@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="paper.css">
+    <link rel="stylesheet" href="../nav.css">
+    <title>Question Papers</title>
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
+            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
+            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
+            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
+            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
+            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
+            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
+            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
+            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
+            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
+            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        </div>
+        <div class="section">
+
+                
+                    
+                    
+                        <div class="top">
+                            <div class="topheading">Question Papers</div>
+                        </div>
+            
+                        <div class="container">
+                          
+                            <div class="paper-box mid-box" onclick="toggleUploadPanel('mid-panel')">
+                                <i class="fa-solid fa-file-alt"></i>
+                                <span>Mid Paper</span>
+                                <div class="upload-panel" id="mid-panel">
+                                    <button class="close-btn" onclick="event.stopPropagation(); closeUploadPanel('mid-panel')">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                    <input type="file" id="midUpload" accept=".pdf" style="display: none;" 
+                                           onchange="handleFileUpload('mid', event)">
+                                    <button class="upload-btn" onclick="event.stopPropagation(); document.getElementById('midUpload').click()">
+                                        <i class="fa-solid fa-upload"></i>
+                                        Upload PDF
+                                    </button>
+                                    <div class="file-list" id="midFileList"></div>
+                                </div>
+                            </div>
+            
+                            <!-- Final Paper Box -->
+                            <div class="paper-box final-box" onclick="toggleUploadPanel('final-panel')">
+                                <i class="fa-solid fa-file-alt"></i>
+                                <span>Final Paper</span>
+                                <div class="upload-panel" id="final-panel">
+                                    <button class="close-btn" onclick="event.stopPropagation(); closeUploadPanel('final-panel')">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                    <input type="file" id="finalUpload" accept=".pdf" style="display: none;" 
+                                           onchange="handleFileUpload('final', event)">
+                                    <button class="upload-btn" onclick="event.stopPropagation(); document.getElementById('finalUpload').click()">
+                                        <i class="fa-solid fa-upload"></i>
+                                        Upload PDF
+                                    </button>
+                                    <div class="file-list" id="finalFileList"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="upload-status" id="uploadStatus"></div>
+            
+                <script>
+                    const uploadedFiles = {
+                        mid: [],
+                        final: []
+                    };
+            
+                    function toggleUploadPanel(panelId) {
+                        const panel = document.getElementById(panelId);
+                        const allPanels = document.querySelectorAll('.upload-panel');
+                        
+                        allPanels.forEach(p => {
+                            if (p.id !== panelId) {
+                                p.style.display = 'none';
+                            }
+                        });
+            
+                        panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
+                    }
+            
+                    function closeUploadPanel(panelId) {
+                        document.getElementById(panelId).style.display = 'none';
+                    }
+            
+                    function handleFileUpload(type, event) {
+                        const file = event.target.files[0];
+                        if (file && file.type === 'application/pdf') {
+                            uploadedFiles[type].push(file.name);
+                            updateFileList(type);
+                            showUploadStatus(`${file.name} uploaded successfully!`);
+                        }
+                        event.target.value = '';
+                    }
+            
+                    function deleteFile(type, fileName) {
+                        uploadedFiles[type] = uploadedFiles[type].filter(name => name !== fileName);
+                        updateFileList(type);
+                        showUploadStatus(`${fileName} deleted successfully!`);
+                    }
+            
+                    function updateFileList(type) {
+                        const fileList = document.getElementById(`${type}FileList`);
+                        fileList.innerHTML = '';
+                        
+                        uploadedFiles[type].forEach(fileName => {
+                            const fileItem = document.createElement('div');
+                            fileItem.className = 'file-item';
+                            fileItem.innerHTML = `
+                                <span class="file-name">
+                                    <i class="fa-solid fa-file-pdf"></i>
+                                    ${fileName}
+                                </span>
+                                <button class="delete-btn" onclick="event.stopPropagation(); deleteFile('${type}', '${fileName}')">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            `;
+                            fileList.appendChild(fileItem);
+                        });
+                    }
+            
+                    function showUploadStatus(message) {
+                        const status = document.getElementById('uploadStatus');
+                        status.textContent = message;
+                        status.style.display = 'block';
+                        setTimeout(() => {
+                            status.style.display = 'none';
+                        }, 3000);
+                    }
+                </script>
+
+
+
+
+            </div>
+</body>
+</html>

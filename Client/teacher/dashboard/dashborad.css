@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  overflow: hidden;
+}
+
+.main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.nav {
+    height: 93%;
+    background: linear-gradient(to bottom, #c0a5ed ,#a880e8, #9576d0,#935de3);
+    padding-top:  1.25rem;
+    margin-left: 3rem;
+    border-radius: 1.875rem 1.875rem 1.875rem 1.875rem;
+    margin-top: 1rem;
+    flex: 4;
+}
+
+.nav a {
+    padding: 1rem;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    color: white;
+    display: block;
+    text-align: center;
+    border-radius:  1.875rem 1.875rem 1.875rem 1.875rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: bolder;
+    font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.nav i{
+    margin-right: 0.4rem;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+.section {
+    display: flex;
+   flex-direction: column;
+    height: 93%;
+    flex: 17;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    margin-right: 2.5rem;
+}
+.logo img{
+    margin-top: 2.5rem;
+    height: 7rem;
+    width: 7rem;
+    margin-left: 3rem;
+    
+  
+}
+.welcome{
+    margin-top: 5rem;
+    margin-left: 1rem;
+    color: white;
+    
+}
+.welcome h1{
+    font-weight: bolder;
+}
+.topbar{
+    display: flex;
+    background: linear-gradient(to right, #c0a5ed ,#a880e8, #9576d0,#935de3);
+    width: 100%;
+    height: 30%;
+    margin: 3rem 1rem 0 1rem;
+    border-radius: 20px 20px 20px 20px;
+
+}
+.acadamicimg img {
+    height: 10rem;
+    width: 17rem;
+    margin-left: 10rem;
+}
+.data{
+    display: flex;
+    color: #935de3;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    font-weight: bolder;
+}
+
+.disciplin{
+background-color: #c0a5ed;
+height: 10rem;
+width: 10rem;
+margin: 2rem 0 0 2rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+border-radius: 1.875rem 1.875rem 1.875rem 1.875rem; 
+font-weight: bold;
+color: #9150f1;
+transition: border 0.01s;
+cursor: pointer;
+transition: 0.2s ease-in-out all;
+
+}
+#disciplin{
+    padding:0.3125rem;
+    border: none;
+    text-decoration: none;
+    text-align: center;
+    border-radius:1.875rem 1.875rem 1.875rem 1.875rem;  ;
+    background-color: #935de3;
+    color: white;
+    height: 1.5rem;
+    cursor: pointer;
+}
+#disciplin:focus{
+    outline: none;
+    border: none;
+}
+.disciplin:hover{
+    transform: scale(1.1);
+}
+
+
+
+.outer-discipline{
+    display: flex;
+}
+
+.proceedforword {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 3rem;
+
+}
+/*==========BUtton prodeed=====*/
+
+button {
+    --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+    --accent: #a880e8;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    cursor: pointer;
+    color: white;
+    padding: 1em 2em;
+    transition:  background-color ease-in-out 0.1s,
+      letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+   
+  }
+  
+ 
+  button:active {
+   
+    background-color: var(--accent);
+    transform: scale(0.95);
+  }
+  

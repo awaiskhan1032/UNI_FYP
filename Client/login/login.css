@@ -1,0 +1,72 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('assets/loginback.jpg') no-repeat center center fixed; /* Replace with your background image */
+    background-size: cover;
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white background */
+    padding: 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Slight shadow to elevate form */
+    width: 18rem;
+    text-align: center;
+}
+
+.logo {
+    width: 8rem; /* Adjust size as needed */
+    margin-bottom: 1rem;
+}
+
+h2 {
+    margin-bottom: 0.7rem;
+    font-weight: bolder;
+}
+
+label {
+    display: flex;
+    margin-bottom: 0.2rem;
+    text-align: left;
+    
+}
+
+input {
+    width: 15rem;
+    padding: 0.6rem;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: flex;
+    align-items: start;
+    border-radius: 0.5rem;
+}
+.inpu{
+    margin-left: 0.6rem;
+}
+button {
+    width: 12rem;
+    padding: 10px;
+    background: linear-gradient(to right,rgb(133, 210, 238), black);
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 2rem 2rem 2rem 2rem ;
+}
+
+button:hover {
+    background: linear-gradient(to right   , black, rgb(73, 163, 190));
+}

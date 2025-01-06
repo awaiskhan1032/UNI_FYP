@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../nav.css">
+    <link rel="stylesheet" href="samples.css">
+    <title>Samples</title>
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
+            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
+            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
+            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
+            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
+            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
+            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
+            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
+            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
+            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
+            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        </div>
+        <div class="section">
+            <div class="top">
+                <div class="topheading">Samples</div>
+                <div class="toppara">The Best average and worst Quizes Labtask and Assignments</div>
+
+                </div>
+            
+
+              
+                        <div class="container">
+                            <!-- Quiz Box -->
+                            <div class="category-box quiz-box" onclick="toggleSubItems('quiz-items')">
+                                <i class="fa-solid fa-question-circle"></i>
+                                <span>Quizzes</span>
+                                <div class="sub-items" id="quiz-items">
+                                    <button class="close-btn" onclick="event.stopPropagation(); closeSubItems('quiz-items')">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                    <a href="#" class="sub-item quiz-sub">Quiz 1</a>
+                                    <a href="#" class="sub-item quiz-sub">Quiz 2</a>
+                                </div>
+                            </div>
+            
+                            <!-- Assignment Box -->
+                            <div class="category-box assignment-box" onclick="toggleSubItems('assignment-items')">
+                                <i class="fa-solid fa-file-alt"></i>
+                                <span>Assignments</span>
+                                <div class="sub-items" id="assignment-items">
+                                    <button class="close-btn" onclick="event.stopPropagation(); closeSubItems('assignment-items')">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                    <a href="#" class="sub-item assignment-sub">Assignment 1</a>
+                                    <a href="#" class="sub-item assignment-sub">Assignment 2</a>
+                                </div>
+                            </div>
+            
+                            <!-- Lab Tasks Box -->
+                            <div class="category-box lab-box" onclick="toggleSubItems('lab-items')">
+                                <i class="fa-solid fa-flask"></i>
+                                <span>Lab Tasks</span>
+                                <div class="sub-items" id="lab-items">
+                                    <button class="close-btn" onclick="event.stopPropagation(); closeSubItems('lab-items')">
+                                        <i class="fa-solid fa-times"></i>
+                                    </button>
+                                    <a href="#" class="sub-item lab-sub">Lab Task 1</a>
+                                    <a href="#" class="sub-item lab-sub">Lab Task 2</a>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <script>
+                    function toggleSubItems(id) {
+                        const subItems = document.getElementById(id);
+                        const allSubItems = document.querySelectorAll('.sub-items');
+                        
+                        // Close all other sub-items first
+                        allSubItems.forEach(item => {
+                            if (item.id !== id) {
+                                item.style.display = 'none';
+                            }
+                        });
+            
+                        // Toggle the clicked sub-items
+                        if (subItems.style.display === 'flex') {
+                            subItems.style.display = 'none';
+                        } else {
+                            subItems.style.display = 'flex';
+                        }
+                    }
+            
+                    function closeSubItems(id) {
+                        const subItems = document.getElementById(id);
+                        subItems.style.display = 'none';
+                    }
+                </script>
+            
+
+
+
+
+
+            </div>
+</body>
+</html>

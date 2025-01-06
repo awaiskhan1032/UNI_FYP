@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <title>Course Folder Verification</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Lato", sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        .section {
+            overflow-y: scroll;
+        }
+
+        .main {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .nav {
+            height: 93%;
+            background: linear-gradient(to bottom, #c0a5ed, #a880e8, #9576d0, #935de3);
+            padding-top: 1.25rem;
+            margin-left: 3rem;
+            border-radius: 1.875rem;
+            margin-top: 1rem;
+            flex: 4;
+        }
+
+        .nav a {
+            padding: 0.86rem;
+            text-decoration: none;
+            font-size: 0.9375rem;
+            color: white;
+            display: block;
+            text-align: center;
+            border-radius: 1.875rem;
+            margin: 0 1rem;
+            font-weight: 300;
+            transition: all 0.3s ease;
+        }
+
+        .nav i {
+            margin-right: 0.4rem;
+        }
+
+        .nav a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        .section {
+            display: flex;
+            flex-direction: column;
+            height: 93%;
+            flex: 17;
+            background-color: white;
+            border-radius: 10px;
+            margin-right: 2.5rem;
+            border: 0.2rem solid rgb(94, 88, 88);
+            padding: 1rem;
+        }
+
+        .depname {
+            text-align: center;
+            margin-top: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .folderverficationreport {
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            font-size: 1.3rem;
+            margin-top: 5px;
+        }
+
+        /* Top Table Styles */
+        .top {
+            width: 80%;
+            margin: 1rem auto;
+            border-collapse: collapse;
+        }
+
+        .top input, 
+        .top textarea {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding: 4px;
+        }
+
+        .top td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+
+        .flex-container {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .colnumber input {
+            width: 3rem;
+        }
+
+        /* Checklist Styles */
+        .cheaklist {
+            text-align: center;
+            font-weight: bold;
+            text-decoration: underline;
+            margin: 1rem 0;
+        }
+
+        /* Main Table Styles */
+        .tablemain {
+            width: 90%;
+            margin: 1rem auto;
+            border-collapse: collapse;
+        }
+
+        .tablemain td {
+            border: 1px solid black;
+            padding: 8px;
+            vertical-align: top;
+        }
+
+        .particulars {
+            width: 20%;
+            padding: 0.4rem;
+        }
+
+        .textare1 {
+            width: 60%;
+        }
+
+        .textare1 textarea {
+            width: 100%;
+            resize: none;
+            border: none;
+            outline: none;
+        }
+
+        .yesno {
+            width: 10%;
+            text-align: center;
+        }
+
+        .yesno input {
+            width: 2rem;
+            border: none;
+            outline: none;
+            text-align: center;
+        }
+
+        /* Confirmation Section */
+        .confirmation {
+            margin: 1rem auto;
+            width: 90%;
+            text-align: center;
+        }
+
+        /* Signature Section */
+        .signature {
+            display: flex;
+            justify-content: space-around;
+            margin: 1rem auto;
+            width: 80%;
+        }
+
+        .instructorsig {
+            text-align: center;
+        }
+
+        .custom-line {
+            border: none;
+            border-top: 1px solid black;
+            margin: 20px 0;
+            width: 7rem;
+        }
+
+        /* Button Styles */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        button {
+            padding: 1em 2em;
+            font-weight: bold;
+            letter-spacing: 0.1em;
+            border: none;
+            border-radius: 1.1em;
+            background-color: #212121;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #a880e8;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1200px) {
+            .main {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+            }
+
+            .nav {
+                width: 100%;
+                height: auto;
+                margin: 0;
+                padding: 1rem;
+            }
+
+            .section {
+                margin: 1rem 0;
+                width: 100%;
+            }
+
+            .top, .tablemain {
+                width: 95%;
+            }
+
+            .signature {
+                width: 95%;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .tablemain td {
+                display: block;
+                width: 100%;
+            }
+
+            .particulars {
+                width: 100%;
+            }
+
+            .textare1 {
+                width: 100%;
+            }
+
+            .yesno {
+                width: 50%;
+                display: inline-block;
+            }
+
+            .buttons {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            button {
+                width: 200px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .nav a {
+                font-size: 0.8rem;
+                padding: 0.5rem;
+            }
+
+            .folderverficationreport {
+                font-size: 1rem;
+            }
+
+            .top td {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="main">
+        <div class="nav">
+            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
+            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
+            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
+            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
+            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
+            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
+            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
+            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
+            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
+            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
+            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        </div>
+        <div class="section">
+            <div class="depname">Department of Computer Science</div>
+            <div class="folderverficationreport">Course Folder Verfication Report</div>
+
+            <table class="top">
+                <tr class="row1">
+                    <td class="col1"><b>1.</b></td>
+                    <td class="col1"> <b>Program</b></td>
+                    <td class="col1"><input type="text"></td>
+                    <td class="col1"><b>2.</b></td>
+                    <td class="col234">
+                        <div class="flex-container">
+                            <b>Semester: </b><input type="text">
+                        </div>
+                    </td>
+                    <td class="colnumber"><input type="number"></td>
+                </tr>
+                <tr class="row2">
+                    <td class="col2"><b>3.</b></td>
+                    <td class="col2"><b>Course Title</b></td>
+                    <td class="col2"><input type="text"></td>
+                </tr>
+                <tr class="row3">
+                    <td class="col3"><b>4.</b></td>
+                    <td class="col3"><b>Instructor Name </b></td>
+                    <td class="col3"><input type="text"></td>
+                </tr>
+                <tr class="row4">
+                    <td><b>5.</b></td>
+                    <td><b>Reviewer Name</b></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+
+            <div class="cheaklist">CHEAKLIST</div>
+
+            <table class="tablemain">
+                <tr>
+                    <td class="particulars"><b>Course Folder Particulars</b></td>
+                    <td class="particulars"><b>Requriments</b></td>
+                    <td >Yes</td>
+                    <td>No</td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>1.</b> Course Outline</td>
+                    <td class="textare1">  <textarea name="message" rows="7" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>2.</b>Course Description-NCEAC</td>
+                    <td class="textare1">  <textarea name="message" rows="7" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>3.</b>Copy of Lecture Notes </td>
+                    <td class="textare1">  <textarea name="message" rows="1" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>4.</b> Copy of Question papers (Assigment no 1-4, Quiz 1-4, Mid-term and Final-term) on seprate sheets</td>
+                    <td class="textare1">  <textarea name="message" rows="5" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>5.</b> Copy of Model Solution (Assigment no 1-4, Quiz 1-4, Mid-term and Final-term) on seprate sheets</td>
+                    <td class="textare1">  <textarea name="message" rows="5" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>6.</b> Copy of Three samples graded(Good,Average and Worst) <br> (Assigment no 1-4, Quiz 1-4, Mid-term and Final-term) on seprate sheets</td>
+                    <td class="textare1">  <textarea name="message" rows="7" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>7.</b> Attendance</td>
+                    <td class="textare1">  <textarea name="message" rows="1" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>8.</b> Course Log-NCEAC</td>
+                    <td class="textare1">  <textarea name="message" rows="1" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>9.</b> Complete Result</td>
+                    <td class="textare1">  <textarea name="message" rows="1" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+                <tr>
+                    <td class="particulars"><b>10.</b> Outcomes Assessment</td>
+                    <td class="textare1">  <textarea name="message" rows="1" cols="99"></textarea></td>
+                    <td class="yesno"><input type="text" ></td>
+                    <td class="yesno"><input type="text" ></td>
+                </tr>
+
+            </table>
+            <div class="confirmation">
+              <p>  I hereby confrim that all the above-mentioned documents are complete in prescribe manner  </p>
+            </div>
+
+            <div class="signature"> 
+                <div class="instructorsig">Instructor Signature
+                <hr class="custom-line">
+            </div>
+                <div class="instructorsig">Instructor Signature
+                <hr class="custom-line">
+            </div>
+
+            </div>
+            <div class="signature"> 
+                <div class="instructorsig">Signature<br>Convener Folder Review Committee
+                <hr class="custom-line">
+            </div>
+                <div class="instructorsig">Signature<br>Chairman
+                <hr class="custom-line">
+            </div>
+
+            </div>
+            <div class="buttons">
+                <button class="submit">
+                    submit
+                </button>
+                <button class="print">
+                    Print
+                </button>
+                <button class="print">
+                    Download
+                </button>
+            </div>
+
+
+
+
+
+
+
+
+
+        </div>
+</body>
+</html>

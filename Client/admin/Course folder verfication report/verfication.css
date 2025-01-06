@@ -1,0 +1,209 @@
+*{
+    margin: 0 ;
+    padding: 0;
+}
+
+.section{
+    
+  
+    overflow-y:scroll;
+    
+    
+}
+
+.main {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.nav {
+    height: 93%;
+    background: linear-gradient(to bottom, #c0a5ed ,#a880e8, #9576d0,#935de3);
+    padding-top:  1.25rem;
+    margin-left: 3rem;
+    border-radius: 1.875rem 1.875rem 1.875rem 1.875rem;
+    margin-top: 1rem;
+    flex: 4;
+    font-family: "Lato", sans-serif;
+    
+}
+
+.nav a {
+    padding: 0.86rem;
+    text-decoration: none;
+    font-size: 0.9375rem;
+    color: white;
+    display: block;
+    text-align: center;
+    border-radius:  1.875rem 1.875rem 1.875rem 1.875rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-weight: bolder;
+    font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.nav i{
+    margin-right: 0.4rem;
+}
+
+.nav a:hover {
+    background-color: white;
+    color: black;
+}
+/* =================================================section============================ */
+.section {
+    display: flex;
+   flex-direction: column;
+    height: 93%;
+    flex: 17;
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    margin-right: 2.5rem;
+    border: 0.2rem solid rgb(94, 88, 88);
+    
+}
+/* ================================dep name================================= */
+.depname{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1.2rem;
+}
+/* =================================folder verfication report================== */
+.folderverficationreport{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+     text-decoration: underline;
+     font-size: 1.3rem;
+     margin-top: 5px;
+}   
+/* =================================table top-============================ */
+.top input ,textarea{
+    border: none;
+    outline: none;
+}
+table.top {
+    width: 80%; /* Optional: makes the table full width */
+    border-collapse: collapse; /* Ensures borders do not double up */
+}
+
+.top td, th { /* Applies to both table data and header cells */
+    border: 1px solid black; /* Adds a 1px solid border around each cell */
+    padding: 8px; /* Adds some padding for spacing */
+    text-align: left; /* Optional: aligns text to the left */
+}
+
+.top tr { /* Optional: Adds border around the entire row */
+    border: 1px solid black;
+}
+.flex-container {
+    display: flex;
+    align-items: center; /* Align items vertically */
+    gap: 0.3rem;
+}
+
+.col234 {
+    border: 1px solid black; /* Keep the border consistent */
+}
+.top{
+    margin-left: 6rem;
+    margin-top: 1rem;
+}
+.colnumber input ,textarea{
+width: 3rem;
+}
+/* =========================================cheaklist================= */
+.cheaklist{
+    font-weight: bold;
+    text-decoration: underline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* =========================================table main-==================== */
+.tablemain{
+    width: 83%;
+    margin-left:6rem ;
+    margin-top: 1rem;
+    border-collapse: collapse;
+     /* Ensures borders do not double up */
+}
+.yesno input, textarea{
+    width: 2rem ;
+}
+.yesno {
+    vertical-align: top; /* Aligns the content to the top of the cell */
+}
+
+.particulars{
+    width: 13rem;
+}
+.textare1{
+    width: 32rem;
+    padding-right: 1rem;
+}
+.textare1 textarea {
+    width: 100%; /* Ensures textarea takes the full width of its container */
+    height: 100%; /* Ensures textarea height matches rows attribute */
+    resize: none; /* Prevents resizing of the textarea */
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+.tablemain, .tablemain th, .tablemain td {
+    border: 1px solid black; /* Adds a 1px solid border around the entire table, headers, and cells */
+}
+.yesno input ,textarea{
+    border: none;
+    outline: none;
+}
+.particulars{
+    padding: 0.4rem;
+}
+.custom-line {
+    border: none; /* Removes the default border */
+    border-top: 1px solid black; /* Creates a single line */
+    margin: 20px 0; /* Adds some space above and below the line */
+    width: 7rem; /* Makes the line span the full width of its container */
+}
+.confirmation{
+    margin-left: 6.5rem;
+
+}
+.signature{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1rem;
+    margin-right: 20rem;
+}
+/* ============================button================================== */
+
+button {
+    margin-top: 4rem;
+    margin-bottom:4rem ;
+    --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+    --accent: #a880e8;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    border: none;
+    border-radius: 1.1em;
+    background-color: #212121;
+    cursor: pointer;
+    color: white;
+    padding: 1em 2em;
+    transition:  background-color ease-in-out 0.1s,
+      letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+   margin-left: 3rem;
+  }
+  
+ 
+  button:active {
+   
+    background-color: var(--accent);
+    transform: scale(0.95);
+  }

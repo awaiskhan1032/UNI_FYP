@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="resdes.css">
+    <title>Course Description</title>
+   
+</head>
+<body>
+    <div class="main">
+        <div class="nav">
+            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
+            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
+            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
+            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
+            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
+            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
+            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
+            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
+            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
+            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
+            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
+            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+        </div>
+
+        <div class="section">
+            <div class="logo">
+                <img src="assets/Nceac.png" alt="Nceac img">
+                <p>INSTITUTION</p>
+            </div>
+
+            <div class="top">
+                <div class="top1">
+                    <p>National Computer Education Accreditation Council NCEAC</p>
+                </div>
+                <div class="top2">
+                    <p>Abbottabad University of Science & Technology</p>
+                </div>
+            </div>
+
+            <div class="nceac">
+                <p>NCEAC.FORM.001-e</p>
+            </div>
+
+            <div class="formtop">
+                <div class="formtop1">
+                    <p>PROGRAM(s) TO BE EVALUATED</p>
+                </div>
+                <div class="formtop2">
+                    <p>A.Course Description</p>
+                    <input type="text" id="textbox">
+                </div>
+            </div>
+
+            <table id="table_first">
+                <tr>
+                    <td class="one">Course Code</td>
+                    <td class="two"><input type="number"></td>
+                </tr>
+                <tr>
+                    <td class="one">Course Title</td>
+                    <td class="two"><input type="text"></td>
+                </tr>
+                <tr>
+                    <td class="one">Credit Hours</td>
+                    <td class="two"><input type="number"></td>
+                </tr>
+                <tr>
+                    <td class="one">Prerequisites by Course(s) and Topics</td>
+                    <td class="two"><input type="text"></td>
+                </tr>
+                <tr>
+                    <td class="one">Assessment Instruments with Weight</td>
+                    <td class="two"><textarea rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="one">Course Coordinator</td>
+                    <td class="two"><input type="text"></td>
+                </tr>
+                <tr>
+                    <td class="one">URL (if any)</td>
+                    <td class="two"><input type="url"></td>
+                </tr>
+                <tr>
+                    <td class="one">Current Catalog Description</td>
+                    <td class="two"><textarea rows="10"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="one">TextBook</td>
+                    <td class="two"><textarea rows="7"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="one">Reference Material</td>
+                    <td class="two"><textarea rows="7"></textarea></td>
+                </tr>
+                <tr>
+                    <td class="one">Course Goals</td>
+                    <td class="two"><textarea rows="17"></textarea></td>
+                </tr>
+            </table>
+
+            <div class="table2top">
+                <div class="nceac2">
+                    <p>1. NCEAC.FORM.001-C</p>
+                </div>
+                <div class="heading2">
+                    <p>National Computer Education Accreditation Council NCEAC</p>
+                </div>
+            </div>
+
+            <div class="second-table">
+                <div class="left outer-td">
+                    <p><b>Topics Covered in the Course with Number of Lectures on each topic</b> (assume 15-week instruction and one and half-hour lectures)</p>
+                </div>
+                <div class="right outer-td">
+                    <!-- Repeat this structure for weeks 1-16 -->
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="week">
+                        <div class="week-inner week-left">Week 1</div>
+                        <div class="week-inner week-right">
+                            <div class="week-right-top">
+                                <div class="lecture">Lec-1</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                            <div class="week-right-bottom">
+                                <div class="lecture">Lec-2</div>
+                                <div class="lecture-name">
+                                    <input type="text">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                  
+                </div>
+            </div>
+            <div class="buttons">
+                <button class="submit">
+                    submit
+                </button>
+                <button class="print">
+                    Print
+                </button>
+                <button class="print">
+                    Download
+                </button>
+            </div>
+        </div>
+    
+    </div>
+</body>
+</html>
