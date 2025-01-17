@@ -5,133 +5,281 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="home.css">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
-
     <title>Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+       .custom::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.custom::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.custom::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #993aec;
+}
+    </style>
 </head>
 
-<body>
-    <div class="main">
-        <div class="nav">
-            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
-            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
-            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
-            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
-            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
-            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
-            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
-            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
-            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
-            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
-            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+<body class="bg-gray-100 font-sans">
+    <div class="flex w-screen h-screen items-center justify-center">
+        <!-- Navigation -->
+        <div class="h-[93%] w-1/5 bg-gradient-to-b from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+            <nav>
+                <ul class="space-y-4">
+                    <li>
+                        <a href="../Home/home.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-house mr-2"></i> Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../course outline/outline.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-rectangle-list mr-2"></i> Course Outline
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../course description/resdes.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-circle-info mr-2"></i> Course Description
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Copy of lecture notes/notes.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-file-lines mr-2"></i> Lecture Notes
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Copy of Question papers/papers.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-circle-question mr-2"></i> Question Papers
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Model solution/modelsol.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-circle-check mr-2"></i> Model Solutions
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../samples/samples.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-file-code mr-2"></i> Samples
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Course log/courselog.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-book mr-2"></i> Course Log
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Outcome Assesment/assesment.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-chart-line mr-2"></i> Outcome Assessment
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Course folder verfication report/resverf.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-clipboard-check mr-2"></i> Folder Verification
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../Manage logins/managelogin.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-users-gear mr-2"></i> Manage Login
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./login/login.html"
+                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
+                            <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <div class="section">
 
-            <div class="topbar">
-
-                <div class="logo"><img src="assets/logo.png" alt=""></div>
-                <div class="welcome">
-                    <h1>Welcome to Aust Academic</h1>
-                    <p>Always stay updated</p>
+        <!-- Main Section -->
+        <div class="flex-1 h-[93%] bg-white p-8 rounded-2xl shadow-lg">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-600 rounded-xl p-6 flex justify-between items-center shadow-lg text-white">
+                <div>
+                    <h1 class="text-3xl font-bold">Welcome to Aust Academic</h1>
+                    <p class="text-lg font-medium">Always stay updated</p>
                 </div>
-                <div class="acadamicimg"><img src="assets/academic.png" alt=""></div>
+                <img src="assets/logo.png" alt="Logo" class="h-24 w-24">
             </div>
-
-            <div class="data">
-                <h3>Please select the following to view acadmaic's :</h3>
+        
+            <!-- Form -->
+            <div class="mt-8">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-2xl font-bold text-purple-700">Please select the following:</h2>
+                    <p class="text-2xl font-bold text-purple-700">OR</p>
+                    <a href="./register-course.html" class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition">Add Course</a>
+                </div>
+                <div class="grid grid-cols-3 gap-6">
+                    <!-- Session -->
+                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="session" class="block text-sm font-medium text-purple-700">Session</label>
+                        <select id="session"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Session</option>
+                        </select>
+                    </div>
+                    <!-- Teacher -->
+                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="teacher" class="block text-sm font-medium text-purple-700">Teacher</label>
+                        <select id="teacher"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Teacher</option>
+                        </select>
+                    </div>
+                    <!-- Class -->
+                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="class" class="block text-sm font-medium text-purple-700">Class</label>
+                        <select id="class"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Class</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <!-- Submit Button -->
+                <div class="mt-8 flex justify-center">
+                    <button class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition"
+                        onclick="storeSelections()">
+                        Submit
+                    </button>
+                </div>
             </div>
-            <div class="outer-discipline">
-
-                <div class="disciplin">
-                    <P>Select Discipline</P>
-                    <select name="buttons" id="disciplin">
-                        <option value="">Select Discipline</option>
-                        <option value="">S.E</option>
-                        <option value="">C.S</option>
-                    </select>
-                </div>
-                <div class="disciplin">
-                    <P>Select Semester</P>
-                    <select name="buttons" id="disciplin">
-                        <option value="">Select Semester</option>
-                        <option value="">1 semester</option>
-                        <option value="">2 semester</option>
-                        <option value="">3 semester</option>
-                        <option value="">4 semester</option>
-                        <option value="">5 semester</option>
-                        <option value="">6 semester</option>
-                        <option value="">7 semester</option>
-                        <option value="">8 semester</option>
-                    </select>
-                </div>
-                <div class="disciplin">
-                    <P>Select Section</P>
-                    <select name="buttons" id="disciplin">
-                        <option value="">Select Section</option>
-                        <option value="">A</option>
-                        <option value="">B</option>
-                        <option value="">C</option>
-                        <option value="">D</option>
-                        <option value="">E</option>
-                        <option value="">F</option>
-                        <option value="">I</option>
-                        <option value="">J</option>
-                    </select>
-                </div>
-                <div class="disciplin">
-                    <P>Select Course</P>
-                    <select name="buttons" id="disciplin">
-                        <option value="">Select Course</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">6</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                    </select>
-                </div>
-                <div class="disciplin">
-                    <P>Course Teacher</P>
-                    <select name="buttons" id="disciplin">
-                        <option value="">Course Teacher</option>
-                        <option value="">1 semester</option>
-                        <option value="">2 semester</option>
-                        <option value="">3 semester</option>
-                        <option value="">4 semester</option>
-                        <option value="">5 semester</option>
-                        <option value="">6 semester</option>
-                        <option value="">7 semester</option>
-                        <option value="">8 semester</option>
-                    </select>
-                </div>
-
-            </div>
-
-<div class="proceedforword">
-    <button class="proceed">Proceed</button>
-</div>
         </div>
-    </div>
-
-
-    </div>
+    <script>
    
 
-    </div>
-  
+        // Verify Token and Fetch Validation
+        const token = localStorage.getItem('token');
+
+        if (token) {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const isExpired = payload.exp * 1000 < Date.now();
+
+            if (isExpired) {
+                alert('Session expired. Please log in again.');
+                localStorage.removeItem('token'); // Clear expired token
+                window.location.href = '../../../login/login.html'; // Redirect to login
+            } else {
+                // Verify token validity with backend
+                fetch('http://localhost:5000/api/auth/validate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error('Invalid token. Please log in again.');
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Token is valid:', data);
+                        document.body.style.display = 'block'; // Show the page after validation
+                    })
+                    .catch((err) => {
+                        alert(err.message);
+                        localStorage.removeItem('token'); // Clear invalid token
+                        window.location.href = '../../login/login.html'; // Redirect to login
+                    });
+            }
+        } else {
+            alert('Access denied. Please log in.');
+            window.location.href = '../../login/login.html'; // Redirect if no token
+        }
+
+        // Store Selected Values in Session Storage
+        async function populateSessions() {
+        try {
+            const response = await fetch('http://localhost:5000/api/teacher/session/getAll'); // Adjust API endpoint as needed
+            const sessions = await response.json();
+            const sessionSelect = document.getElementById('session');
+            sessionSelect.innerHTML = '<option value="">Select Session</option>';
+            sessions.forEach(session => {
+                sessionSelect.innerHTML += `<option value="${session.year} ${session.session}">${session.year} - ${session.session}</option>`;
+            });
+        } catch (error) {
+            console.error('Error fetching sessions:', error);
+        }
+    }
+
+    // Fetch teacher data from API and populate dropdown
+    async function populateTeachers() {
+        try {
+            const response = await fetch('http://localhost:5000/api/teacher/getAll'); // Adjust API endpoint as needed
+            const teachers = await response.json();
+            const teacherSelect = document.getElementById('teacher');
+            teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+            teachers.forEach(teacher => {
+                teacherSelect.innerHTML += `<option value="${teacher.name}">${teacher.name}</option>`;
+            });
+        } catch (error) {
+            console.error('Error fetching teachers:', error);
+        }
+    }
+
+    // Fetch class data from API and populate dropdown
+    async function populateClasses() {
+        try {
+            const response = await fetch('http://localhost:5000/api/teacher/class/getAll'); // Adjust API endpoint as needed
+            const classes = await response.json();
+            const classSelect = document.getElementById('class');
+            classSelect.innerHTML = '<option value="">Select Class</option>';
+            classes.forEach(classItem => {
+                classSelect.innerHTML += `<option value="${classItem.discipline} ${classItem.semester} ${classItem.section}">${classItem.discipline} ${classItem.semester} ${classItem.section}</option>`;
+            });
+        } catch (error) {
+            console.error('Error fetching classes:', error);
+        }
+    }
+
+    // Store selected values in localStorage
+    function storeSelections() {
+        const session = document.getElementById('session').value;
+        const teacher = document.getElementById('teacher').value;
+        const classValue = document.getElementById('class').value;
+        
+        if (!session || !teacher || !classValue) {
+            alert('Please select all fields.');
+            return;
+        }
+
+        localStorage.setItem('session', session);
+        localStorage.setItem('teacher', teacher);
+        localStorage.setItem('class', classValue);
+
+        alert(`Now you can navigate to other pages to get documents for session: ${session} , teacher: ${teacher} and class: ${classValue}.`);
+    }
+
+    // Initialize dropdowns on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        populateSessions();
+        populateTeachers();
+        populateClasses();
+    });
+    </script>
 </body>
 
 </html>

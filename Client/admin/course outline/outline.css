@@ -113,6 +113,9 @@ body {
 .before-mid {
     background: linear-gradient(135deg, #c0a5ed, #935de3);
     box-shadow: 0 8px 15px rgba(192, 165, 237, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* Updated colors for After Mid box */

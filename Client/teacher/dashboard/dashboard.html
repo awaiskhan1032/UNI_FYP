@@ -16,6 +16,11 @@
         rel="stylesheet">
 
     <title>Teacher</title>
+    <style>
+        body {
+            display: none; /* Hide the page content initially */
+        }
+    </style>
 </head>
 
 <body>
@@ -23,14 +28,17 @@
         <div class="nav">
             <a href="./admin/Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
             <a href="#"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
-            <a href="./admin/course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
+            <a href="./admin/course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course
+                Description</a>
             <a href="#"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
             <a href="#"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
             <a href="#"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
             <a href="#"><i class="fa-solid fa-file-code"></i>Samples</a>
             <a href="./admin/Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
-            <a href="./admin/Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
-            <a href="./admin/Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
+            <a href="./admin/Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome
+                Assessment</a>
+            <a href="./admin/Course folder verfication report/resverf.html"><i
+                    class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
             <a href="#Manage_logins"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
             <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
         </div>
@@ -119,9 +127,9 @@
 
             </div>
 
-<div class="proceedforword">
-    <button class="proceed">Proceed</button>
-</div>
+            <div class="proceedforword">
+                <button class="proceed">Proceed</button>
+            </div>
         </div>
     </div>
 
@@ -130,6 +138,48 @@
 
 
     </div>
+
+    <script>
+        const token = localStorage.getItem('token');
+    
+        if (token) {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const isExpired = payload.exp * 1000 < Date.now();
+    
+            if (isExpired) {
+                alert('Session expired. Please log in again.');
+                localStorage.removeItem('token'); // Clear expired token
+                window.location.href = '../../login/login.html'; // Redirect to login
+            } else {
+                // Verify token validity with backend
+                fetch('http://localhost:5000/api/auth/validate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error('Invalid token. Please log in again.');
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Token is valid:', data);
+                        document.body.style.display = 'block'; // Show the page after validation
+                    })
+                    .catch((err) => {
+                        alert(err.message);
+                        localStorage.removeItem('token'); // Clear invalid token
+                        window.location.href = '../../login/login.html'; // Redirect to login
+                    });
+            }
+        } else {
+            alert('Access denied. Please log in.');
+            window.location.href = '../../login/login.html'; // Redirect if no token
+        }
+    </script>
     
 </body>
 

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Assign Courses</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+    <script>
+        async function populateTeachers() {
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/getAll');
+                const data = await response.json();                
+                if (response.ok) {
+                    const teacherSelect = document.getElementById('teacherSelect');
+                    teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+                    data.forEach(teacher => {
+                        console.log(teacher);
+                        
+                        teacherSelect.innerHTML += `<option value="${teacher._id}">${teacher.name}</option>`;
+                    });
+                } else {
+                    alert('Failed to fetch teachers.');
+                }
+            } catch (err) {
+                console.error('Error fetching teachers:', err);
+            }
+        }
+
+        function showStepTwo() {
+            const teacher = document.getElementById('teacherSelect').value;
+            if (!teacher) {
+                alert('Please select a teacher.');
+                return;
+            }
+            document.getElementById('stepOne').classList.add('hidden');
+            document.getElementById('stepTwo').classList.remove('hidden');
+        }
+
+        function showStepThree() {
+            const discipline = document.getElementById('discipline').value;
+            const semester = document.getElementById('semester').value;
+            const section = document.getElementById('section').value;
+            const year = document.getElementById('year').value;
+            const session = document.getElementById('session').value;
+
+            if (!discipline || !semester || !section || !year || !session) {
+                alert('Please select all fields.');
+                return;
+            }
+
+            document.getElementById('stepTwo').classList.add('hidden');
+            document.getElementById('stepThree').classList.remove('hidden');
+        }
+
+        function generateCourseFields() {
+            const courseCount = parseInt(document.getElementById('courseCount').value, 10);
+
+            if (isNaN(courseCount) || courseCount <= 0) {
+                alert('Please enter a valid number of courses.');
+                return;
+            }
+
+            const coursesContainer = document.getElementById('coursesContainer');
+            coursesContainer.innerHTML = '';
+
+            for (let i = 0; i < courseCount; i++) {
+                coursesContainer.innerHTML += `
+                    <div class="flex gap-4 mb-4">
+                        <input type="text" name="courseCode" placeholder="Course Code" class="w-1/2 p-2 border rounded-lg" required>
+                        <input type="text" name="courseTitle" placeholder="Course Title" class="w-1/2 p-2 border rounded-lg" required>
+                    </div>
+                `;
+            }
+
+            document.getElementById('submitCourses').classList.remove('hidden');
+        }
+
+        async function submitCourses(event) {
+            event.preventDefault();
+
+            const teacher = document.getElementById('teacherSelect').value;
+            
+            const discipline = document.getElementById('discipline').value;
+            const semester = document.getElementById('semester').value;
+            const section = document.getElementById('section').value;
+            const year = document.getElementById('year').value;
+            const session = document.getElementById('session').value;
+
+            const courses = Array.from(document.querySelectorAll('#coursesContainer > div')).map(course => {
+                const courseCode = course.querySelector('[name="courseCode"]').value;
+                const courseTitle = course.querySelector('[name="courseTitle"]').value;
+                return { courseCode, courseTitle };
+            });
+
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/add-course', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        teacher,
+                        discipline,
+                        semester,
+                        section,
+                        year,
+                        session,
+                        courses,
+                    }),
+                });
+
+                if (response.ok) {
+                    alert('Courses registered successfully.');
+                    location.reload(); // Reload the page to reset the form
+                } else {
+                    const error = await response.json();
+                    alert(`Failed to register courses: ${error.message}`);
+                }
+            } catch (err) {
+                console.error('Error submitting courses:', err);
+                alert('An error occurred while registering courses.');
+            }
+        }
+
+        // Populate teacher select dropdown on page load
+        document.addEventListener('DOMContentLoaded', populateTeachers);
+    </script>
+</head>
+
+<body class="bg-gray-100 font-sans">
+    <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg shadow-lg mt-10">
+        <h1 class="text-3xl font-bold text-purple-700 mb-8 text-center">Assign Courses to Teacher</h1>
+
+        <!-- Step 1 -->
+        <div id="stepOne">
+            <h2 class="text-xl font-semibold mb-4">Step 1: Select Teacher</h2>
+            <select id="teacherSelect" class="w-full p-3 border rounded-lg mb-6">
+                <option value="">Loading...</option>
+            </select>
+            <button onclick="showStepTwo()" class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-800">
+                Proceed
+            </button>
+        </div>
+
+        <!-- Step 2 -->
+        <div id="stepTwo" class="hidden">
+            <h2 class="text-xl font-semibold mb-4">Step 2: Select Details</h2>
+            <div class="flex gap-4 mb-6">
+                <select id="discipline" class="w-1/3 p-3 border rounded-lg">
+                    <option value="">Select Discipline</option>
+                    <option value="SE">S.E</option>
+                    <option value="CS">C.S</option>
+                </select>
+                <select id="semester" class="w-1/3 p-3 border rounded-lg">
+                    <option value="">Select Semester</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
+                <select id="section" class="w-1/3 p-3 border rounded-lg">
+                    <option value="">Select Section</option>
+                    <option value="A">A</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="D">D</option>
+                </select>
+            </div>
+            <div class="flex gap-4 mb-6">
+                <select id="year" class="w-1/2 p-3 border rounded-lg">
+                    <option value="">Select Year</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                </select>
+                <select id="session" class="w-1/2 p-3 border rounded-lg">
+                    <option value="">Select Session</option>
+                    <option value="spring">Spring</option>
+                    <option value="fall">Fall</option>
+                </select>
+            </div>
+            <button onclick="showStepThree()" class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-800">
+                Proceed
+            </button>
+        </div>
+
+        <!-- Step 3 -->
+        <div id="stepThree" class="hidden">
+            <h2 class="text-xl font-semibold mb-4">Step 3: Enter Course Details</h2>
+            <input id="courseCount" type="number" placeholder="Enter number of courses"
+                class="w-full p-3 border rounded-lg mb-6">
+            <button onclick="generateCourseFields()" class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-800">
+                Generate Fields
+            </button>
+            <div id="coursesContainer" class="mt-6"></div>
+            <button id="submitCourses" class="hidden bg-green-600 text-white py-2 px-4 rounded-lg hover:bg-green-800 mt-4"
+                onclick="submitCourses(event)">
+                Submit Courses
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

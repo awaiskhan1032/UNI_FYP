@@ -1,28 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-    integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Login Page</title>
     <link rel="stylesheet" href="login.css">
 </head>
+
 <body>
     <div class="login-container">
         <img src="assets/logologin.jfif" alt="Logo" class="logo">
         <h2>Login</h2>
-        <form action="/login" method="post"> 
+        <form id="loginForm">
             <div class="inpu">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="Enter your Email">
-            
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required placeholder="Enter your password">
-        </div>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required placeholder="Enter your Email">
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required placeholder="Enter your password">
+            </div>
             <button type="submit">Login</button>
         </form>
+        <!-- Popup for showing errors -->
+        <div id="errorPopup" class="popup" style="display: none; color: red; margin-top: 10px;"></div>
     </div>
+
+    <script>
+        // Login form handler
+        localStorage.removeItem('token');
+        localStorage.removeItem('role'); 
+        const loginForm = document.getElementById('loginForm');
+        const errorPopup = document.getElementById('errorPopup');
+
+        loginForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                const response = await fetch('http://localhost:5000/api/auth/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email, password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    localStorage.setItem('token', data.token); // Save the JWT to local storage
+                    localStorage.setItem('role',data.role)
+                    
+
+                    if (data.role === 'teacher') {
+                        window.location.href = '/Client/admin/Home/home.html';
+                    }
+                    else if (data.role === 'admin') {
+                        window.location.href = '/Client/admin/Home/home.html';
+                    }
+                }
+                else {
+                    // Display error message
+                    errorPopup.textContent = data.message || 'Login failed. Please try again.';
+                    errorPopup.style.display = 'block';
+                }
+            } catch (err) {
+                console.error('Error:', err);
+                errorPopup.textContent = 'An unexpected error occurred. Please try again later.';
+                errorPopup.style.display = 'block';
+            }
+        });
+    </script>
 </body>
+
 </html>
