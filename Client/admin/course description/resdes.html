@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,305 +8,555 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
-    <link rel="stylesheet" href="resdes.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Course Description</title>
-   
+    <style>
+        .custom::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #993aec;
+        }
+    </style>
 </head>
-<body>
-    <div class="main">
-        <div class="nav">
-            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
-            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
-            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
-            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
-            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
-            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
-            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
-            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
-            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
-            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
-            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+
+<body class="overflow-x-hidden font-['Lato']">
+    <div class="flex w-full min-h-screen gap-3 p-4">
+        <div
+            class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="../Home/home.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
+                    </li>
+                    <li><a href="../course outline/outline.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                            Outline</a></li>
+                    <li><a href="../course description/resdes.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                            Description</a></li>
+                    <li><a href="../Copy of lecture notes/notes.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
+                            Notes</a></li>
+                    <li><a href="../Copy of Question papers/papers.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
+                            Papers</a></li>
+                    <li><a href="../Model solution/modelsol.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
+                            Solutions</a></li>
+                    <li><a href="../samples/samples.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
+                    </li>
+                    <li><a href="../Course log/courselog.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                            Log</a></li>
+                    <li><a href="../Outcome Assesment/assesment.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
+                            Assessment</a></li>
+                    <li><a href="../Course folder verfication report/resverf.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
+                            Verification</a></li>
+                    <li><a href="../Manage logins/managelogin.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
+                            Login</a></li>
+                    <li><a href="./login/login.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+        <!-- Nav section removed as requested -->
 
-        <div class="section">
-            <div class="logo">
-                <img src="assets/Nceac.png" alt="Nceac img">
-                <p>INSTITUTION</p>
+        <div class="ml-[calc(100vw/5)] bg-white rounded-lg border-2 border-gray-700 p-4 max-w-[1200px] mx-auto">
+            <div class="flex items-centerre mb-4">
+                <img src="assets/Nceac.png" alt="Nceac img" class="h-12 w-24 object-contain">
+                <p class="font-bold ml-2">INSTITUTION</p>
             </div>
 
-            <div class="top">
-                <div class="top1">
-                    <p>National Computer Education Accreditation Council NCEAC</p>
+            <div class="flex flex-wrap gap-8 mb-8">
+                <div class="max-w-[15rem]">
+                    <p class="text-lg">National Computer Education Accreditation Council NCEAC</p>
                 </div>
-                <div class="top2">
-                    <p>Abbottabad University of Science & Technology</p>
+                <div>
+                    <p class="text-2xl">Abbottabad University of Science & Technology</p>
                 </div>
             </div>
 
-            <div class="nceac">
+            <div class="my-8">
                 <p>NCEAC.FORM.001-e</p>
             </div>
 
-            <div class="formtop">
-                <div class="formtop1">
+            <div class="flex flex-wrap gap-8 mb-8">
+                <div>
                     <p>PROGRAM(s) TO BE EVALUATED</p>
                 </div>
-                <div class="formtop2">
+                <div>
                     <p>A.Course Description</p>
-                    <input type="text" id="textbox">
+                    <select id="course-select" class="border-b border-black outline-none p-2 w-full max-w-[300px]">
+                        <option value="">Loading courses...</option>
+                    </select>
                 </div>
             </div>
 
-            <table id="table_first">
-                <tr>
-                    <td class="one">Course Code</td>
-                    <td class="two"><input type="number"></td>
+            <table class="w-full border-collapse mb-8">
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Course Code</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <input type="number" class="w-full p-2 border-none outline-none">
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Course Title</td>
-                    <td class="two"><input type="text"></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Course Title</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <input type="text" class="w-full p-2 border-none outline-none">
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Credit Hours</td>
-                    <td class="two"><input type="number"></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Credit Hours</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <input type="number" class="w-full p-2 border-none outline-none">
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Prerequisites by Course(s) and Topics</td>
-                    <td class="two"><input type="text"></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Prerequisites by Course(s) and Topics</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <input type="text" class="w-full p-2 border-none outline-none">
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Assessment Instruments with Weight</td>
-                    <td class="two"><textarea rows="10"></textarea></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Assessment Instruments with Weight</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <textarea rows="10" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Course Coordinator</td>
-                    <td class="two"><input type="text"></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Course Coordinator</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <input type="text" class="w-full p-2 border-none outline-none">
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">URL (if any)</td>
-                    <td class="two"><input type="url"></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">URL (if any)</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <input type="url" class="w-full p-2 border-none outline-none">
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Current Catalog Description</td>
-                    <td class="two"><textarea rows="10"></textarea></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Current Catalog Description</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <textarea rows="10" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">TextBook</td>
-                    <td class="two"><textarea rows="7"></textarea></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">TextBook</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <textarea rows="7" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Reference Material</td>
-                    <td class="two"><textarea rows="7"></textarea></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Reference Material</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <textarea rows="7" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                    </td>
                 </tr>
-                <tr>
-                    <td class="one">Course Goals</td>
-                    <td class="two"><textarea rows="17"></textarea></td>
+                <tr class="flex flex-wrap">
+                    <td class="flex-1 min-w-[200px] p-2 border border-black">Course Goals</td>
+                    <td class="flex-[3] min-w-[300px] p-2 border border-black">
+                        <textarea rows="17" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                    </td>
                 </tr>
             </table>
 
-            <div class="table2top">
-                <div class="nceac2">
+            <div class="flex flex-wrap gap-8 my-8">
+                <div>
                     <p>1. NCEAC.FORM.001-C</p>
                 </div>
-                <div class="heading2">
+                <div>
                     <p>National Computer Education Accreditation Council NCEAC</p>
                 </div>
             </div>
 
-            <div class="second-table">
-                <div class="left outer-td">
-                    <p><b>Topics Covered in the Course with Number of Lectures on each topic</b> (assume 15-week instruction and one and half-hour lectures)</p>
+            <div class="flex flex-wrap">
+                <div class="flex-1 min-w-[200px] p-4 border border-black">
+                    <p class="font-bold">Topics Covered in the Course with Number of Lectures on each topic (assume
+                        15-week instruction and one and half-hour lectures)</p>
                 </div>
-                <div class="right outer-td">
-                    <!-- Repeat this structure for weeks 1-16 -->
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                <div class="flex-[3] min-w-[300px]">
+                    <!-- Week template - repeat for all weeks -->
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="week">
-                        <div class="week-inner week-left">Week 1</div>
-                        <div class="week-inner week-right">
-                            <div class="week-right-top">
-                                <div class="lecture">Lec-1</div>
-                                <div class="lecture-name">
-                                    <input type="text">
-                                </div>
-                            </div>
-                            <div class="week-right-bottom">
-                                <div class="lecture">Lec-2</div>
-                                <div class="lecture-name">
-                                    <input type="text">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
-                  
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap">
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-[7] min-w-[200px]">
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                            <div class="flex border border-black">
+                                <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
+                                <div class="flex-[4] min-w-[140px] p-2">
+                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Repeat the week template for weeks 2-15 -->
+                    <div class="w-full max-w-4xl mx-auto">
+                        <table class="w-full border-collapse border border-gray-800">
+                            <!-- First Row -->
+                            <tr class="border-b border-gray-800">
+                                <td class="border border-gray-800 p-4 align-top w-1/3">
+                                    <div class="font-bold">Oral and Written Communications</div>
+                                </td>
+                                <td class="border border-gray-800 p-4" colspan="4">
+                                    <div>Quizzes, Assignments, Viva, Mid Term, Final Term</div>
+                                </td>
+                            </tr>
+
+                            <!-- Empty Rows -->
+                            <tr class="border-b border-gray-800">
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                            </tr>
+                            <tr class="border-b border-gray-800">
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                                <td class="border border-gray-800 p-4"></td>
+                            </tr>
+
+                            <!-- Form Number -->
+                            <tr>
+                                <td colspan="5" class="p-4 text-sm">
+                                    NCEAC.FORM. 001.C
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
                 </div>
             </div>
-            <div class="buttons">
-                <button class="submit">
-                    submit
+
+            <div class="mt-16 mb-16">
+                <button
+                    class="font-bold tracking-widest border-none rounded-2xl bg-gray-900 text-white px-8 py-4 mx-12 transition-all hover:bg-purple-500 active:scale-95">
+                    Submit
                 </button>
-                <button class="print">
+                <button
+                    class="font-bold tracking-widest border-none rounded-2xl bg-gray-900 text-white px-8 py-4 mx-12 transition-all hover:bg-purple-500 active:scale-95">
                     Print
                 </button>
-                <button class="print">
+                <button
+                    class="font-bold tracking-widest border-none rounded-2xl bg-gray-900 text-white px-8 py-4 mx-12 transition-all hover:bg-purple-500 active:scale-95">
                     Download
                 </button>
             </div>
         </div>
-    
     </div>
+
+    <script>
+        async function populateCourses() {
+            const classValue = localStorage.getItem('class'); // Retrieve class value from local storage
+            if (!classValue) {
+                alert('Please select a valid class first.');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/course/get-specific', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ class: classValue }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch courses');
+                }
+
+                const courses = await response.json();
+                const courseSelect = document.getElementById('course-select');
+                courseSelect.innerHTML = '<option value="">Select Course</option>';
+                courses.forEach(course => {
+                    courseSelect.innerHTML += `<option value="${course._id}">${course.courseTitle}</option>`;
+                });
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+                alert('Could not load courses. Please try again.');
+            }
+        }
+
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', populateCourses);
+    </script>
 </body>
+
 </html>

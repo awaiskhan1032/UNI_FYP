@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 
-// Models
-const ClassSchema = new mongoose.Schema({
-    discipline: { type: String, required: true },
-    section: { type: String, required: true },
-    semester: { type: String, required: true },
+const classSchema = new mongoose.Schema({
+    discipline: String,
+    semester: String,
+    section: String,
 });
 
-module.exports= mongoose.model('Class', ClassSchema);
+module.exports = mongoose.models.Class || mongoose.model('Class', classSchema);

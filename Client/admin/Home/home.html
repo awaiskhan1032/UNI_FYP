@@ -130,7 +130,7 @@
                     <p class="text-2xl font-bold text-purple-700">OR</p>
                     <a href="./register-course.html" class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition">Add Course</a>
                 </div>
-                <div class="grid grid-cols-3 gap-6">
+                <div class="grid grid-cols-4 gap-6">
                     <!-- Session -->
                     <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
                         <label for="session" class="block text-sm font-medium text-purple-700">Session</label>
@@ -153,6 +153,14 @@
                         <select id="class"
                             class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
                             <option value="">Select Class</option>
+                        </select>
+                    </div>
+
+                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="course" class="block text-sm font-medium text-purple-700">Course</label>
+                        <select id="course"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Course</option>
                         </select>
                     </div>
                 </div>
@@ -255,13 +263,28 @@
         }
     }
 
+
+    async function populateCourses() {
+        try {
+            const response = await fetch('http://localhost:5000/api/teacher/course/getAll'); // Adjust API endpoint as needed
+            const courses = await response.json();
+            const courseSelect = document.getElementById('course');
+            courseSelect.innerHTML = '<option value="">Select Course</option>';
+            courses.forEach(courseItem => {
+                courseSelect.innerHTML += `<option value="${courseItem.courseTitle} ">${courseItem.courseTitle}</option>`;
+            });
+        } catch (error) {
+            console.error('Error fetching courses:', error);
+        }
+    }
     // Store selected values in localStorage
     function storeSelections() {
         const session = document.getElementById('session').value;
         const teacher = document.getElementById('teacher').value;
         const classValue = document.getElementById('class').value;
+        const courseValue = document.getElementById('course').value;
         
-        if (!session || !teacher || !classValue) {
+        if (!session || !teacher || !classValue , !courseValue) {
             alert('Please select all fields.');
             return;
         }
@@ -269,6 +292,10 @@
         localStorage.setItem('session', session);
         localStorage.setItem('teacher', teacher);
         localStorage.setItem('class', classValue);
+        localStorage.setItem('course', courseValue);
+
+        console.log(localStorage.getItem('course'));
+        
 
         alert(`Now you can navigate to other pages to get documents for session: ${session} , teacher: ${teacher} and class: ${classValue}.`);
     }
@@ -278,6 +305,7 @@
         populateSessions();
         populateTeachers();
         populateClasses();
+        populateCourses();
     });
     </script>
 </body>

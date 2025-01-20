@@ -1,58 +1,12 @@
-const Class = require("../models/class");
 const Course = require("../models/Course");
 const Session = require("../models/Session");
 const Teaching = require("../models/Teaching");
 const User = require("../models/User");
 
 
+const Class = require("../models/Class");
 
 
-const path = require('path');
-const multer = require('multer');
-
-// Set up storage engine
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, 'uploads/'); // Files will be saved in the 'uploads' folder
-    },
-    filename: (req, file, cb) => {
-        const timestamp = Date.now();
-        const ext = path.extname(file.originalname);
-        cb(null, `${file.fieldname}-${timestamp}${ext}`); // Custom file naming
-    },
-});
-
-// Filter to accept only PDF files
-const fileFilter = (req, file, cb) => {
-    if (file.mimetype === 'application/pdf') {
-        cb(null, true);
-    } else {
-        cb(new Error('Only PDF files are allowed'), false);
-    }
-};
-
-// Initialize multer with storage and file filter
-const upload = multer({
-    storage,
-    fileFilter,
-    limits: { fileSize: 5 * 1024 * 1024 }, 
-}).single('file'); 
-
-const uploadDocument = (req, res) => {
-    upload(req, res, (err) => {
-        if (err) {
-            console.error(err.message);
-            return res.status(400).json({ message: err.message });
-        }
-
-        // File was successfully uploaded
-        const filePath = req.file.path; // File path in the uploads folder
-        return res.status(200).json({
-            message: 'File uploaded successfully',
-            filePath,
-        });
-    });
-};
 
 
 const getAllTeachers = async (req, res) => {
@@ -71,7 +25,7 @@ const addCourse = async (req, res) => {
   const { teacher, discipline, semester, section, year, session, courses } =
     req.body;
 
-  console.log(teacher, discipline, semester, section, year, session, courses);
+  // console.log(teacher, discipline, semester, section, year, session, courses);
 
   try {
     // Check or create class entry
@@ -88,16 +42,34 @@ const addCourse = async (req, res) => {
 
     // Check or create course entries
     const courseEntries = [];
-    for (const { courseCode, courseTitle } of courses) {
-      let course = await Course.findOne({ courseTitle });
+    
+    for (const {courseTitle} of courses) {
+      let course = await Course.findOne({ courseTitle, class: classEntry._id }); // Check if course exists for the class
       if (!course) {
-        course = await Course.create({ courseCode, courseTitle });
+        course = await Course.create({ courseTitle, class: classEntry._id });
       }
       courseEntries.push(course._id);
     }
 
-    // Create teaching entry
-    const teaching = await Teaching.create({
+    // Check if teaching entry exists
+    let teaching = await Teaching.findOne({
+      teacher,
+      class: classEntry._id,
+      session: sessionEntry._id,
+    });
+
+    if (teaching) {
+      // Update existing teaching entry with new courses
+      teaching.courses = [...new Set([...teaching.courses, ...courseEntries])]; // Avoid duplicate courses
+      await teaching.save();
+
+      return res
+        .status(200)
+        .json({ message: "Teaching entry updated with new courses", teaching });
+    }
+
+    // Create a new teaching entry if it doesn't exist
+    teaching = await Teaching.create({
       teacher,
       class: classEntry._id,
       session: sessionEntry._id,
@@ -114,6 +86,8 @@ const addCourse = async (req, res) => {
     console.log(error.message);
   }
 };
+
+
 
 
 
@@ -137,4 +111,34 @@ const getAllClasses = async (req, res) => {
     }
 };
 
-module.exports = { getAllTeachers, addCourse, getAllSessions , getAllClasses ,uploadDocument  };
+const getAllCourses = async (req, res) => {
+    try {
+        const courses = await Course.find();
+        res.status(200).json(courses);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching courses', error: error.message });
+    }
+};
+const getSpecificCourses = async (req, res) => {
+  try {
+    const { class: classValue } = req.body;
+    
+
+    const [discipline, semester, section] = classValue.split(' ');
+
+    const classEntry = await Class.findOne({ discipline, semester, section });
+    if (!classEntry) {
+      return res.status(404).json({ message: 'Class not found' });
+    }
+
+    // Fetch courses related to the class
+    const courses = await Course.find({ class: classEntry._id });
+
+    res.status(200).json(courses);
+  } catch (error) {
+    console.error('Error fetching courses:', error.message);
+    res.status(500).json({ message: 'Error fetching courses', error: error.message });
+  }
+};
+
+module.exports = { getAllTeachers, addCourse, getAllSessions , getAllClasses,getAllCourses , getSpecificCourses  };

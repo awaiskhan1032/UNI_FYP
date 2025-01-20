@@ -6,9 +6,21 @@ const documentSchema = new mongoose.Schema(
             type: String,
             required: true,
         },
+        doctype:{
+            type: String,
+            required: true,
+        },
+        subtype:{
+            type: String,
+        },
         teaching: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Teaching',
+            required: true,
+        },
+        course: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Course',
             required: true,
         },
     },
