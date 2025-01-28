@@ -53,6 +53,29 @@
             <p class="text-gray-600 mt-2">Upload and manage your mid and final exam papers</p>
         </div>
 
+        <div
+        class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
+        <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
+        <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Session:</span>
+                <p id="sessionInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Teacher:</span>
+                <p id="teacherInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Class:</span>
+                <p id="classInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Course:</span>
+                <p id="courseInfo" class="text-gray-700"></p>
+            </div>
+        </div>
+    </div>
+
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full px-4">
             <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center space-y-4 hover:scale-105 hover:shadow-xl">
                 <i class="fas fa-file-alt text-purple-600 text-6xl"></i>
@@ -85,6 +108,12 @@
     </div>
 
     <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
+            document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
+            document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
+            document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
+        });
         async function handleFileUpload(type, event) {
             const file = event.target.files[0]; // Get the selected file
     

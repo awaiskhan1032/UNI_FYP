@@ -112,67 +112,72 @@
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Code</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <input type="number" class="w-full p-2 border-none outline-none">
+                        <input type="number" id="course-code" class="w-full p-2 border-none outline-none">
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Title</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <input type="text" class="w-full p-2 border-none outline-none">
+                        <input type="text" id="course-title" class="w-full p-2 border-none outline-none">
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Credit Hours</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <input type="number" class="w-full p-2 border-none outline-none">
+                        <input type="number" id="credit-hours" class="w-full p-2 border-none outline-none">
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Prerequisites by Course(s) and Topics</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <input type="text" class="w-full p-2 border-none outline-none">
+                        <input type="text" id="pre-reqs" class="w-full p-2 border-none outline-none">
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Assessment Instruments with Weight</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <textarea rows="10" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                        <textarea rows="10" id="assessment-instruments"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Coordinator</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <input type="text" class="w-full p-2 border-none outline-none">
+                        <input type="text" id="course-coordinator" class="w-full p-2 border-none outline-none">
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">URL (if any)</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <input type="url" class="w-full p-2 border-none outline-none">
+                        <input type="url" id="course-url" class="w-full p-2 border-none outline-none">
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Current Catalog Description</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <textarea rows="10" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                        <textarea rows="10" id="course-catalog"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">TextBook</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <textarea rows="7" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                        <textarea rows="7" id="course-textbook"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Reference Material</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <textarea rows="7" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                        <textarea rows="7" id="course-reference-material"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Goals</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
-                        <textarea rows="17" class="w-full p-2 border-none outline-none resize-y"></textarea>
+                        <textarea rows="17" id="course-goals"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
                     </td>
                 </tr>
             </table>
@@ -193,274 +198,275 @@
                 </div>
                 <div class="flex-[3] min-w-[300px]">
                     <!-- Week template - repeat for all weeks -->
+
                     <div class="flex flex-wrap">
                         <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week1-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week1-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 2</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week2-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week2-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 3</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week3-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week3-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 4</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week4-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week4-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 5</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week5-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week5-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 6</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week6-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week6-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 7</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week7-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week7-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 8</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week8-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week8-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 9</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week9-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week9-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 10</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week10-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week10-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 11</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week11-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week11-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 12</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week12-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week12-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 13</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week13-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week13-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 14</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week14-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week14-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 15</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week15-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week15-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
-                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 16</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week16-lec1" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
-                                    <input type="text" class="w-full p-2 border-none outline-none">
+                                    <input type="text" id="week16-lec2" class="w-full p-2 border-none outline-none">
                                 </div>
                             </div>
                         </div>
@@ -507,15 +513,15 @@
             </div>
 
             <div class="mt-16 mb-16">
-                <button
+                <button id="submit-btn"
                     class="font-bold tracking-widest border-none rounded-2xl bg-gray-900 text-white px-8 py-4 mx-12 transition-all hover:bg-purple-500 active:scale-95">
                     Submit
                 </button>
-                <button
+                <button id="print-btn"
                     class="font-bold tracking-widest border-none rounded-2xl bg-gray-900 text-white px-8 py-4 mx-12 transition-all hover:bg-purple-500 active:scale-95">
                     Print
                 </button>
-                <button
+                <button id="downlaod-btn"
                     class="font-bold tracking-widest border-none rounded-2xl bg-gray-900 text-white px-8 py-4 mx-12 transition-all hover:bg-purple-500 active:scale-95">
                     Download
                 </button>
@@ -524,8 +530,10 @@
     </div>
 
     <script>
+
+        // Existing functionality
         async function populateCourses() {
-            const classValue = localStorage.getItem('class'); // Retrieve class value from local storage
+            const classValue = localStorage.getItem('class');
             if (!classValue) {
                 alert('Please select a valid class first.');
                 return;
@@ -554,8 +562,133 @@
             }
         }
 
-        // Call the function when the page loads
-        document.addEventListener('DOMContentLoaded', populateCourses);
+        // New functionality for form handling
+        function getFormData() {
+            const formData = {
+                courseCode: document.getElementById('course-code').value,
+                courseTitle: document.getElementById('course-title').value,
+                creditHours: document.getElementById('credit-hours').value,
+                prerequisites: document.getElementById('pre-reqs').value,
+                assessmentInstruments: document.getElementById('assessment-instruments').value,
+                courseCoordinator: document.getElementById('course-coordinator').value,
+                url: document.getElementById('course-url').value,
+                catalogDescription: document.getElementById('course-catalog').value,
+                textbook: document.getElementById('course-textbook').value,
+                referenceMaterial: document.getElementById('course-reference-material').value,
+                courseGoals: document.getElementById('course-goals').value,
+                weeklyTopics: []
+            };
+
+            // Get all week containers
+            const weekIds = [
+                'week1', 'week2', 'week3', 'week4', 'week5', 'week6', 'week7', 'week8',
+                'week9', 'week10', 'week11', 'week12', 'week13', 'week14', 'week15', 'week16'
+            ];
+
+            weekIds.forEach((weekId, index) => {
+                const lec1 = document.getElementById(`${weekId}-lec1`);
+                const lec2 = document.getElementById(`${weekId}-lec2`);
+
+                if (lec1 && lec2) {
+                    formData.weeklyTopics.push({
+                        week: index + 1,
+                        lectures: [lec1.value, lec2.value]
+                    });
+                }
+            });
+
+            return formData;
+        }
+
+        async function handleSubmit() {
+            try {
+                const formData = getFormData();
+                const courseId = document.getElementById('course-select').value;
+
+                if (!courseId) {
+                    alert('Please select a course first.');
+                    return;
+                }
+
+                const response = await fetch('http://localhost:5000/api/teacher/course/update-description', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        courseId,
+                        ...formData
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save course description');
+                }
+
+                alert('Course description saved successfully!');
+            } catch (error) {
+                console.error('Error saving course description:', error);
+                alert('Failed to save course description. Please try again.');
+            }
+        }
+
+        function handlePrint() {
+            window.print();
+        }
+
+        async function handleDownload() {
+            try {
+                const formData = getFormData();
+                const courseId = document.getElementById('course-select').value;
+
+                if (!courseId) {
+                    alert('Please select a course first.');
+                    return;
+                }
+
+                const response = await fetch('http://localhost:5000/api/teacher/course/download-description', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        courseId,
+                        ...formData
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to generate download');
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `course-description-${courseId}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Error downloading course description:', error);
+                alert('Failed to download course description. Please try again.');
+            }
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            populateCourses();
+
+            // Add event listeners to buttons
+            const submitButton = document.getElementById('submit-btn');
+            const printButton = document.getElementById('print-btn');
+            const downloadButton = document.getElementById('download- btn');
+
+            submitButton.addEventListener('click', handleSubmit);
+            printButton.addEventListener('click', handlePrint);
+            downloadButton.addEventListener('click', handleDownload);
+        });
     </script>
 </body>
 

@@ -76,6 +76,28 @@
             <h1 class="text-3xl font-bold text-purple-700">Lecture Notes</h1>
             <p class="text-gray-600">Manage notes week by week</p>
         </div>
+        <div
+        class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
+        <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
+        <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Session:</span>
+                <p id="sessionInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Teacher:</span>
+                <p id="teacherInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Class:</span>
+                <p id="classInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Course:</span>
+                <p id="courseInfo" class="text-gray-700"></p>
+            </div>
+        </div>
+    </div>
 
         <!-- Week Selection -->
         <div>
@@ -109,6 +131,12 @@
     </div>
 
     <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
+            document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
+            document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
+            document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
+        });
         const state = {
             selectedWeek: null
         };

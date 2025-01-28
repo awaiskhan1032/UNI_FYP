@@ -8,181 +8,164 @@
     <title>Admin</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-       .custom::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	border-radius: 10px;
-	background-color: #F5F5F5;
-}
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
 
-.custom::-webkit-scrollbar
-{
-	width: 12px;
-	background-color: #F5F5F5;
-}
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #993aec;
+        }
 
-.custom::-webkit-scrollbar-thumb
-{
-	border-radius: 10px;
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
-	background-color: #993aec;
-}
+        .sub-items {
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 
 <body class="bg-gray-100 font-sans">
-    <div class="flex w-screen h-screen items-center justify-center">
-        <!-- Navigation -->
-        <div class="h-[93%] w-1/5 bg-gradient-to-b from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
-            <nav>
-                <ul class="space-y-4">
-                    <li>
-                        <a href="../Home/home.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-house mr-2"></i> Home
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../course outline/outline.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-rectangle-list mr-2"></i> Course Outline
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../course description/resdes.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-circle-info mr-2"></i> Course Description
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Copy of lecture notes/notes.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-file-lines mr-2"></i> Lecture Notes
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Copy of Question papers/papers.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-circle-question mr-2"></i> Question Papers
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Model solution/modelsol.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-circle-check mr-2"></i> Model Solutions
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../samples/samples.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-file-code mr-2"></i> Samples
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Course log/courselog.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-book mr-2"></i> Course Log
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Outcome Assesment/assesment.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-chart-line mr-2"></i> Outcome Assessment
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Course folder verfication report/resverf.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-clipboard-check mr-2"></i> Folder Verification
-                        </a>
-                    </li>
-                    <li>
-                        <a href="../Manage logins/managelogin.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-users-gear mr-2"></i> Manage Login
-                        </a>
-                    </li>
-                    <li>
-                        <a href="./login/login.html"
-                            class="block text-center bg-white text-black font-bold p-3 rounded-xl hover:bg-gray-200">
-                            <i class="fa-solid fa-right-from-bracket mr-2"></i> Logout
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+    <div
+        class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
+        <nav>
+            <ul class="space-y-4">
+                <li><a href="../Home/home.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
+                </li>
+                <li><a href="../course outline/outline.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Outline</a></li>
+                <li><a href="../course description/resdes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Description</a></li>
+                <li><a href="../Copy of lecture notes/notes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
+                        Notes</a></li>
+                <li><a href="../Copy of Question papers/papers.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
+                        Papers</a></li>
+                <li><a href="../Model solution/modelsol.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
+                        Solutions</a></li>
+                <li><a href="../samples/samples.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
+                </li>
+                <li><a href="../Course log/courselog.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Log</a></li>
+                <li><a href="../Outcome Assesment/assesment.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
+                        Assessment</a></li>
+                <li><a href="../Course folder verfication report/resverf.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Folder Verification</a></li>
+                <li id="manage-login-btn"><a href="../Manage logins/managelogin.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
+                        Login</a></li>
+                <li><a href="./login/login.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Main Section -->
+    <div class="flex-1 ml-[calc(100vw/5)] h-screen bg-white p-8 rounded-2xl shadow-lg">
+        <!-- Header -->
+        <div
+            class="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-600 rounded-xl p-6 flex justify-between items-center shadow-lg text-white">
+            <div>
+                <h1 class="text-3xl font-bold">Welcome to Aust Academic</h1>
+                <p class="text-lg font-medium">Always stay updated</p>
+            </div>
+            <img src="assets/logo.png" alt="Logo" class="h-24 w-24">
         </div>
 
-        <!-- Main Section -->
-        <div class="flex-1 h-[93%] bg-white p-8 rounded-2xl shadow-lg">
-            <!-- Header -->
-            <div class="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-600 rounded-xl p-6 flex justify-between items-center shadow-lg text-white">
-                <div>
-                    <h1 class="text-3xl font-bold">Welcome to Aust Academic</h1>
-                    <p class="text-lg font-medium">Always stay updated</p>
-                </div>
-                <img src="assets/logo.png" alt="Logo" class="h-24 w-24">
+        <!-- Form -->
+        <div class="mt-8">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-2xl font-bold text-purple-700">Please select the following:</h2>
+                <p id="or-text" class="text-2xl font-bold text-purple-700">OR</p>
+                <a id="add-course-btn" href="./register-course.html"
+                    class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition">Add
+                    Course</a>
             </div>
-        
-            <!-- Form -->
-            <div class="mt-8">
-                <div class="flex items-center justify-between mb-4">
-                    <h2 class="text-2xl font-bold text-purple-700">Please select the following:</h2>
-                    <p class="text-2xl font-bold text-purple-700">OR</p>
-                    <a href="./register-course.html" class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition">Add Course</a>
+            <div class="grid grid-cols-4 gap-6">
+                <!-- Session -->
+                <div
+                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                    <label for="session" class="block text-sm font-medium text-purple-700">Session</label>
+                    <select id="session"
+                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                        <option value="">Select Session</option>
+                    </select>
                 </div>
-                <div class="grid grid-cols-4 gap-6">
-                    <!-- Session -->
-                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                        <label for="session" class="block text-sm font-medium text-purple-700">Session</label>
-                        <select id="session"
-                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                            <option value="">Select Session</option>
-                        </select>
-                    </div>
-                    <!-- Teacher -->
-                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                        <label for="teacher" class="block text-sm font-medium text-purple-700">Teacher</label>
-                        <select id="teacher"
-                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                            <option value="">Select Teacher</option>
-                        </select>
-                    </div>
-                    <!-- Class -->
-                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                        <label for="class" class="block text-sm font-medium text-purple-700">Class</label>
-                        <select id="class"
-                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                            <option value="">Select Class</option>
-                        </select>
-                    </div>
+                <!-- Teacher -->
+                <div
+                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                    <label for="teacher" class="block text-sm font-medium text-purple-700">Teacher</label>
+                    <select id="teacher"
+                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                        <option value="">Select Teacher</option>
+                    </select>
+                </div>
+                <!-- Class -->
+                <div
+                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                    <label for="class" class="block text-sm font-medium text-purple-700">Class</label>
+                    <select id="class"
+                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                        <option value="">Select Class</option>
+                    </select>
+                </div>
+                <!-- Course -->
+                <div
+                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                    <label for="course" class="block text-sm font-medium text-purple-700">Course</label>
+                    <select id="course"
+                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                        <option value="">Select Course</option>
+                    </select>
+                </div>
+            </div>
 
-                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                        <label for="course" class="block text-sm font-medium text-purple-700">Course</label>
-                        <select id="course"
-                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                            <option value="">Select Course</option>
-                        </select>
-                    </div>
-                </div>
-        
-                <!-- Submit Button -->
-                <div class="mt-8 flex justify-center">
-                    <button class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition"
-                        onclick="storeSelections()">
-                        Submit
-                    </button>
-                </div>
+            <!-- Submit Button -->
+            <div class="mt-8 flex justify-center">
+                <button
+                    class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition"
+                    onclick="storeSelections()">
+                    Submit
+                </button>
             </div>
         </div>
+    </div>
     <script>
-   
+        async function applyStoredSelections() {
+            const dropdowns = ["session", "teacher", "class", "course"];
+            dropdowns.forEach(id => {
+                const select = document.getElementById(id);
+                const storedValue = localStorage.getItem(id);
+                if (storedValue) {
+                    select.value = storedValue;
+                }
+            });
+        }
 
-        // Verify Token and Fetch Validation
+        // token starts here
         const token = localStorage.getItem('token');
-
         if (token) {
             const payload = JSON.parse(atob(token.split('.')[1]));
             const isExpired = payload.exp * 1000 < Date.now();
+            const role = payload.role || "";
+
+            if (role === 'teacher') {
+                document.getElementById('add-course-btn').style.display = 'none';
+                document.getElementById('or-text').style.display = 'none';
+                document.getElementById('manage-login-btn').style.display = 'none';
+            }
 
             if (isExpired) {
                 alert('Session expired. Please log in again.');
@@ -218,95 +201,101 @@
             window.location.href = '../../login/login.html'; // Redirect if no token
         }
 
+        //token ends here
+
+
         // Store Selected Values in Session Storage
         async function populateSessions() {
-        try {
-            const response = await fetch('http://localhost:5000/api/teacher/session/getAll'); // Adjust API endpoint as needed
-            const sessions = await response.json();
-            const sessionSelect = document.getElementById('session');
-            sessionSelect.innerHTML = '<option value="">Select Session</option>';
-            sessions.forEach(session => {
-                sessionSelect.innerHTML += `<option value="${session.year} ${session.session}">${session.year} - ${session.session}</option>`;
-            });
-        } catch (error) {
-            console.error('Error fetching sessions:', error);
-        }
-    }
-
-    // Fetch teacher data from API and populate dropdown
-    async function populateTeachers() {
-        try {
-            const response = await fetch('http://localhost:5000/api/teacher/getAll'); // Adjust API endpoint as needed
-            const teachers = await response.json();
-            const teacherSelect = document.getElementById('teacher');
-            teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
-            teachers.forEach(teacher => {
-                teacherSelect.innerHTML += `<option value="${teacher.name}">${teacher.name}</option>`;
-            });
-        } catch (error) {
-            console.error('Error fetching teachers:', error);
-        }
-    }
-
-    // Fetch class data from API and populate dropdown
-    async function populateClasses() {
-        try {
-            const response = await fetch('http://localhost:5000/api/teacher/class/getAll'); // Adjust API endpoint as needed
-            const classes = await response.json();
-            const classSelect = document.getElementById('class');
-            classSelect.innerHTML = '<option value="">Select Class</option>';
-            classes.forEach(classItem => {
-                classSelect.innerHTML += `<option value="${classItem.discipline} ${classItem.semester} ${classItem.section}">${classItem.discipline} ${classItem.semester} ${classItem.section}</option>`;
-            });
-        } catch (error) {
-            console.error('Error fetching classes:', error);
-        }
-    }
-
-
-    async function populateCourses() {
-        try {
-            const response = await fetch('http://localhost:5000/api/teacher/course/getAll'); // Adjust API endpoint as needed
-            const courses = await response.json();
-            const courseSelect = document.getElementById('course');
-            courseSelect.innerHTML = '<option value="">Select Course</option>';
-            courses.forEach(courseItem => {
-                courseSelect.innerHTML += `<option value="${courseItem.courseTitle} ">${courseItem.courseTitle}</option>`;
-            });
-        } catch (error) {
-            console.error('Error fetching courses:', error);
-        }
-    }
-    // Store selected values in localStorage
-    function storeSelections() {
-        const session = document.getElementById('session').value;
-        const teacher = document.getElementById('teacher').value;
-        const classValue = document.getElementById('class').value;
-        const courseValue = document.getElementById('course').value;
-        
-        if (!session || !teacher || !classValue , !courseValue) {
-            alert('Please select all fields.');
-            return;
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/session/getAll'); // Adjust API endpoint as needed
+                const sessions = await response.json();
+                const sessionSelect = document.getElementById('session');
+                sessionSelect.innerHTML = '<option value="">Select Session</option>';
+                sessions.forEach(session => {
+                    sessionSelect.innerHTML += `<option value="${session.year} ${session.session}">${session.year} - ${session.session}</option>`;
+                });
+            } catch (error) {
+                console.error('Error fetching sessions:', error);
+            }
         }
 
-        localStorage.setItem('session', session);
-        localStorage.setItem('teacher', teacher);
-        localStorage.setItem('class', classValue);
-        localStorage.setItem('course', courseValue);
+        // Fetch teacher data from API and populate dropdown
+        async function populateTeachers() {
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/getAll'); // Adjust API endpoint as needed
+                const teachers = await response.json();
+                const teacherSelect = document.getElementById('teacher');
+                teacherSelect.innerHTML = '<option value="">Select Teacher</option>';
+                teachers.forEach(teacher => {
+                    teacherSelect.innerHTML += `<option value="${teacher.name}">${teacher.name}</option>`;
+                });
+            } catch (error) {
+                console.error('Error fetching teachers:', error);
+            }
+        }
 
-        console.log(localStorage.getItem('course'));
-        
+        // Fetch class data from API and populate dropdown
+        async function populateClasses() {
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/class/getAll'); // Adjust API endpoint as needed
+                const classes = await response.json();
+                const classSelect = document.getElementById('class');
+                classSelect.innerHTML = '<option value="">Select Class</option>';
+                classes.forEach(classItem => {
+                    classSelect.innerHTML += `<option value="${classItem.discipline} ${classItem.semester} ${classItem.section}">${classItem.discipline} ${classItem.semester} ${classItem.section}</option>`;
+                });
+            } catch (error) {
+                console.error('Error fetching classes:', error);
+            }
+        }
 
-        alert(`Now you can navigate to other pages to get documents for session: ${session} , teacher: ${teacher} and class: ${classValue}.`);
-    }
 
-    // Initialize dropdowns on page load
-    document.addEventListener('DOMContentLoaded', () => {
-        populateSessions();
-        populateTeachers();
-        populateClasses();
-        populateCourses();
-    });
+        async function populateCourses() {
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/course/getAll'); // Adjust API endpoint as needed
+                const courses = await response.json();
+                const courseSelect = document.getElementById('course');
+                courseSelect.innerHTML = '<option value="">Select Course</option>';
+                courses.forEach(courseItem => {
+                    courseSelect.innerHTML += `<option value="${courseItem.courseTitle} ">${courseItem.courseTitle}</option>`;
+                });
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+            }
+        }
+        // Store selected values in localStorage
+        function storeSelections() {
+            const session = document.getElementById('session').value;
+            const teacher = document.getElementById('teacher').value;
+            const classValue = document.getElementById('class').value;
+            const courseValue = document.getElementById('course').value;
+
+            if (!session || !teacher || !classValue, !courseValue) {
+                alert('Please select all fields.');
+                return;
+            }
+
+            localStorage.setItem('session', session);
+            localStorage.setItem('teacher', teacher);
+            localStorage.setItem('class', classValue);
+            localStorage.setItem('course', courseValue);
+
+            console.log(localStorage.getItem('course'));
+
+
+            alert(`Now you can navigate to other pages to get documents for session: ${session} , teacher: ${teacher} and class: ${classValue}.`);
+        }
+
+        // Initialize dropdowns on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                populateSessions(),
+                populateTeachers(),
+                populateClasses(),
+                populateCourses(),
+            ]);
+            applyStoredSelections();
+        });
     </script>
 </body>
 

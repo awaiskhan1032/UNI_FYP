@@ -82,16 +82,38 @@
                 class="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-600 text-white p-6 rounded-lg shadow-lg">
                 <h1 class="text-3xl font-bold">Course Outline Upload</h1>
             </div>
+            <div
+                class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
+                <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
+                <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold text-purple-900">Session:</span>
+                        <p id="sessionInfo" class="text-gray-700"></p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold text-purple-900">Teacher:</span>
+                        <p id="teacherInfo" class="text-gray-700"></p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold text-purple-900">Class:</span>
+                        <p id="classInfo" class="text-gray-700"></p>
+                    </div>
+                    <div class="flex items-center space-x-2">
+                        <span class="font-bold text-purple-900">Course:</span>
+                        <p id="courseInfo" class="text-gray-700"></p>
+                    </div>
+                </div>
+            </div>
 
             <!-- Content -->
-            <div class="flex justify-center items-center h-full space-x-8 mt-8">
+            <div class="flex justify-center items-center h-[20rem] gap-8">
                 <!-- Before Mid Box -->
                 <div
                     class="relative flex flex-col items-center justify-center w-64 h-64 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-110 cursor-pointer">
                     <i class="fa-solid fa-file-alt text-5xl mb-2"></i>
-                    <span class="text-xl font-semibold tracking-wide mb-2">Before Mid</span>
+                    <span class="text-xl font-semibold tracking-wide mb-2">Mid + Terminal</span>
                     <input type="file" id="beforeUpload" accept=".pdf" class="hidden"
-                        onchange="handleFileUpload('before', event)">
+                        onchange="handleFileUpload('mid+terminal', event)">
                     <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-lg transition"
                         onclick="document.getElementById('beforeUpload').click()">
                         <i class="fa-solid fa-upload mr-2"></i>Upload PDF
@@ -100,24 +122,24 @@
                 </div>
 
                 <!-- After Mid Box -->
-                <div
-                    class="relative flex flex-col items-center justify-center w-64 h-64 bg-gradient-to-br from-purple-500 via-purple-600 to-purple-700 text-white rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-110 cursor-pointer">
-                    <i class="fa-solid fa-file-alt text-5xl mb-2"></i>
-                    <span class="text-xl font-semibold tracking-wide mb-2">After Mid</span>
-                    <input type="file" id="afterUpload" accept=".pdf" class="hidden"
-                        onchange="handleFileUpload('after', event)">
-                    <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-lg transition"
-                        onclick="document.getElementById('afterUpload').click()">
-                        <i class="fa-solid fa-upload mr-2"></i>Upload PDF
-                    </button>
-                    <div id="afterFileList" class="mt-4"></div>
-                </div>
+
             </div>
         </div>
     </div>
 
     <script>
+
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
+            document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
+            document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
+            document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
+        });
+
         async function handleFileUpload(type, event) {
+
+
+
             const file = event.target.files[0];
             if (!file) return;
 

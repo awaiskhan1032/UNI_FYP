@@ -84,23 +84,30 @@ exports.uploadLectureNotes = async (req, res) => {
         // Fetch class ID
         const classEntry = await Class.findOne({ discipline, semester, section });
         if (!classEntry) {
+            console.log("class not found")
             return res.status(404).json({ message: "Class not found" });
         }
        
         // Fetch teacher ID
         const teacher = await User.findOne({ name: teacherName, role: "teacher" });
         if (!teacher) {
+            console.log("teacher not found")
+
             return res.status(404).json({ message: "Teacher not found" });
         }
 
         // Fetch session ID
         const sessionEntry = await Session.findOne({ year, session });
         if (!sessionEntry) {
+            console.log("session not found")
+
             return res.status(404).json({ message: "Session not found" });
         }
 
         const courseEntry = await Course.findOne({ courseTitle: courseValue });
         if (!courseEntry) {
+            console.log("course not found")
+
             return res.status(404).json({ message: "Course not found" });
         }
 
@@ -111,6 +118,8 @@ exports.uploadLectureNotes = async (req, res) => {
         });
     
         if (!teaching) {
+            console.log("teaching entry not found")
+
             return res.status(404).json({ message: "Teaching entry not found" });
         }
 
