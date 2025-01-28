@@ -1,498 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="courselog.css">
+    <title>Outcomes Assessment Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <style>
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            background-color: #993aec;
+        }
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
-        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    <title>COurse Log</title>
+        .sub-items {
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
-
-<body>
-    <div class="main">
-        <div class="nav">
-            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
-            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
-            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
-            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
-            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
-            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
-            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
-            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
-            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
-            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
-            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="../Home/home.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a></li>
+                    <li><a href="../course outline/outline.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Outline</a></li>
+                    <li><a href="../course description/resdes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Description</a></li>
+                    <li><a href="../Copy of lecture notes/notes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture Notes</a></li>
+                    <li><a href="../Copy of Question papers/papers.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question Papers</a></li>
+                    <li><a href="../Model solution/modelsol.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model Solutions</a></li>
+                    <li><a href="../samples/samples.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a></li>
+                    <li><a href="../Course log/courselog.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Log</a></li>
+                    <li><a href="../Outcome Assesment/assesment.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome Assessment</a></li>
+                    <li><a href="../Course folder verfication report/resverf.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Folder Verification</a></li>
+                    <li><a href="../Manage logins/managelogin.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage Login</a></li>
+                    <li><a href="./login/login.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a></li>
+                </ul>
+            </nav>
         </div>
 
-        <div class="section">
-
-            <hr class="Hrtop">
-
-            <div class="maintop">
-
-                <div class="logo">
-                    <img src="assets/Nceac.png" alt="Nceac img">
-                </div>
-                <div class="top">
-                    National Computing Educaiton Accreditation Council <br> <span>NCEAC</span>
-                </div>
-                <div class="logo2">
-                    <img src="assets/heclogo.png" alt="">
+        <!-- Main Content -->
+        <div class="ml-[calc(100vw/5)] p-8">
+            <form id="outcomes-form" class="bg-white p-8 rounded-lg shadow-md">
+                <!-- University Logo and Name -->
+                <div class="text-center mb-8">
+                    <div class="mb-4 flex justify-center">
+                        <img src="./assets/heclogo.png" alt="University Logo" class="w-24 h-24">
+                    </div>
+                    <h1 class="text-2xl font-bold underline">Abbottabad University of Science & Technology</h1>
+                    <h2 class="text-xl">Department of Computer Science</h2>
                 </div>
 
-            </div>
-
-            <hr class="Hrbottom">
-
-            <div class="nceac">
-                NCEAC.DOC.001-E
-            </div>
-            <div class="fromname">
-                Course Log
-            </div>
-
-            <div class="fromtopfirst">
-                <div class="formtop1">
-                    INSTITUTION
-                </div>
-                <div class="formtop2hr">
-                    <div class="formtop2">Abbottabad Universty of Science & technology</div>
-                    <hr class="hr">
-                </div>
-            </div>
-
-            <div class="fromtopsecond">
-                <div class="formtopsecond1">
-                    PROGRAM (s) TO BE EVALUATED
-                </div>
-                <div class="formtopsecondhr">
-                    <div class="formtopsecond2">
-                        <input type="text">
-                        <hr class="hr">
+                <!-- Batch and Year -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <div>
+                        <label class="block mb-2">Batch:</label>
+                        <input type="text" id="batch" class="border-b border-black w-24 text-center">
+                    </div>
+                    <div>
+                        <label class="block mb-2">Year:</label>
+                        <input type="number" id="year" class="border-b border-black w-24 text-center">
                     </div>
                 </div>
-            </div>
 
-            <div class="tabletop">
-                <table>
-                    <tr>
-                        <td class="section1">Course Name </td>
-                        <td class="section2"><input type="text"></td>
-                    </tr>
-                    <tr>
-                        <td class="section1">Catalog Number</td>
-                        <td class="section2"><input type="number"></td>
-                    </tr>
-                    <tr>
-                        <td class="section1">Instructor Name</td>
-                        <td class="section2"><input type="text"></td>
-                    </tr>
-                </table>
-            </div>
-
-            <form action="" class="form1">
-                <table>
-                    <tr class="row1">
-                        <td class="date">Date</td>
-                        <td class="duration">Duration</td>
-                        <td class="topic-covered">Topic Covered</td>
-                        <td class="evaluation-inst">Evaluation Instrument used</td>
-                        <td class="signature"><input type="text"></td>
-                    </tr>
-
-                    <tr class="row2">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                        <td class="evaluation-inst"><input type="text"></td>
-                        <td class="signature"><input type="text"></td>
-
-                    </tr>
-                    <tr class="row3">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10" class="bgc"></textarea>
-                        </td>
-                        <td class="evaluation-inst"><input type="text" class="bgc"></td>
-                        <td class="signature"><input type="text"></td>
-                    </tr>
-                    <tr class="row4">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                        <td class="evaluation-inst"><input type="text"></td>
-                        <td class="signature"><input type="text"></td>
-
-                    </tr>
-                    <tr class="row5">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                        <td class="evaluation-inst"><input type="text"></td>
-                        <td class="signature"><input type="text"></td>
-
-                    </tr>
-                    <tr class="row6">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                        <td class="evaluation-inst"><input type="text"></td>
-                        <td class="signature"><input type="text"></td>
-
-                    </tr>
-                    <tr class="row7">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                        <td class="evaluation-inst"><input type="text"></td>
-                        <td class="signature"><input type="text"></td>
-
-                    </tr>
-                    <tr class="row8">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                        <td class="evaluation-inst"><input type="text"></td>
-                        <td class="signature"><input type="text"></td>
-
-                    </tr>
-                    <tr class="row9">
-                        <td class="date"><input type="date"></td>
-                        <td class="duration"><input type="text"></td>
-                        <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                        <td class="evaluation-inst"><input type="text"></td>
-                        <td class="signature"><input type="text"></td>
-
-                    </tr>
-
-
-                </table>
-            </form>
-            <div class="pageend">
-                <div>Page 1 of 3</div>
-                <div>NCEAC.DOC.001-E</div>
-            </div>
-
-
-            <hr class="Hrtop">
-
-            <div class="maintop2">
-
-                <div class="logo">
-                    <img src="assets/Nceac.png" alt="Nceac img">
-                </div>
-                <div class="top">
-                    National Computing Educaiton Accreditation Council <br> <span>NCEAC</span>
-                </div>
-                <div class="logo2">
-                    <img src="assets/heclogo.png" alt="">
-                </div>
-
-            </div>
-            <hr class="Hrbottom">
-            <div class="nceac">
-                NCEAC.DOC.001-E
-            </div>
-
-
-            <table class="table2">
-
-                <tr class="row10">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-                </tr>
-
-                <tr class="row11">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row12">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row13">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row14">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row15">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row16">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row17">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row18">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row19">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-                </tr>
-
-                <tr class="row20">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row21">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row22">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row23">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row24">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-                <tr class="row25">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-            </table>
-            <div class="pageend">
-                <div>Page 1 of 3</div>
-                <div>NCEAC.DOC.001-E</div>
-            </div>
-
-
-            <hr class="Hrtop">
-
-            <div class="maintop3">
-
-                <div class="logo">
-                    <img src="assets/Nceac.png" alt="Nceac img">
-                </div>
-                <div class="top">
-                    National Computing Educaiton Accreditation Council <br> <span>NCEAC</span>
-                </div>
-                <div class="logo2">
-                    <img src="assets/heclogo.png" alt="">
-                </div>
-
-            </div>
-            <hr class="Hrbottom">
-            <div class="nceac">
-                NCEAC.DOC.001-E
-            </div>
-
-            <table class="table3">
-                <tr class="row26">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-                <tr class="row27">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-                <tr class="row28">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-                <tr class="row29">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-                </tr>
-                <tr class="row30">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-                <tr class="row31">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-                <tr class="row32">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-                <tr class="row33">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-                <tr class="row34">
-                    <td class="date"><input type="date"></td>
-                    <td class="duration"><input type="text"></td>
-                    <td class="topic-covered"><textarea name="message" rows="8" cols="10"></textarea></td>
-                    <td class="evaluation-inst"><input type="text"></td>
-                    <td class="signature"><input type="text"></td>
-
-                </tr>
-
-
-            </table>
-            <div class="pageend">
-                <div>Page 1 of 3</div>
-                <div>NCEAC.DOC.001-E</div>
-            </div>
-
-
-            <div class="ending">
-                <div class="instructorname">
-                    <div class="name">Name of Instructor:
+                <!-- Course and Instructor Details -->
+                <div class="space-y-4 mb-8">
+                    <div>
+                        <label>Course Name:</label>
+                        <input type="text" id="course-name" class="border-b border-black w-full">
                     </div>
-                    <div class="instruct"><input type="text" class="end" id="endinst"></div>
+                    <div>
+                        <label>Instructor's Name:</label>
+                        <input type="text" id="instructor-name" class="border-b border-black w-full">
+                    </div>
                 </div>
 
-                <div class="signatureending">
-                    <div class="signatureend">Signature:</div>
-                    <div class="instruct"><input type="text" class="end" id="endsig"></div>
+                <!-- Prerequisites Assessment Table -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">Outcome Assessment</h3>
+                    <p class="mb-4">Assessment of the students preparedness for this course at the start of this term</p>
+                    <table id="prerequisites-table" class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border p-2 w-1/2">At the beginning of this term:</th>
+                                <th class="border p-2">Nearly 100%</th>
+                                <th class="border p-2">Nearly 75%</th>
+                                <th class="border p-2">Nearly 50%</th>
+                                <th class="border p-2">Nearly 25%</th>
+                                <th class="border p-2">N/A</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">1. Students had the prerequisite math skills.</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">2. Students had the prerequisite laboratory skills.</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">3. Students had the prerequisite problem solving skills</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">4. Students had the prerequisite design skills</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">5. Students were capable of using the necessary Tools (e.g. hardware/software, etc.)</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">6. Students had the necessary Programming skills</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">7. Students had the necessary communication skills.</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="na"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                <div class="dateend">
-                    <div class="dat">Date:</div>
-                    <div class="instruct"><input type="text" class="end" id="enddate"></div>
+
+                <!-- Course Outcomes Table -->
+                <div class="mb-8">
+                    <table id="outcomes-table" class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border p-2 w-2/5">Course Learning Outcomes (assessed within course)</th>
+                                <th class="border p-2 w-1/5">How/Where Assessed</th>
+                                <th class="border p-2">Min Pass %</th>
+                                <th class="border p-2">High Score %</th>
+                                <th class="border p-2">Class Avg %</th>
+                                <th class="border p-2">Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">To understand the difference between traditional systems and database systems.</td>
+                                <td class="border p-2">Assignment 1/ Assignment 2/ Quiz 1/Quiz 2</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="20" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="80" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A+" class="w-full text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">How to gather requirements for database applications and different elicitation techniques.</td>
+                                <td class="border p-2">Assignment 3/Final</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="40" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="80" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A-" class="w-full text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">To analyze different UML techniques.</td>
+                                <td class="border p-2">Quiz 3 / Quiz 4/Final</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="0" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="70" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A+" class="w-full text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">To apply conceptual model techniques on gathered requirements.</td>
+                                <td class="border p-2">Assignment 3/ Assignment 4 / Final</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="10" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A+" class="w-full text-center"></td>
+                            </tr>
+                          
+                         </table>
+                          
+
+
+
+                <div class="note ml-12 mt-4 italic text-gray-600">
+                    Note: For Grade give the class average on an "A=4.0, B=3.0" basis.
                 </div>
-                <div class="buttons">
-                    <button class="submit">
-                        submit
+
+                <!-- Recommendations Section -->
+                <div class="recommendations ml-12 mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Recommendations:</h3>
+                    <p>Include which outcomes require more attention within the course to improve student performance, and how the course should be altered in the future to improve results.</p>
+                    <textarea class="w-full mt-2 p-2 border rounded" rows="4"></textarea>
+                </div>
+
+                <!-- Buttons with Original Styling -->
+                <div class="ml-12 mt-16 mb-16 space-x-4">
+                    <button class="bg-black text-white font-bold py-4 px-8 rounded-xl hover:bg-purple-600 transition-all duration-100 active:scale-95 active:bg-purple-600">
+                        Submit
                     </button>
-                    <button class="print">
+                    <button class="bg-black text-white font-bold py-4 px-8 rounded-xl hover:bg-purple-600 transition-all duration-100 active:scale-95 active:bg-purple-600">
                         Print
                     </button>
-                </div>
-
-
-            </div>
-
+                    <button class="bg-black text-white font-bold py-4 px-8 rounded-xl hover:bg-purple-600 transition-all duration-100 active:scale-95 active:bg-purple-600">
+                        Download
+                    </button>
+           
+            </form>
+            
         </div>
+    </div>
 
+    <script>
+        // Exclusive checkbox selection for each row
+        document.querySelectorAll('#prerequisites-table tbody tr').forEach(row => {
+            const checkboxes = row.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        checkboxes.forEach(cb => {
+                            if (cb !== this) cb.checked = false;
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
-
 </html>

@@ -73,7 +73,6 @@
             for (let i = 0; i < courseCount; i++) {
                 coursesContainer.innerHTML += `
                     <div class="flex gap-4 mb-4">
-                        <input type="text" name="courseCode" placeholder="Course Code" class="w-1/2 p-2 border rounded-lg" required>
                         <input type="text" name="courseTitle" placeholder="Course Title" class="w-1/2 p-2 border rounded-lg" required>
                     </div>
                 `;
@@ -94,9 +93,8 @@
             const session = document.getElementById('session').value;
 
             const courses = Array.from(document.querySelectorAll('#coursesContainer > div')).map(course => {
-                const courseCode = course.querySelector('[name="courseCode"]').value;
                 const courseTitle = course.querySelector('[name="courseTitle"]').value;
-                return { courseCode, courseTitle };
+                return {  courseTitle };
             });
 
             try {

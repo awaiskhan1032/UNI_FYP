@@ -1,152 +1,186 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="paper.css">
-    <link rel="stylesheet" href="../nav.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>Question Papers</title>
+    <style>
+        .custom::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #993aec;
+        }
+    </style>
 </head>
+
 <body>
-    <div class="main">
-        <div class="nav">
-            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
-            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
-            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
-            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
-            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
-            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
-            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
-            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
-            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
-            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
-            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+    <div class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+        <nav>
+            <ul class="space-y-4">
+                <li><a href="../Home/home.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a></li>
+                <li><a href="../course outline/outline.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Outline</a></li>
+                <li><a href="../course description/resdes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Description</a></li>
+                <li><a href="../Copy of lecture notes/notes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture Notes</a></li>
+                <li><a href="../Copy of Question papers/papers.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question Papers</a></li>
+                <li><a href="../Model solution/modelsol.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model Solutions</a></li>
+                <li><a href="../samples/samples.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a></li>
+                <li><a href="../Course log/courselog.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Log</a></li>
+                <li><a href="../Outcome Assesment/assesment.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome Assessment</a></li>
+                <li><a href="../Course folder verfication report/resverf.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder Verification</a></li>
+                <li><a href="../Manage logins/managelogin.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage Login</a></li>
+                <li><a href="./login/login.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="ml-[calc(100vw/5)] flex flex-col items-center py-8 space-y-6">
+        <div class="text-center">
+            <h1 class="text-4xl font-bold text-purple-600">Question Papers</h1>
+            <p class="text-gray-600 mt-2">Upload and manage your mid and final exam papers</p>
         </div>
-        <div class="section">
 
-                
-                    
-                    
-                        <div class="top">
-                            <div class="topheading">Question Papers</div>
-                        </div>
-            
-                        <div class="container">
-                          
-                            <div class="paper-box mid-box" onclick="toggleUploadPanel('mid-panel')">
-                                <i class="fa-solid fa-file-alt"></i>
-                                <span>Mid Paper</span>
-                                <div class="upload-panel" id="mid-panel">
-                                    <button class="close-btn" onclick="event.stopPropagation(); closeUploadPanel('mid-panel')">
-                                        <i class="fa-solid fa-times"></i>
-                                    </button>
-                                    <input type="file" id="midUpload" accept=".pdf" style="display: none;" 
-                                           onchange="handleFileUpload('mid', event)">
-                                    <button class="upload-btn" onclick="event.stopPropagation(); document.getElementById('midUpload').click()">
-                                        <i class="fa-solid fa-upload"></i>
-                                        Upload PDF
-                                    </button>
-                                    <div class="file-list" id="midFileList"></div>
-                                </div>
-                            </div>
-            
-                            <!-- Final Paper Box -->
-                            <div class="paper-box final-box" onclick="toggleUploadPanel('final-panel')">
-                                <i class="fa-solid fa-file-alt"></i>
-                                <span>Final Paper</span>
-                                <div class="upload-panel" id="final-panel">
-                                    <button class="close-btn" onclick="event.stopPropagation(); closeUploadPanel('final-panel')">
-                                        <i class="fa-solid fa-times"></i>
-                                    </button>
-                                    <input type="file" id="finalUpload" accept=".pdf" style="display: none;" 
-                                           onchange="handleFileUpload('final', event)">
-                                    <button class="upload-btn" onclick="event.stopPropagation(); document.getElementById('finalUpload').click()">
-                                        <i class="fa-solid fa-upload"></i>
-                                        Upload PDF
-                                    </button>
-                                    <div class="file-list" id="finalFileList"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <div class="upload-status" id="uploadStatus"></div>
-            
-                <script>
-                    const uploadedFiles = {
-                        mid: [],
-                        final: []
-                    };
-            
-                    function toggleUploadPanel(panelId) {
-                        const panel = document.getElementById(panelId);
-                        const allPanels = document.querySelectorAll('.upload-panel');
-                        
-                        allPanels.forEach(p => {
-                            if (p.id !== panelId) {
-                                p.style.display = 'none';
-                            }
-                        });
-            
-                        panel.style.display = panel.style.display === 'flex' ? 'none' : 'flex';
-                    }
-            
-                    function closeUploadPanel(panelId) {
-                        document.getElementById(panelId).style.display = 'none';
-                    }
-            
-                    function handleFileUpload(type, event) {
-                        const file = event.target.files[0];
-                        if (file && file.type === 'application/pdf') {
-                            uploadedFiles[type].push(file.name);
-                            updateFileList(type);
-                            showUploadStatus(`${file.name} uploaded successfully!`);
-                        }
-                        event.target.value = '';
-                    }
-            
-                    function deleteFile(type, fileName) {
-                        uploadedFiles[type] = uploadedFiles[type].filter(name => name !== fileName);
-                        updateFileList(type);
-                        showUploadStatus(`${fileName} deleted successfully!`);
-                    }
-            
-                    function updateFileList(type) {
-                        const fileList = document.getElementById(`${type}FileList`);
-                        fileList.innerHTML = '';
-                        
-                        uploadedFiles[type].forEach(fileName => {
-                            const fileItem = document.createElement('div');
-                            fileItem.className = 'file-item';
-                            fileItem.innerHTML = `
-                                <span class="file-name">
-                                    <i class="fa-solid fa-file-pdf"></i>
-                                    ${fileName}
-                                </span>
-                                <button class="delete-btn" onclick="event.stopPropagation(); deleteFile('${type}', '${fileName}')">
-                                    <i class="fa-solid fa-trash"></i>
-                                </button>
-                            `;
-                            fileList.appendChild(fileItem);
-                        });
-                    }
-            
-                    function showUploadStatus(message) {
-                        const status = document.getElementById('uploadStatus');
-                        status.textContent = message;
-                        status.style.display = 'block';
-                        setTimeout(() => {
-                            status.style.display = 'none';
-                        }, 3000);
-                    }
-                </script>
-
-
-
-
+        <div
+        class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
+        <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
+        <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Session:</span>
+                <p id="sessionInfo" class="text-gray-700"></p>
             </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Teacher:</span>
+                <p id="teacherInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Class:</span>
+                <p id="classInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Course:</span>
+                <p id="courseInfo" class="text-gray-700"></p>
+            </div>
+        </div>
+    </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full px-4">
+            <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center space-y-4 hover:scale-105 hover:shadow-xl">
+                <i class="fas fa-file-alt text-purple-600 text-6xl"></i>
+                <h2 class="text-xl font-semibold text-gray-700">Mid Paper</h2>
+
+                <div id="mid-panel" class="w-full flex flex-col items-center space-y-4">
+                    <input type="file" id="midUpload" accept=".pdf" class="hidden" onchange="handleFileUpload('question paper mideterm', event)">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg" onclick="document.getElementById('midUpload').click()">
+                        <i class="fas fa-upload mr-2"></i>Upload PDF
+                    </button>
+                    <div id="midFileList" class="w-full space-y-2"></div>
+                </div>
+            </div>
+
+            <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center space-y-4 hover:scale-105 hover:shadow-xl">
+                <i class="fas fa-file-alt text-purple-600 text-6xl"></i>
+                <h2 class="text-xl font-semibold text-gray-700">Final Paper</h2>
+
+                <div id="final-panel" class="w-full flex flex-col items-center space-y-4">
+                    <input type="file" id="finalUpload" accept=".pdf" class="hidden" onchange="handleFileUpload('question paper final', event)">
+                    <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg" onclick="document.getElementById('finalUpload').click()">
+                        <i class="fas fa-upload mr-2"></i>Upload PDF
+                    </button>
+                    <div id="finalFileList" class="w-full space-y-2"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="uploadStatus" class="mt-6 text-center text-white bg-green-500 py-2 px-4 rounded-lg hidden"></div>
+    </div>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
+            document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
+            document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
+            document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
+        });
+        async function handleFileUpload(type, event) {
+            const file = event.target.files[0]; // Get the selected file
+    
+            // Validate the file type
+            if (!file || file.type !== 'application/pdf') {
+                showUploadStatus('Please upload a valid PDF file.', 'error');
+                return;
+            }
+    
+            // Retrieve required data from localStorage
+            const classValue = localStorage.getItem('class');
+            const teacherName = localStorage.getItem('teacher');
+            const sessionValue = localStorage.getItem('session');
+            const courseValue = localStorage.getItem('course');
+    
+            // Validate localStorage values
+            if (!classValue || !teacherName || !sessionValue || !courseValue) {
+                showUploadStatus('Missing data in localStorage. Check inputs.', 'error');
+                return;
+            }
+    
+            // Prepare FormData
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('class', classValue);
+            formData.append('teacher', teacherName);
+            formData.append('session', sessionValue);
+            formData.append('course', courseValue);
+            formData.append('doctype', type); // Add the document type (e.g., 'mid' or 'final')
+    
+            try {
+                // Send the file to the server
+                const response = await fetch('http://localhost:5000/api/teacher/document', {
+                    method: 'POST',
+                    body: formData,
+                    headers:formData
+                });
+    
+                if (response.ok) {
+                    const result = await response.json();
+                    showUploadStatus(`File uploaded successfully: ${result.message}`, 'success');
+                } else {
+                    const errorData = await response.json();
+                    showUploadStatus(`Upload failed: ${errorData.message}`, 'error');
+                }
+            } catch (error) {
+                console.error('Upload error:', error);
+                showUploadStatus('An error occurred during upload.', 'error');
+            } finally {
+                event.target.value = ''; // Clear the file input
+            }
+        }
+    
+        // Display upload status messages
+        function showUploadStatus(message, type) {
+            const status = document.getElementById('uploadStatus');
+            status.textContent = message;
+            status.className = `text-center py-2 px-4 rounded-lg ${
+                type === 'success' ? 'bg-green-500' : 'bg-red-500'
+            }`;
+            status.style.display = 'block';
+            setTimeout(() => {
+                status.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+    
 </body>
+
 </html>

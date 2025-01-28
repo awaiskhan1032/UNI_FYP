@@ -1,166 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../nav.css">
-    <link rel="stylesheet" href="notes.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <title>Lecture Notes</title>
+    <style>
+        .custom::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #993aec;
+        }
+    </style>
 </head>
-<body>
-    <div class="main">
-        <div class="nav">
-            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
-            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
-            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
-            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
-            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
-            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
-            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
-            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
-            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
-            <a href="../Manage logins/managelogin.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
-            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
+
+<body class="bg-gray-100 min-h-screen font-sans">
+    <div
+    class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+    <nav>
+        <ul class="space-y-4">
+            <li><a href="../Home/home.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
+            </li>
+            <li><a href="../course outline/outline.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                    Outline</a></li>
+            <li><a href="../course description/resdes.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                    Description</a></li>
+            <li><a href="../Copy of lecture notes/notes.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
+                    Notes</a></li>
+            <li><a href="../Copy of Question papers/papers.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
+                    Papers</a></li>
+            <li><a href="../Model solution/modelsol.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
+                    Solutions</a></li>
+            <li><a href="../samples/samples.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
+            </li>
+            <li><a href="../Course log/courselog.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                    Log</a></li>
+            <li><a href="../Outcome Assesment/assesment.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
+                    Assessment</a></li>
+            <li><a href="../Course folder verfication report/resverf.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
+                    Verification</a></li>
+            <li><a href="../Manage logins/managelogin.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
+                    Login</a></li>
+            <li><a href="./login/login.html"
+                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+    <div class="ml-[calc(100vw/5)] flex flex-col items-center py-8 space-y-6">
+        <!-- Page Heading -->
+        <div class="text-center">
+            <h1 class="text-3xl font-bold text-purple-700">Lecture Notes</h1>
+            <p class="text-gray-600">Manage notes week by week</p>
         </div>
-        <div class="section">
-
-            <div class="top">
-                <div class="topheading">Lecture Notes</div>
-                <div class="toppara">Notes for the complete semester</div>
-
-                </div>
-            
-
-                <div class="alert" id="alert">
-                    <span>File uploaded successfully!</span>
-                </div>
-                
-                <div class="grid-container" id="weekGrid"></div>
-            
-                <div class="modal-backdrop" id="modalBackdrop">
-                    <div class="modal" id="modal">
-                        <div class="modal-header">
-                            <h2 class="modal-title" id="modalTitle">Week X - Lecture Notes</h2>
-                        </div>
-                        
-                        <div class="upload-section">
-                            <input type="file" id="fileUpload" accept=".pdf" style="display: none;">
-                            <button class="button button-primary" onclick="document.getElementById('fileUpload').click()">
-                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-upload"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                                Upload PDF
-                            </button>
-                        </div>
-            
-                        <div class="file-list" id="fileList"></div>
-                    </div>
-                </div>
-
-
-            
-                <script>
-                    const state = {
-                        uploads: {},
-                        selectedWeek: null
-                    };
-            
-                    function initializeGrid() {
-                        const grid = document.getElementById('weekGrid');
-                        grid.innerHTML = '';
-                        
-                        for (let i = 1; i <= 16; i++) {
-                            const box = document.createElement('div');
-                            box.className = 'week-box';
-                            box.innerHTML = `
-                                <div class="week-header">
-                                    <h3 style="font-weight: 600">Week ${i}</h3>
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="file-icon"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-                                </div>
-                                <p class="file-count">${state.uploads[i]?.length || 0} files uploaded</p>
-                            `;
-                            box.onclick = () => openModal(i);
-                            grid.appendChild(box);
-                        }
-                    }
-            
-                    function openModal(week) {
-                        state.selectedWeek = week;
-                        document.getElementById('modalTitle').textContent = `Week ${week} - Lecture Notes`;
-                        document.getElementById('modalBackdrop').style.display = 'block';
-                        updateFileList();
-                    }
-            
-                    function closeModal() {
-                        document.getElementById('modalBackdrop').style.display = 'none';
-                        state.selectedWeek = null;
-                    }
-            
-                    function handleFileUpload(event) {
-                        const file = event.target.files[0];
-                        if (file && file.type === 'application/pdf') {
-                            if (!state.uploads[state.selectedWeek]) {
-                                state.uploads[state.selectedWeek] = [];
-                            }
-                            state.uploads[state.selectedWeek].push(file.name);
-                            showAlert();
-                            updateFileList();
-                            initializeGrid();
-                        }
-                        event.target.value = '';
-                    }
-            
-                    function deleteFile(fileName) {
-                        state.uploads[state.selectedWeek] = state.uploads[state.selectedWeek].filter(
-                            name => name !== fileName
-                        );
-                        updateFileList();
-                        initializeGrid();
-                    }
-            
-                    function updateFileList() {
-                        const fileList = document.getElementById('fileList');
-                        fileList.innerHTML = '';
-                        const files = state.uploads[state.selectedWeek] || [];
-                        
-                        files.forEach(fileName => {
-                            const fileItem = document.createElement('div');
-                            fileItem.className = 'file-item';
-                            fileItem.innerHTML = `
-                                <span class="file-name">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="file-icon"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
-                                    ${fileName}
-                                </span>
-                                <button class="button button-ghost" onclick="deleteFile('${fileName}')">
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" y1="11" x2="10" y2="17"/><line x1="14" y1="11" x2="14" y2="17"/></svg>
-                                </button>
-                            `;
-                            fileList.appendChild(fileItem);
-                        });
-                    }
-            
-                    function showAlert() {
-                        const alert = document.getElementById('alert');
-                        alert.style.display = 'block';
-                        setTimeout(() => {
-                            alert.style.display = 'none';
-                        }, 3000);
-                    }
-            
-                    document.getElementById('fileUpload').onchange = handleFileUpload;
-                    document.getElementById('modalBackdrop').onclick = (event) => {
-                        if (event.target === document.getElementById('modalBackdrop')) {
-                            closeModal();
-                        }
-                    };
-            
-                    initializeGrid();
-                </script>
-           
-
-
-
-
+        <div
+        class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
+        <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
+        <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Session:</span>
+                <p id="sessionInfo" class="text-gray-700"></p>
             </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Teacher:</span>
+                <p id="teacherInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Class:</span>
+                <p id="classInfo" class="text-gray-700"></p>
+            </div>
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-purple-900">Course:</span>
+                <p id="courseInfo" class="text-gray-700"></p>
+            </div>
+        </div>
+    </div>
+
+        <!-- Week Selection -->
+        <div>
+            <label for="week-select" class="block text-lg font-medium text-gray-700">Select Week</label>
+            <select id="week-select" class="mt-2 block w-40 p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
+                <option value="" disabled selected>Select Week</option>
+                <!-- Options for weeks -->
+                <script>
+                    for (let i = 1; i <= 16; i++) {
+                        document.write(`<option value="${i}">Week ${i}</option>`);
+                    }
+                </script>
+            </select>
+        </div>
+
+        <!-- Upload and View Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md w-96">
+            <h2 id="modalTitle" class="text-2xl font-semibold text-purple-600 mb-4">Week - Lecture Notes</h2>
+
+            <!-- File Upload -->
+            <div class="flex flex-col space-y-4">
+                <input type="file" id="fileUpload" accept=".pdf" class="hidden">
+                <button
+                    class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition"
+                    onclick="document.getElementById('fileUpload').click()">
+                    Upload PDF
+                </button>
+                <div id="fileList" class="text-gray-700 space-y-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+         document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
+            document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
+            document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
+            document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
+        });
+        const state = {
+            selectedWeek: null
+        };
+
+        document.getElementById('week-select').addEventListener('change', (event) => {
+            const week = event.target.value;
+            state.selectedWeek = week;
+            document.getElementById('modalTitle').textContent = `Week ${week} - Lecture Notes`;
+        });
+
+        document.getElementById('fileUpload').addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (!file || file.type !== 'application/pdf') {
+                alert('Please upload a valid PDF file.');
+                return;
+            }
+
+            if (!state.selectedWeek) {
+                alert('Please select a week first.');
+                return;
+            }
+
+            const courseTitle = localStorage.getItem('course'); // Assume course ID is stored in localStorage
+            if (!courseTitle) {
+                alert('Course title is missing.');
+                return;
+            }
+
+            const formData = new FormData();
+            
+            
+            formData.append('file', file);
+            formData.append('week', state.selectedWeek);
+            formData.append('courseTitle', courseTitle);
+
+            try {                
+                const response = await fetch('http://localhost:5000/api/teacher/lecture-notes/document', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    alert(`Lecture notes uploaded successfully for Week ${state.selectedWeek}!`);
+                } else {
+                    const errorData = await response.json();
+                    alert(`Failed to upload: ${errorData.message}`);
+                }
+            } catch (error) {
+                console.error('Error uploading lecture notes:', error);
+                alert('An error occurred. Please try again.');
+            } finally {
+                event.target.value = ''; // Reset file input
+            }
+        });
+    </script>
 </body>
+
 </html>
+    

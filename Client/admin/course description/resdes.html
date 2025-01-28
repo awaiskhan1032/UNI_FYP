@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Course Description</title>
+<<<<<<< HEAD
 </head>
 <body class="overflow-x-hidden font-['Lato']">
     <div class="flex w-full min-h-screen gap-3 p-4">
@@ -16,6 +18,77 @@
 
         <div class="flex-1 bg-white rounded-lg border-2 border-gray-700 p-4 max-w-[1200px] mx-auto">
             <div class="flex items-center mb-4">
+=======
+    <style>
+        .custom::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar {
+            width: 12px;
+            background-color: #F5F5F5;
+        }
+
+        .custom::-webkit-scrollbar-thumb {
+            border-radius: 10px;
+            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+            background-color: #993aec;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden font-['Lato']">
+    <div class="flex w-full min-h-screen gap-3 p-4">
+        <div
+            class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+            <nav>
+                <ul class="space-y-4">
+                    <li><a href="../Home/home.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
+                    </li>
+                    <li><a href="../course outline/outline.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                            Outline</a></li>
+                    <li><a href="../course description/resdes.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                            Description</a></li>
+                    <li><a href="../Copy of lecture notes/notes.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
+                            Notes</a></li>
+                    <li><a href="../Copy of Question papers/papers.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
+                            Papers</a></li>
+                    <li><a href="../Model solution/modelsol.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
+                            Solutions</a></li>
+                    <li><a href="../samples/samples.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
+                    </li>
+                    <li><a href="../Course log/courselog.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                            Log</a></li>
+                    <li><a href="../Outcome Assesment/assesment.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
+                            Assessment</a></li>
+                    <li><a href="../Course folder verfication report/resverf.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
+                            Verification</a></li>
+                    <li><a href="../Manage logins/managelogin.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
+                            Login</a></li>
+                    <li><a href="./login/login.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <!-- Nav section removed as requested -->
+
+        <div class="ml-[calc(100vw/5)] bg-white rounded-lg border-2 border-gray-700 p-4 max-w-[1200px] mx-auto">
+            <div class="flex items-centerre mb-4">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                 <img src="assets/Nceac.png" alt="Nceac img" class="h-12 w-24 object-contain">
                 <p class="font-bold ml-2">INSTITUTION</p>
             </div>
@@ -39,7 +112,13 @@
                 </div>
                 <div>
                     <p>A.Course Description</p>
+<<<<<<< HEAD
                     <input type="text" class="border-b border-black outline-none p-2 w-full max-w-[300px]">
+=======
+                    <select id="course-select" class="border-b border-black outline-none p-2 w-full max-w-[300px]">
+                        <option value="">Loading courses...</option>
+                    </select>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                 </div>
             </div>
 
@@ -47,67 +126,116 @@
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Code</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <input type="number" class="w-full p-2 border-none outline-none">
+=======
+                        <input type="number" id="course-code" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Title</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                        <input type="text" id="course-title" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Credit Hours</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <input type="number" class="w-full p-2 border-none outline-none">
+=======
+                        <input type="number" id="credit-hours" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Prerequisites by Course(s) and Topics</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                        <input type="text" id="pre-reqs" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Assessment Instruments with Weight</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <textarea rows="10" class="w-full p-2 border-none outline-none resize-y"></textarea>
+=======
+                        <textarea rows="10" id="assessment-instruments"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Coordinator</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                        <input type="text" id="course-coordinator" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">URL (if any)</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <input type="url" class="w-full p-2 border-none outline-none">
+=======
+                        <input type="url" id="course-url" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Current Catalog Description</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <textarea rows="10" class="w-full p-2 border-none outline-none resize-y"></textarea>
+=======
+                        <textarea rows="10" id="course-catalog"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">TextBook</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <textarea rows="7" class="w-full p-2 border-none outline-none resize-y"></textarea>
+=======
+                        <textarea rows="7" id="course-textbook"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Reference Material</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <textarea rows="7" class="w-full p-2 border-none outline-none resize-y"></textarea>
+=======
+                        <textarea rows="7" id="course-reference-material"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
                 <tr class="flex flex-wrap">
                     <td class="flex-1 min-w-[200px] p-2 border border-black">Course Goals</td>
                     <td class="flex-[3] min-w-[300px] p-2 border border-black">
+<<<<<<< HEAD
                         <textarea rows="17" class="w-full p-2 border-none outline-none resize-y"></textarea>
+=======
+                        <textarea rows="17" id="course-goals"
+                            class="w-full p-2 border-none outline-none resize-y"></textarea>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     </td>
                 </tr>
             </table>
@@ -123,102 +251,175 @@
 
             <div class="flex flex-wrap">
                 <div class="flex-1 min-w-[200px] p-4 border border-black">
+<<<<<<< HEAD
                     <p class="font-bold">Topics Covered in the Course with Number of Lectures on each topic (assume 15-week instruction and one and half-hour lectures)</p>
                 </div>
                 <div class="flex-[3] min-w-[300px]">
                     <!-- Week template - repeat for all weeks -->
+=======
+                    <p class="font-bold">Topics Covered in the Course with Number of Lectures on each topic (assume
+                        15-week instruction and one and half-hour lectures)</p>
+                </div>
+                <div class="flex-[3] min-w-[300px]">
+                    <!-- Week template - repeat for all weeks -->
+
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                     <div class="flex flex-wrap">
                         <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week1-lec1" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week1-lec2" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
+<<<<<<< HEAD
                         <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+=======
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 2</div>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week2-lec1" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week2-lec2" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
+<<<<<<< HEAD
                         <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+=======
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 3</div>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week3-lec1" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week3-lec2" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
+<<<<<<< HEAD
                         <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+=======
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 4</div>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week4-lec1" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week4-lec2" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
+<<<<<<< HEAD
                         <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+=======
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 5</div>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week5-lec1" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-2</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week5-lec2" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="flex flex-wrap">
+<<<<<<< HEAD
                         <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 1</div>
+=======
+                        <div class="flex-1 min-w-[100px] p-2 text-center border border-black">Week 6</div>
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                         <div class="flex-[7] min-w-[200px]">
                             <div class="flex border border-black">
                                 <div class="flex-1 min-w-[60px] p-2 text-center border-r border-black">Lec-1</div>
                                 <div class="flex-[4] min-w-[140px] p-2">
+<<<<<<< HEAD
                                     <input type="text" class="w-full p-2 border-none outline-none">
+=======
+                                    <input type="text" id="week6-lec1" class="w-full p-2 border-none outline-none">
+>>>>>>> 017c1eb9a6f69b527049970a85cd5d2ccdf627a7
                                 </div>
                             </div>
                             <div class="flex border border-black">
@@ -453,5 +654,168 @@
             </div>
         </div>
     </div>
+
+    <script>
+
+        // Existing functionality
+        async function populateCourses() {
+            const classValue = localStorage.getItem('class');
+            if (!classValue) {
+                alert('Please select a valid class first.');
+                return;
+            }
+
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/course/get-specific', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ class: classValue }),
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to fetch courses');
+                }
+
+                const courses = await response.json();
+                const courseSelect = document.getElementById('course-select');
+                courseSelect.innerHTML = '<option value="">Select Course</option>';
+                courses.forEach(course => {
+                    courseSelect.innerHTML += `<option value="${course._id}">${course.courseTitle}</option>`;
+                });
+            } catch (error) {
+                console.error('Error fetching courses:', error);
+                alert('Could not load courses. Please try again.');
+            }
+        }
+
+        // New functionality for form handling
+        function getFormData() {
+            const formData = {
+                courseCode: document.getElementById('course-code').value,
+                courseTitle: document.getElementById('course-title').value,
+                creditHours: document.getElementById('credit-hours').value,
+                prerequisites: document.getElementById('pre-reqs').value,
+                assessmentInstruments: document.getElementById('assessment-instruments').value,
+                courseCoordinator: document.getElementById('course-coordinator').value,
+                url: document.getElementById('course-url').value,
+                catalogDescription: document.getElementById('course-catalog').value,
+                textbook: document.getElementById('course-textbook').value,
+                referenceMaterial: document.getElementById('course-reference-material').value,
+                courseGoals: document.getElementById('course-goals').value,
+                weeklyTopics: []
+            };
+
+            // Get all week containers
+            const weekIds = [
+                'week1', 'week2', 'week3', 'week4', 'week5', 'week6', 'week7', 'week8',
+                'week9', 'week10', 'week11', 'week12', 'week13', 'week14', 'week15', 'week16'
+            ];
+
+            weekIds.forEach((weekId, index) => {
+                const lec1 = document.getElementById(`${weekId}-lec1`);
+                const lec2 = document.getElementById(`${weekId}-lec2`);
+
+                if (lec1 && lec2) {
+                    formData.weeklyTopics.push({
+                        week: index + 1,
+                        lectures: [lec1.value, lec2.value]
+                    });
+                }
+            });
+
+            return formData;
+        }
+
+        async function handleSubmit() {
+            try {
+                const formData = getFormData();
+                const courseId = document.getElementById('course-select').value;
+
+                if (!courseId) {
+                    alert('Please select a course first.');
+                    return;
+                }
+
+                const response = await fetch('http://localhost:5000/api/teacher/course/update-description', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        courseId,
+                        ...formData
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save course description');
+                }
+
+                alert('Course description saved successfully!');
+            } catch (error) {
+                console.error('Error saving course description:', error);
+                alert('Failed to save course description. Please try again.');
+            }
+        }
+
+        function handlePrint() {
+            window.print();
+        }
+
+        async function handleDownload() {
+            try {
+                const formData = getFormData();
+                const courseId = document.getElementById('course-select').value;
+
+                if (!courseId) {
+                    alert('Please select a course first.');
+                    return;
+                }
+
+                const response = await fetch('http://localhost:5000/api/teacher/course/download-description', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        courseId,
+                        ...formData
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to generate download');
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `course-description-${courseId}.pdf`;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            } catch (error) {
+                console.error('Error downloading course description:', error);
+                alert('Failed to download course description. Please try again.');
+            }
+        }
+
+        // Event Listeners
+        document.addEventListener('DOMContentLoaded', () => {
+            populateCourses();
+
+            // Add event listeners to buttons
+            const submitButton = document.getElementById('submit-btn');
+            const printButton = document.getElementById('print-btn');
+            const downloadButton = document.getElementById('download- btn');
+
+            submitButton.addEventListener('click', handleSubmit);
+            printButton.addEventListener('click', handlePrint);
+            downloadButton.addEventListener('click', handleDownload);
+        });
+    </script>
 </body>
+
 </html>
