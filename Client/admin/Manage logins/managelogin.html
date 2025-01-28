@@ -2,37 +2,102 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../nav.css">
-    <link rel="stylesheet" href="managelogin.css">
     <title>Manage Login</title>
-    <style>
-        .loading-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 20px;
-            text-align: center;
-            padding-top: 20%;
-            z-index: 9999;
-        }
-    </style>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <script>
-        // Function to handle the form submission
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        pulse: {
+                            '0%': { boxShadow: '0 0 0 0 rgba(74, 144, 226, 0.4)' },
+                            '70%': { boxShadow: '0 0 0 10px rgba(74, 144, 226, 0)' },
+                            '100%': { boxShadow: '0 0 0 0 rgba(74, 144, 226, 0)' }
+                        }
+                    },
+                    animation: {
+                        'input-pulse': 'pulse 1.5s infinite'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="m-0 font-['Lato'] font-light not-italic overflow-hidden">
+    <div class="main flex w-screen h-screen">
+        <div class="nav bg-gray-800 text-white w-64 p-4 space-y-2">
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-house mr-2"></i>Home</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-rectangle-list mr-2"></i>Course Outline</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-circle-info mr-2"></i>Course Description</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-file-lines mr-2"></i>Lecture Notes</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-circle-question mr-2"></i>Question Papers</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-circle-check mr-2"></i>Model Solutions</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-file-code mr-2"></i>Samples</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-book mr-2"></i>Course Log</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-chart-line mr-2"></i>Outcome Assessment</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-clipboard-check mr-2"></i>Course Folder Verification</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-users-gear mr-2"></i>Manage Login</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-right-from-bracket mr-2"></i>Logout</a>
+        </div>
+
+        <div class="section flex flex-col h-full flex-grow bg-white rounded-lg mr-10">
+            <div class="login-container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[800px] p-10 bg-white rounded-[15px] shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
+                <div class="container-header text-center mb-12">
+                    <h2 class="text-[2rem] text-[#333] mb-2 font-medium">Generate User Credentials</h2>
+                    <p class="text-[#666] text-[1.1rem]">Create new user access credentials</p>
+                </div>
+                
+                <form id="credentialsForm" class="form-content flex flex-col gap-8">
+                    <div class="input-row flex gap-12 mb-4 max-md:flex-col max-md:gap-6">
+                        <div class="form-group flex-1 relative">
+                            <label class="absolute -top-[10px] left-[15px] bg-white px-[5px] text-[#4a90e2] text-[0.9rem] font-medium">Teacher Name</label>
+                            <input 
+                                type="text" 
+                                id="teacher"
+                                required
+                                class="w-full p-4 border-2 border-[#e1e1e1] rounded-lg text-base transition-all duration-300 ease-in-out focus:outline-none focus:border-[#4a90e2] focus:animate-input-pulse" 
+                                placeholder="Enter Teacher Name"
+                            />
+                            <i class="fas fa-user absolute right-[15px] top-1/2 -translate-y-1/2 text-[#999]"></i>
+                        </div>
+                        
+                        <div class="form-group flex-1 relative">
+                            <label class="absolute -top-[10px] left-[15px] bg-white px-[5px] text-[#4a90e2] text-[0.9rem] font-medium">Email Address</label>
+                            <input 
+                                type="email" 
+                                id="email"
+                                required
+                                class="w-full p-4 border-2 border-[#e1e1e1] rounded-lg text-base transition-all duration-300 ease-in-out focus:outline-none focus:border-[#4a90e2] focus:animate-input-pulse" 
+                                placeholder="Enter email address"
+                            />
+                            <i class="fas fa-envelope absolute right-[15px] top-1/2 -translate-y-1/2 text-[#999]"></i>
+                        </div>
+                    </div>
+                    
+                    <button type="submit" class="generate-btn bg-[#4a90e2] text-white py-4 px-8 text-[1.1rem] rounded-lg cursor-pointer transition-all duration-300 ease-in-out hover:bg-[#357abd] hover:translate-y-[-2px] hover:shadow-[0_5px_15px_rgba(74,144,226,0.3)] active:translate-y-0 flex items-center justify-center gap-[0.8rem] mx-auto min-w-[250px]">
+                        <i class="fas fa-key text-[1.2rem]"></i>
+                        Generate Credentials
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div id="loadingOverlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 text-white text-xl text-center pt-[20%] z-[9999] hidden">
+        Generating credentials, please wait...
+    </div>
+
+    <script>
         async function generateCredentials(event) {
-            event.preventDefault(); // Prevent default form submission
+            event.preventDefault();
 
             const teacherNameField = document.getElementById('teacher');
             const emailField = document.getElementById('email');
             const teacherName = teacherNameField.value;
             const email = emailField.value;
-            const token = localStorage.getItem('token'); // Get the token from localStorage
+            const token = localStorage.getItem('token');
             const loadingOverlay = document.getElementById('loadingOverlay');
 
             if (!teacherName || !email) {
@@ -40,24 +105,22 @@
                 return;
             }
 
-            // Show loading overlay
-            loadingOverlay.style.display = 'block';
+            loadingOverlay.classList.remove('hidden');
 
             try {
                 const response = await fetch('http://localhost:5000/api/manage-logins/generate', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        Authorization: `Bearer ${token}` // Add the token in headers
+                        Authorization: `Bearer ${token}`
                     },
-                    body: JSON.stringify({ teacherName, email }) // Send teacher name and email as the body
+                    body: JSON.stringify({ teacherName, email })
                 });
 
                 const data = await response.json();
 
                 if (response.ok) {
                     alert(`Credentials generated and sent to the mail:\nUsername: ${data.username}\nPassword: ${data.password}`);
-                    // Clear input fields
                     teacherNameField.value = '';
                     emailField.value = '';
                 } else {
@@ -67,68 +130,11 @@
                 console.error('Error:', error);
                 alert('An error occurred. Please try again.');
             } finally {
-                // Hide loading overlay
-                loadingOverlay.style.display = 'none';
+                loadingOverlay.classList.add('hidden');
             }
         }
-    </script>
-</head>
-<body>
-    <div class="main">
-        <div class="nav">
-            <a href="../Home/home.html"><i class="fa-solid fa-house"></i>Home</a>
-            <a href="../course outline/outline.html"><i class="fa-solid fa-rectangle-list"></i>Course Outline</a>
-            <a href="../course description/resdes.html"><i class="fa-solid fa-circle-info"></i>Course Description</a>
-            <a href="../Copy of lecture notes/notes.html"><i class="fa-solid fa-file-lines"></i>Lecture Notes</a>
-            <a href="../Copy of Question papers/papers.html"><i class="fa-solid fa-circle-question"></i>Question Papers</a>
-            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-circle-check"></i>Model Solutions</a>
-            <a href="../samples/samples.html"> <i class="fa-solid fa-file-code"></i>Samples</a>
-            <a href="../Course log/courselog.html"><i class="fa-solid fa-book"></i>Course Log</a>
-            <a href="../Outcome Assesment/assesment.html"><i class="fa-solid fa-chart-line"></i>Outcome Assessment</a>
-            <a href="../Course folder verfication report/resverf.html"><i class="fa-solid fa-clipboard-check"></i>Course Folder Verification</a>
-            <a href="../Model solution/modelsol.html"><i class="fa-solid fa-users-gear"></i>Manage Login</a>
-            <a href="./login/login.html"><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
-        </div>
-        <div class="section">
-            <div class="login-container">
-                <div class="container-header">
-                    <h2>Generate User Credentials</h2>
-                    <p>Create new user access credentials</p>
-                </div>
-                <form class="form-content" onsubmit="generateCredentials(event)">
-                    <div class="input-row">
-                        <div class="form-group">
-                            <label for="teacher">Teacher Name</label>
-                            <input 
-                                type="text" 
-                                id="teacher" 
-                                placeholder="Enter Teacher Name"
-                                required
-                            >
-                            <i class="fa-solid fa-user"></i>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input 
-                                type="email" 
-                                id="email" 
-                                placeholder="Enter email address"
-                                required
-                            >
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
-                    </div>
-                    <button type="submit" class="generate-btn">
-                        <i class="fa-solid fa-key"></i>
-                        Generate Credentials
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
 
-    <div class="loading-overlay" id="loadingOverlay">
-        Generating credentials, please wait...
-    </div>
+        document.getElementById('credentialsForm').addEventListener('submit', generateCredentials);
+    </script>
 </body>
 </html>
