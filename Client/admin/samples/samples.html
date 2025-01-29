@@ -187,16 +187,78 @@
                                 Task 1</label>
                             <button
                                 class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full mb-4"
-                                onclick="submitFiles('lab task 1')">Upload</button>
+                                onclick="submitFiles('lab 1')">Upload</button>
                         </div>
                         <div>
                             <input type="file" id="lab2-file" accept=".pdf" hidden>
-                            <label for="lab2-file"
-                                class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">Lab
-                                Task 2</label>
-                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full"
-                                onclick="submitFiles('lab task 2')">Upload</button>
+                            <label for="lab2-file" class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">
+                                Lab Task 2
+                            </label>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full" onclick="submitFiles('lab 2')">
+                                Upload
+                            </button>
                         </div>
+                        
+                        <div>
+                            <input type="file" id="lab3-file" accept=".pdf" hidden>
+                            <label for="lab3-file" class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">
+                                Lab Task 3
+                            </label>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full" onclick="submitFiles('lab 3')">
+                                Upload
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <input type="file" id="lab4-file" accept=".pdf" hidden>
+                            <label for="lab4-file" class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">
+                                Lab Task 4
+                            </label>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full" onclick="submitFiles('lab 4')">
+                                Upload
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <input type="file" id="lab5-file" accept=".pdf" hidden>
+                            <label for="lab5-file" class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">
+                                Lab Task 5
+                            </label>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full" onclick="submitFiles('lab 5')">
+                                Upload
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <input type="file" id="lab6-file" accept=".pdf" hidden>
+                            <label for="lab6-file" class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">
+                                Lab Task 6
+                            </label>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full" onclick="submitFiles('lab 6')">
+                                Upload
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <input type="file" id="lab7-file" accept=".pdf" hidden>
+                            <label for="lab7-file" class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">
+                                Lab Task 7
+                            </label>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full" onclick="submitFiles('lab 7')">
+                                Upload
+                            </button>
+                        </div>
+                        
+                        <div>
+                            <input type="file" id="lab8-file" accept=".pdf" hidden>
+                            <label for="lab8-file" class="block bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded-lg w-full text-center cursor-pointer mb-2">
+                                Lab Task 8
+                            </label>
+                            <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg w-full" onclick="submitFiles('lab 8')">
+                                Upload
+                            </button>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -244,9 +306,9 @@
         }
 
         async function submitFiles(doctype) {
-            const formData = new FormData();
+            const formData = new FormData();            
             const fileInput = document.getElementById(`${doctype.replace(' ', '').toLowerCase()}-file`);
-
+            
             if (fileInput.files[0]) {
                 formData.append('file', fileInput.files[0]);
                 formData.append('doctype', `samples ${doctype}`);
