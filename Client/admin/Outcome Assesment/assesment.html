@@ -244,6 +244,56 @@
     </div>
 
     <script>
+
+// token starts here
+const token = localStorage.getItem('token');
+        if (token) {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const isExpired = payload.exp * 1000 < Date.now();
+            const role = payload.role || "";
+
+            if (role === 'teacher') {
+                document.getElementById('add-course-btn').style.display = 'none';
+                document.getElementById('or-text').style.display = 'none';
+                document.getElementById('manage-login-btn').style.display = 'none';
+            }
+
+            if (isExpired) {
+                alert('Session expired. Please log in again.');
+                localStorage.removeItem('token'); // Clear expired token
+                window.location.href = '../../../login/login.html'; // Redirect to login
+            } else {
+                // Verify token validity with backend
+                fetch('http://localhost:5000/api/auth/validate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error('Invalid token. Please log in again.');
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Token is valid:', data);
+                        document.body.style.display = 'block'; // Show the page after validation
+                    })
+                    .catch((err) => {
+                        alert(err.message);
+                        localStorage.removeItem('token'); // Clear invalid token
+                        window.location.href = '../../login/login.html'; // Redirect to login
+                    });
+            }
+        } else {
+            alert('Access denied. Please log in.');
+            window.location.href = '../../login/login.html'; // Redirect if no token
+        }
+
+        //token ends here
+
         // Exclusive checkbox selection for each row
         document.querySelectorAll('#prerequisites-table tbody tr').forEach(row => {
             const checkboxes = row.querySelectorAll('input[type="checkbox"]');
