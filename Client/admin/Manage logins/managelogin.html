@@ -6,47 +6,44 @@
     <title>Manage Login</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <style>
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 12px;
-            background-color: #F5F5F5;
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    keyframes: {
+                        pulse: {
+                            '0%': { boxShadow: '0 0 0 0 rgba(74, 144, 226, 0.4)' },
+                            '70%': { boxShadow: '0 0 0 10px rgba(74, 144, 226, 0)' },
+                            '100%': { boxShadow: '0 0 0 0 rgba(74, 144, 226, 0)' }
+                        }
+                    },
+                    animation: {
+                        'input-pulse': 'pulse 1.5s infinite'
+                    }
+                }
+            }
         }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            background-color: #993aec;
-        }
-
-        .sub-items {
-            display: none;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
-        }
-    </style>
+    </script>
 </head>
-<body >
+<body class="m-0 font-['Lato'] font-light not-italic overflow-hidden">
     <div class="main flex w-screen h-screen">
-        <div class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
-            <nav>
-                <ul class="space-y-4">
-                    <li><a href="../Home/home.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a></li>
-                    <li><a href="../course outline/outline.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Outline</a></li>
-                    <li><a href="../course description/resdes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Description</a></li>
-                    <li><a href="../Copy of lecture notes/notes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture Notes</a></li>
-                    <li><a href="../Copy of Question papers/papers.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question Papers</a></li>
-                    <li><a href="../Model solution/modelsol.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model Solutions</a></li>
-                    <li><a href="../samples/samples.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a></li>
-                    <li><a href="../Course log/courselog.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Log</a></li>
-                    <li><a href="../Outcome Assesment/assesment.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome Assessment</a></li>
-                    <li><a href="../Course folder verfication report/resverf.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Folder Verification</a></li>
-                    <li><a href="../Manage logins/managelogin.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage Login</a></li>
-                    <li><a href="./login/login.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a></li>
-                </ul>
-            </nav>
+        <div class="nav bg-gray-800 text-white w-64 p-4 space-y-2">
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-house mr-2"></i>Home</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-rectangle-list mr-2"></i>Course Outline</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-circle-info mr-2"></i>Course Description</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-file-lines mr-2"></i>Lecture Notes</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-circle-question mr-2"></i>Question Papers</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-circle-check mr-2"></i>Model Solutions</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-file-code mr-2"></i>Samples</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-book mr-2"></i>Course Log</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-chart-line mr-2"></i>Outcome Assessment</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-clipboard-check mr-2"></i>Course Folder Verification</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-users-gear mr-2"></i>Manage Login</a>
+            <a href="#" class="block py-2 hover:bg-gray-700"><i class="fa-solid fa-right-from-bracket mr-2"></i>Logout</a>
         </div>
 
-            <div class="login-container  ml-[calc(100vw/5)]  w-[90%] p-10 bg-white rounded-[15px] shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
+        <div class="section flex flex-col h-full flex-grow bg-white rounded-lg mr-10">
+            <div class="login-container absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-[800px] p-10 bg-white rounded-[15px] shadow-[0_10px_30px_rgba(0,0,0,0.1)]">
                 <div class="container-header text-center mb-12">
                     <h2 class="text-[2rem] text-[#333] mb-2 font-medium">Generate User Credentials</h2>
                     <p class="text-[#666] text-[1.1rem]">Create new user access credentials</p>
@@ -85,6 +82,7 @@
                     </button>
                 </form>
             </div>
+        </div>
     </div>
 
     <div id="loadingOverlay" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 text-white text-xl text-center pt-[20%] z-[9999] hidden">
@@ -92,6 +90,56 @@
     </div>
 
     <script>
+
+// token starts here
+const token = localStorage.getItem('token');
+        if (token) {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const isExpired = payload.exp * 1000 < Date.now();
+            const role = payload.role || "";
+
+            if (role === 'teacher') {
+                document.getElementById('add-course-btn').style.display = 'none';
+                document.getElementById('or-text').style.display = 'none';
+                document.getElementById('manage-login-btn').style.display = 'none';
+            }
+
+            if (isExpired) {
+                alert('Session expired. Please log in again.');
+                localStorage.removeItem('token'); // Clear expired token
+                window.location.href = '../../../login/login.html'; // Redirect to login
+            } else {
+                // Verify token validity with backend
+                fetch('http://localhost:5000/api/auth/validate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error('Invalid token. Please log in again.');
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Token is valid:', data);
+                        document.body.style.display = 'block'; // Show the page after validation
+                    })
+                    .catch((err) => {
+                        alert(err.message);
+                        localStorage.removeItem('token'); // Clear invalid token
+                        window.location.href = '../../login/login.html'; // Redirect to login
+                    });
+            }
+        } else {
+            alert('Access denied. Please log in.');
+            window.location.href = '../../login/login.html'; // Redirect if no token
+        }
+
+        //token ends here
+
         async function generateCredentials(event) {
             event.preventDefault();
 

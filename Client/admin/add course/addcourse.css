@@ -1,0 +1,108 @@
+.Addcourse{
+font-size: 4.5rem;
+}
+span{
+    margin: 0.5rem 0 0 2rem;
+}
+
+.disciplin{
+    background-color: #c0a5ed;
+    height: 10rem;
+    width: 10rem;
+    margin: 6rem 0 0 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 1.875rem 1.875rem 1.875rem 1.875rem; 
+    font-weight: bold;
+    color: #9150f1;
+    transition: border 0.01s;
+    cursor: pointer;
+    transition: 0.2s ease-in-out all;
+    
+    
+    }
+    #disciplin{
+        padding:0.3125rem;
+        border: none;
+        text-decoration: none;
+        text-align: center;
+        border-radius:1.875rem 1.875rem 1.875rem 1.875rem;  ;
+        background-color: #935de3;
+        color: white;
+        height: 1.5rem;
+        cursor: pointer;
+    }
+    #disciplin:focus{
+        outline: none;
+        border: none;
+    }
+    .disciplin:hover{
+        transform: scale(1.1);
+    }
+    
+    
+    
+    .outer-discipline{
+        display: flex;
+    }
+    
+    .proceedforword {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 3rem;
+    
+    }
+   
+    .coursefeild{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+    }
+    input,textarea{
+      
+        width: 17rem;
+        height: 2rem;
+    }
+    button {
+        --hover-shadows: 16px 16px 33px #121212, -16px -16px 33px #303030;
+        --accent: #a880e8;
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        border: none;
+        border-radius: 1.1em;
+        background-color: #212121;
+        cursor: pointer;
+        color: white;
+        padding: 1em 2em;
+        transition:  background-color ease-in-out 0.1s,
+          letter-spacing ease-in-out 0.1s, transform ease-in-out 0.1s;
+       
+      }
+      
+     
+      button:active {
+       
+        background-color: var(--accent);
+        transform: scale(0.95);
+      }
+    
+      /* Toggle Button Styles */
+    .toggle-btn {
+        display: none;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: #935de3;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        color: white;
+        cursor: pointer;
+        z-index: 1000;
+    }

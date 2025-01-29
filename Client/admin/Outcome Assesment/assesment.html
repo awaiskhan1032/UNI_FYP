@@ -3,214 +3,310 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outcome Assessment Form</title>
+    <title>Outcomes Assessment Form</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 12px;
-            background-color: #F5F5F5;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            border-radius: 10px;
-            background-color: #993aec;
-        }
-
-        .sub-items {
-            display: none;
-            flex-direction: column;
-            gap: 8px;
-            margin-top: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
-<body class="min-h-screen bg-white p-8">
-    <div class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
-        <nav>
-            <ul class="space-y-4">
-                <li><a href="../Home/home.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a></li>
-                <li><a href="../course outline/outline.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Outline</a></li>
-                <li><a href="../course description/resdes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Description</a></li>
-                <li><a href="../Copy of lecture notes/notes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture Notes</a></li>
-                <li><a href="../Copy of Question papers/papers.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question Papers</a></li>
-                <li><a href="../Model solution/modelsol.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model Solutions</a></li>
-                <li><a href="../samples/samples.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a></li>
-                <li><a href="../Course log/courselog.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Log</a></li>
-                <li><a href="../Outcome Assesment/assesment.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome Assessment</a></li>
-                <li><a href="../Course folder verfication report/resverf.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Folder Verification</a></li>
-                <li><a href="../Manage logins/managelogin.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage Login</a></li>
-                <li><a href="./login/login.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a></li>
-            </ul>
-        </nav>
-    </div>
-<div class="ml-[calc(100vw/5)] p-8">
-        <!-- Logo and Header Section -->
-        <div class="flex flex-col items-center mb-8">
-            <img src="./assets/Austlogo.png" alt="University Logo" class="w-24 h-24">
-            <div class="text-center mt-4">
-                <h1 class="text-lg font-bold underline">Abbottabad University of Science & Technology</h1>
-                <h2 class="text-lg font-bold mt-1">Department of Computer Science</h2>
-            </div>
+<body class="bg-gray-100">
+    <div class="flex min-h-screen">
+        <!-- Sidebar Navigation -->
+        <div class="w-64 bg-gradient-to-b from-purple-300 via-purple-400 to-purple-600 p-4 rounded-r-3xl">
+            <nav id="sidebar-nav" class="space-y-2">
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-house mr-2"></i>Home
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-rectangle-list mr-2"></i>Course Outline
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-circle-info mr-2"></i>Course Description
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-file-lines mr-2"></i>Lecture Notes
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-circle-question mr-2"></i>Question Papers
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-circle-check mr-2"></i>Model Solutions
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-file-code mr-2"></i>Samples
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-book mr-2"></i>Course Log
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-chart-line mr-2"></i>Outcome Assessment
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-clipboard-check mr-2"></i>Course Folder Verification
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-users-gear mr-2"></i>Manage Login
+                </a>
+                <a href="#" class="block p-3 text-white hover:bg-white hover:text-black rounded-full transition-colors">
+                    <i class="fas fa-right-from-bracket mr-2"></i>Logout
+                </a>
+            </nav>
         </div>
-    
-        <!-- Batch and Year Section -->
-        <div class="flex justify-center gap-2 mt-12 font-bold">
-            <div>
-                Batch: <input type="text" class="border-b border-black focus:outline-none w-12">
-            </div>
-            <div>
-                Year: <input type="number" class="border-b border-black focus:outline-none w-12">
-            </div>
-        </div>
-    
-        <!-- Course and Instructor Section -->
-        <div class="mt-4 ml-12 font-bold">
-            <div>
-                Course Name: <input type="text" class="border-b border-black focus:outline-none w-64">
-            </div>
-            <div class="mt-1">
-                Instructor's Name: <input type="text" class="border-b border-black focus:outline-none w-56">
-            </div>
-        </div>
-    
-        <!-- Assessment Section -->
-        <div class="mt-4 ml-12">
-            <h3 class="font-bold">Outcome Assessment:</h3>
-            <p>Assessment of the students' preparedness for this course at the start of this term</p>
-        </div>
-    
-        <!-- First Assessment Table -->
-        <div class="overflow-x-auto mt-4">
-            <table class="w-full mb-8 border-collapse">
-                <thead>
-                    <tr>
-                        <th class="text-left p-4">At the beginning of this term:</th>
-                        <th class="p-4">Nearly 100%</th>
-                        <th class="p-4">Nearly 75%</th>
-                        <th class="p-4">Nearly 50%</th>
-                        <th class="p-4">Nearly 25%</th>
-                        <th class="p-4">N/A</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <script>
-                        function handleCheckboxChange(event, rowIndex) {
-                            const checkboxes = document.querySelectorAll(`input[name="row-${rowIndex}"]`);
-                            checkboxes.forEach(cb => {
-                                if (cb !== event.target) cb.checked = false;
-                            });
-                        }
-                    </script>
-                    <script>
-                        const assessmentQuestions = [
-                            "Students had the prerequisite math skills.",
-                            "Students had the prerequisite laboratory skills.",
-                            "Students had the prerequisite problem-solving skills.",
-                            "Students had the prerequisite design skills.",
-                            "Students were capable of using the necessary Tools (e.g. hardware/software, etc.).",
-                            "Students had the necessary Programming skills.",
-                            "Students had the necessary communication skills."
-                        ];
-    
-                        const ratings = [100, 75, 50, 25, 'na'];
-    
-                        document.write(assessmentQuestions.map((text, index) => `
-                            <tr class="border-b">
-                                <td class="p-4">${text}</td>
-                                ${ratings.map(value => `
-                                    <td class="p-4 text-center">
-                                        <input type="checkbox" name="row-${index}" value="${value}" onclick="handleCheckboxChange(event, ${index})"
-                                            class="appearance-none w-5 h-5 border-2 border-purple-500 rounded cursor-pointer checked:bg-purple-500 relative">
-                                    </td>
-                                `).join('')}
-                            </tr>
-                        `).join(''));
-                    </script>
-                </tbody>
-            </table>
-        </div>
-    
-        <!-- Outcomes Table -->
-        <table class="w-full border mt-4">
-            <thead>
-                <tr class="bg-gray-100">
-                    <th class="p-4 text-left border w-4/12">Course Learning Outcomes (assessed within course)</th>
-                    <th class="p-4 text-left border w-3/12">How/Where Assessed</th>
-                    <th class="p-4 text-left border w-1/12">MinPass %</th>
-                    <th class="p-4 text-left border w-1/12">HighScore %</th>
-                    <th class="p-4 text-left border w-1/12">ClassAvg %</th>
-                    <th class="p-4 text-left border w-1/12">Grade</th>
-                </tr>
-            </thead>
-            <tbody>
-                <script>
-                    const outcomeData = [
-                        {
-                            outcome: "To understand the difference between traditional systems and database systems.",
-                            assessed: "Assignment 1/ Assignment 2/ Quiz 1/Quiz 2",
-                            minPass: "20",
-                            highScore: "100",
-                            classAvg: "80",
-                            grade: "A+"
-                        },
-                        {
-                            outcome: "How to gather requirements for database applications and different elicitation techniques.",
-                            assessed: "Assignment 3/Final",
-                            minPass: "40",
-                            highScore: "100",
-                            classAvg: "80",
-                            grade: "A-"
-                        },
-                        {
-                            outcome: "To analyze different UML techniques.",
-                            assessed: "Quiz 3 / Quiz 4/Final",
-                            minPass: "0",
-                            highScore: "100",
-                            classAvg: "70",
-                            grade: "A+"
-                        },
-                        {
-                            outcome: "To apply conceptual model techniques on gathered requirements.",
-                            assessed: "Assignment 3/ Assignment 4 / Final",
-                            minPass: "10",
-                            highScore: "100",
-                            classAvg: "80",
-                            grade: "A-"
-                        }
-                    ];
-    
-                    document.write(outcomeData.map(row => `
-                        <tr class="border">
-                            <td class="p-4 border text-sm">${row.outcome}</td>
-                            <td class="p-4 border text-sm">${row.assessed}</td>
-                            <td class="p-4 border"><input type="number" value="${row.minPass}" class="w-full text-center bg-transparent"></td>
-                            <td class="p-4 border"><input type="number" value="${row.highScore}" class="w-full text-center bg-transparent"></td>
-                            <td class="p-4 border"><input type="number" value="${row.classAvg}" class="w-full text-center bg-transparent"></td>
-                            <td class="p-4 border"><input type="text" value="${row.grade}" class="w-full text-center bg-transparent"></td>
-                        </tr>
-                    `).join(''));
-                </script>
-            </tbody>
-        </table>
-    
-        <!-- Note Section -->
-        <div class="ml-12 mt-4 text-gray-600 italic">
-            Note: For Grade give the class average on an "A=4.0, B=3.0" basis.
-        </div>
-    
-        <!-- Recommendations Section -->
-        <div class="ml-12 mt-8 p-4 bg-gray-50 border rounded">
-            <h3 class="font-bold">Recommendations:</h3>
-            <p>Include which outcomes require more attention within the course to improve student performance, and how the course should be altered in the future to improve results.</p>
-        </div>
-    
-        <!-- Buttons -->
-        <div class="ml-12 mt-16 mb-16 space-x-4">
-            <button class="bg-[#212121] text-white px-8 py-4 rounded-2xl font-bold tracking-wider hover:bg-purple-500 transition-colors duration-200">Submit</button>
-            <button class="bg-[#212121] text-white px-8 py-4 rounded-2xl font-bold tracking-wider hover:bg-purple-500 transition-colors duration-200">Print</button>
-            <button class="bg-[#212121] text-white px-8 py-4 rounded-2xl font-bold tracking-wider hover:bg-purple-500 transition-colors duration-200">Download</button>
-        </div>
-</div>
 
+        <!-- Main Content -->
+        <div class="flex-1 p-8">
+            <form id="outcomes-form" class="bg-white p-8 rounded-lg shadow-md">
+                <!-- University Logo and Name -->
+                <div class="text-center mb-8">
+                    <div class="mb-4 flex justify-center">
+                        <img src="https://via.placeholder.com/100" alt="University Logo" class="w-24 h-24">
+                    </div>
+                    <h1 class="text-2xl font-bold underline">Abbottabad University of Science & Technology</h1>
+                    <h2 class="text-xl">Department of Computer Science</h2>
+                </div>
+
+                <!-- Batch and Year -->
+                <div class="flex justify-center space-x-4 mb-8">
+                    <div>
+                        <label class="block mb-2">Batch:</label>
+                        <input type="text" id="batch" class="border-b border-black w-24 text-center">
+                    </div>
+                    <div>
+                        <label class="block mb-2">Year:</label>
+                        <input type="number" id="year" class="border-b border-black w-24 text-center">
+                    </div>
+                </div>
+
+                <!-- Course and Instructor Details -->
+                <div class="space-y-4 mb-8">
+                    <div>
+                        <label>Course Name:</label>
+                        <input type="text" id="course-name" class="border-b border-black w-full">
+                    </div>
+                    <div>
+                        <label>Instructor's Name:</label>
+                        <input type="text" id="instructor-name" class="border-b border-black w-full">
+                    </div>
+                </div>
+
+                <!-- Prerequisites Assessment Table -->
+                <div class="mb-8">
+                    <h3 class="text-xl font-bold mb-4">Outcome Assessment</h3>
+                    <p class="mb-4">Assessment of the students preparedness for this course at the start of this term</p>
+                    <table id="prerequisites-table" class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border p-2 w-1/2">At the beginning of this term:</th>
+                                <th class="border p-2">Nearly 100%</th>
+                                <th class="border p-2">Nearly 75%</th>
+                                <th class="border p-2">Nearly 50%</th>
+                                <th class="border p-2">Nearly 25%</th>
+                                <th class="border p-2">N/A</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">1. Students had the prerequisite math skills.</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="math" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">2. Students had the prerequisite laboratory skills.</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="lab" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">3. Students had the prerequisite problem solving skills</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="problem-solving" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">4. Students had the prerequisite design skills</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="design" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">5. Students were capable of using the necessary Tools (e.g. hardware/software, etc.)</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="tools" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">6. Students had the necessary Programming skills</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="programming" value="na"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">7. Students had the necessary communication skills.</td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="100"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="75"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="50"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="25"></td>
+                                <td class="border p-2 text-center"><input type="checkbox" name="communication" value="na"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Course Outcomes Table -->
+                <div class="mb-8">
+                    <table id="outcomes-table" class="w-full border-collapse">
+                        <thead>
+                            <tr class="bg-gray-100">
+                                <th class="border p-2 w-2/5">Course Learning Outcomes (assessed within course)</th>
+                                <th class="border p-2 w-1/5">How/Where Assessed</th>
+                                <th class="border p-2">Min Pass %</th>
+                                <th class="border p-2">High Score %</th>
+                                <th class="border p-2">Class Avg %</th>
+                                <th class="border p-2">Grade</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border p-2">To understand the difference between traditional systems and database systems.</td>
+                                <td class="border p-2">Assignment 1/ Assignment 2/ Quiz 1/Quiz 2</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="20" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="80" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A+" class="w-full text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">How to gather requirements for database applications and different elicitation techniques.</td>
+                                <td class="border p-2">Assignment 3/Final</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="40" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="80" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A-" class="w-full text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">To analyze different UML techniques.</td>
+                                <td class="border p-2">Quiz 3 / Quiz 4/Final</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="0" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="70" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A+" class="w-full text-center"></td>
+                            </tr>
+                            <tr>
+                                <td class="border p-2">To apply conceptual model techniques on gathered requirements.</td>
+                                <td class="border p-2">Assignment 3/ Assignment 4 / Final</td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="10" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="number" min="0" max="100" value="100" class="w-full text-center"></td>
+                                <td class="border p-2"><input type="text" value="A+" class="w-full text-center"></td>
+                            </tr>
+                          
+                         </table>
+                          
+
+
+
+                <div class="note ml-12 mt-4 italic text-gray-600">
+                    Note: For Grade give the class average on an "A=4.0, B=3.0" basis.
+                </div>
+
+                <!-- Recommendations Section -->
+                <div class="recommendations ml-12 mt-4 p-4 bg-gray-50 border border-gray-200 rounded-lg">
+                    <h3 class="text-xl font-bold mb-2">Recommendations:</h3>
+                    <p>Include which outcomes require more attention within the course to improve student performance, and how the course should be altered in the future to improve results.</p>
+                    <textarea class="w-full mt-2 p-2 border rounded" rows="4"></textarea>
+                </div>
+
+                <!-- Buttons with Original Styling -->
+                <div class="ml-12 mt-16 mb-16 space-x-4">
+                    <button class="bg-black text-white font-bold py-4 px-8 rounded-xl hover:bg-purple-600 transition-all duration-100 active:scale-95 active:bg-purple-600">
+                        Submit
+                    </button>
+                    <button class="bg-black text-white font-bold py-4 px-8 rounded-xl hover:bg-purple-600 transition-all duration-100 active:scale-95 active:bg-purple-600">
+                        Print
+                    </button>
+                    <button class="bg-black text-white font-bold py-4 px-8 rounded-xl hover:bg-purple-600 transition-all duration-100 active:scale-95 active:bg-purple-600">
+                        Download
+                    </button>
+           
+            </form>
+            
+        </div>
+    </div>
+
+    <script>
+
+// token starts here
+const token = localStorage.getItem('token');
+        if (token) {
+            const payload = JSON.parse(atob(token.split('.')[1]));
+            const isExpired = payload.exp * 1000 < Date.now();
+            const role = payload.role || "";
+
+            if (role === 'teacher') {
+                document.getElementById('add-course-btn').style.display = 'none';
+                document.getElementById('or-text').style.display = 'none';
+                document.getElementById('manage-login-btn').style.display = 'none';
+            }
+
+            if (isExpired) {
+                alert('Session expired. Please log in again.');
+                localStorage.removeItem('token'); // Clear expired token
+                window.location.href = '../../../login/login.html'; // Redirect to login
+            } else {
+                // Verify token validity with backend
+                fetch('http://localhost:5000/api/auth/validate-token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        Authorization: `Bearer ${token}`,
+                    },
+                })
+                    .then((response) => {
+                        if (!response.ok) {
+                            throw new Error('Invalid token. Please log in again.');
+                        }
+                        return response.json();
+                    })
+                    .then((data) => {
+                        console.log('Token is valid:', data);
+                        document.body.style.display = 'block'; // Show the page after validation
+                    })
+                    .catch((err) => {
+                        alert(err.message);
+                        localStorage.removeItem('token'); // Clear invalid token
+                        window.location.href = '../../login/login.html'; // Redirect to login
+                    });
+            }
+        } else {
+            alert('Access denied. Please log in.');
+            window.location.href = '../../login/login.html'; // Redirect if no token
+        }
+
+        //token ends here
+
+        // Exclusive checkbox selection for each row
+        document.querySelectorAll('#prerequisites-table tbody tr').forEach(row => {
+            const checkboxes = row.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    if (this.checked) {
+                        checkboxes.forEach(cb => {
+                            if (cb !== this) cb.checked = false;
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
