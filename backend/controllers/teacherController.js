@@ -20,6 +20,31 @@ const getAllTeachers = async (req, res) => {
     console.log(error.message);
   }
 };
+const getCourseDescription = async (req, res) => {
+  try {
+    let { courseTitle } = req.query;
+
+
+    if (!courseTitle) {
+      console.log("Error: Course title is missing.");
+      return res.status(400).json({ message: "Course title is required." });
+    }
+
+    const trimmedCourseTitle = courseTitle.trim();
+
+    const course = await Course.findOne({ courseTitle: trimmedCourseTitle });
+
+    if (!course) {
+      console.log("Course not found for title:", trimmedCourseTitle);
+      return res.status(404).json({ message: "Course not found." });
+    }
+
+    res.json(course);
+  } catch (error) {
+    console.error("Server error:", error);
+    res.status(500).json({ message: "Server error.", error });
+  }
+};
 
 const addCourse = async (req, res) => {
   const { teacher, discipline, semester, section, year, session, courses } =
@@ -141,4 +166,4 @@ const getSpecificCourses = async (req, res) => {
   }
 };
 
-module.exports = { getAllTeachers, addCourse, getAllSessions , getAllClasses,getAllCourses , getSpecificCourses  };
+module.exports = { getAllTeachers, addCourse, getAllSessions , getAllClasses,getAllCourses ,getCourseDescription, getSpecificCourses  };

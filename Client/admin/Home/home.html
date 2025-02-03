@@ -87,50 +87,50 @@
         <!-- Form -->
         <div class="mt-8">
             <div class="flex items-center justify-between mb-4">
-                <h2 class="text-2xl font-bold text-purple-700">Please select the following:</h2>
-                <p id="or-text" class="text-2xl font-bold text-purple-700">OR</p>
+                <h2 class="text-2xl font-bold text-purple-700 m-auto">Please select the following:</h2>
+                <p id="or-text" class="text-2xl font-bold text-purple-700 mr-5">OR</p>
                 <a id="add-course-btn" href="./register-course.html"
                     class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition">Add
                     Course</a>
             </div>
-            <div class="grid grid-cols-4 gap-6">
-                <!-- Session -->
-                <div
-                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                    <label for="session" class="block text-sm font-medium text-purple-700">Session</label>
-                    <select id="session"
-                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                        <option value="">Select Session</option>
-                    </select>
-                </div>
-                <!-- Teacher -->
-                <div
-                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                    <label for="teacher" class="block text-sm font-medium text-purple-700">Teacher</label>
-                    <select id="teacher"
-                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                        <option value="">Select Teacher</option>
-                    </select>
-                </div>
-                <!-- Class -->
-                <div
-                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                    <label for="class" class="block text-sm font-medium text-purple-700">Class</label>
-                    <select id="class"
-                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                        <option value="">Select Class</option>
-                    </select>
-                </div>
-                <!-- Course -->
-                <div
-                    class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
-                    <label for="course" class="block text-sm font-medium text-purple-700">Course</label>
-                    <select id="course"
-                        class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
-                        <option value="">Select Course</option>
-                    </select>
+            <div class="flex justify-center">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Session -->
+                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="session" class="block text-sm font-medium text-purple-700">Session</label>
+                        <select id="session"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Session</option>
+                        </select>
+                    </div>
+                    <!-- Teacher -->
+                    <div id="teacher-select"
+                        class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="teacher" class="block text-sm font-medium text-purple-700">Teacher</label>
+                        <select id="teacher"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Teacher</option>
+                        </select>
+                    </div>
+                    <!-- Class -->
+                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="class" class="block text-sm font-medium text-purple-700">Class</label>
+                        <select id="class"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Class</option>
+                        </select>
+                    </div>
+                    <!-- Course -->
+                    <div class="bg-purple-200 p-6 rounded-xl shadow-lg hover:shadow-xl transition transform hover:scale-105">
+                        <label for="course" class="block text-sm font-medium text-purple-700">Course</label>
+                        <select id="course"
+                            class="block w-full mt-2 rounded-lg bg-purple-400 text-white p-2 font-medium focus:outline-none">
+                            <option value="">Select Course</option>
+                        </select>
+                    </div>
                 </div>
             </div>
+            
 
             <!-- Submit Button -->
             <div class="mt-8 flex justify-center">
@@ -143,6 +143,7 @@
         </div>
     </div>
     <script>
+
         async function applyStoredSelections() {
             const dropdowns = ["session", "teacher", "class", "course"];
             dropdowns.forEach(id => {
@@ -153,13 +154,14 @@
                 }
             });
         }
-
+        let role;
         // token starts here
         const token = localStorage.getItem('token');
+        let payload;
         if (token) {
-            const payload = JSON.parse(atob(token.split('.')[1]));
+             payload = JSON.parse(atob(token.split('.')[1]));
             const isExpired = payload.exp * 1000 < Date.now();
-            const role = payload.role || "";
+             role = payload.role || "";
 
             if (role === 'teacher') {
                 document.getElementById('add-course-btn').style.display = 'none';
@@ -276,18 +278,31 @@
             }
 
             localStorage.setItem('session', session);
-            localStorage.setItem('teacher', teacher);
+            
+            
+            if(role=="admin"){
+                localStorage.setItem('teacher', teacher);
+            }
+            else{
+                localStorage.setItem('teacher', payload.username);
+            }
             localStorage.setItem('class', classValue);
             localStorage.setItem('course', courseValue);
 
-            console.log(localStorage.getItem('course'));
-
+            console.log(localStorage.getItem("session"));
+            console.log(localStorage.getItem("teacher"));
+            console.log(localStorage.getItem("class"));
+            console.log(localStorage.getItem("course"));
 
             alert(`Now you can navigate to other pages to get documents for session: ${session} , teacher: ${teacher} and class: ${classValue}.`);
         }
 
         // Initialize dropdowns on page load
         document.addEventListener('DOMContentLoaded', async () => {
+            const teacherSelect=document.getElementById("teacher-select")
+            if(role=="teacher"){
+                teacherSelect.style.display="none";
+            }
             await Promise.all([
                 populateSessions(),
                 populateTeachers(),

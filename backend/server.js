@@ -5,6 +5,8 @@ const authRoutes = require('./routes/auth');
 const teacherRoutes = require('./routes/teacher');
 const manageLoginsRoutes=require("./routes/manageLogins")
 const cors = require('cors');
+const path = require('path');
+
 const { uploadDocument } = require('./controllers/uploadController');
 
 // Load environment variables
@@ -14,6 +16,7 @@ dotenv.config();
 connectDB();
 
 const app = express();
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Middleware for parsing JSON and URL-encoded data
 app.use(express.json());

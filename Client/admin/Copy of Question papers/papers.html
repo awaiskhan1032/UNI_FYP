@@ -28,21 +28,46 @@
 </head>
 
 <body>
-    <div class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+    <div
+        class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
         <nav>
             <ul class="space-y-4">
-                <li><a href="../Home/home.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a></li>
-                <li><a href="../course outline/outline.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Outline</a></li>
-                <li><a href="../course description/resdes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Description</a></li>
-                <li><a href="../Copy of lecture notes/notes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture Notes</a></li>
-                <li><a href="../Copy of Question papers/papers.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question Papers</a></li>
-                <li><a href="../Model solution/modelsol.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model Solutions</a></li>
-                <li><a href="../samples/samples.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a></li>
-                <li><a href="../Course log/courselog.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Log</a></li>
-                <li><a href="../Outcome Assesment/assesment.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome Assessment</a></li>
-                <li><a href="../Course folder verfication report/resverf.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder Verification</a></li>
-                <li><a href="../Manage logins/managelogin.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage Login</a></li>
-                <li><a href="./login/login.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a></li>
+                <li><a href="../Home/home.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
+                </li>
+                <li><a href="../course outline/outline.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Outline</a></li>
+                <li><a href="../course description/resdes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Description</a></li>
+                <li><a href="../Copy of lecture notes/notes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
+                        Notes</a></li>
+                <li><a href="../Copy of Question papers/papers.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
+                        Papers</a></li>
+                <li><a href="../Model solution/modelsol.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
+                        Solutions</a></li>
+                <li><a href="../samples/samples.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
+                </li>
+                <li><a href="../Course log/courselog.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Log</a></li>
+                <li><a href="../Outcome Assesment/assesment.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
+                        Assessment</a></li>
+                <li><a href="../Course folder verfication report/resverf.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
+                        Verification</a></li>
+                <li id="manage-login-btn"><a href="../Manage logins/managelogin.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
+                        Login</a></li>
+                <li><a href="./login/login.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
+                </li>
             </ul>
         </nav>
     </div>
@@ -54,50 +79,54 @@
         </div>
 
         <div
-        class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
-        <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
-        <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Session:</span>
-                <p id="sessionInfo" class="text-gray-700"></p>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Teacher:</span>
-                <p id="teacherInfo" class="text-gray-700"></p>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Class:</span>
-                <p id="classInfo" class="text-gray-700"></p>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Course:</span>
-                <p id="courseInfo" class="text-gray-700"></p>
+            class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
+            <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
+            <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Session:</span>
+                    <p id="sessionInfo" class="text-gray-700"></p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Teacher:</span>
+                    <p id="teacherInfo" class="text-gray-700"></p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Class:</span>
+                    <p id="classInfo" class="text-gray-700"></p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Course:</span>
+                    <p id="courseInfo" class="text-gray-700"></p>
+                </div>
             </div>
         </div>
-    </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl w-full px-4">
-            <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center space-y-4 hover:scale-105 hover:shadow-xl">
+            <div
+                class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center space-y-4 hover:scale-105 hover:shadow-xl">
                 <i class="fas fa-file-alt text-purple-600 text-6xl"></i>
                 <h2 class="text-xl font-semibold text-gray-700">Mid Paper</h2>
 
                 <div id="mid-panel" class="w-full flex flex-col items-center space-y-4">
-                    <input type="file" id="midUpload" accept=".pdf" class="hidden" onchange="handleFileUpload('question paper mideterm', event)">
-                    <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg" onclick="document.getElementById('midUpload').click()">
-                        <i class="fas fa-upload mr-2"></i>Upload PDF
+                    <input type="file" id="midUpload" accept=".pdf" class="hidden">
+                    <button id="file-btn-mid"
+                        class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg" >
+                    <i class="fas fa-upload mr-2"></i>
+                    <span id="file-status-mid"></span> PDF
                     </button>
                     <div id="midFileList" class="w-full space-y-2"></div>
                 </div>
             </div>
 
-            <div class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center space-y-4 hover:scale-105 hover:shadow-xl">
+            <div
+                class="bg-white shadow-lg rounded-lg p-6 flex flex-col items-center space-y-4 hover:scale-105 hover:shadow-xl">
                 <i class="fas fa-file-alt text-purple-600 text-6xl"></i>
                 <h2 class="text-xl font-semibold text-gray-700">Final Paper</h2>
 
                 <div id="final-panel" class="w-full flex flex-col items-center space-y-4">
-                    <input type="file" id="finalUpload" accept=".pdf" class="hidden" onchange="handleFileUpload('question paper final', event)">
-                    <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg" onclick="document.getElementById('finalUpload').click()">
-                        <i class="fas fa-upload mr-2"></i>Upload PDF
+                    <input type="file" id="finalUpload" accept=".pdf" class="hidden"> <button id="file-btn-final"
+                        class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg">
+                    <i class="fas fa-upload mr-2"></i><span id="file-status-final"></span> PDF
                     </button>
                     <div id="finalFileList" class="w-full space-y-2"></div>
                 </div>
@@ -109,16 +138,15 @@
 
     <script>
 
-// token starts here
-const token = localStorage.getItem('token');
+        // token starts here
+        const token = localStorage.getItem('token');
         if (token) {
             const payload = JSON.parse(atob(token.split('.')[1]));
             const isExpired = payload.exp * 1000 < Date.now();
             const role = payload.role || "";
 
             if (role === 'teacher') {
-                document.getElementById('add-course-btn').style.display = 'none';
-                document.getElementById('or-text').style.display = 'none';
+
                 document.getElementById('manage-login-btn').style.display = 'none';
             }
 
@@ -158,33 +186,139 @@ const token = localStorage.getItem('token');
 
         //token ends here
 
-         document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
+            const fileStatusMid = document.getElementById("file-status-mid");
+            const fileStatusFinal = document.getElementById("file-status-final");
+            const fileBtnMid = document.getElementById("file-btn-mid");
+            const fileBtnFinal = document.getElementById("file-btn-final");
+            
+            // Get mid document data
+            const getMidsData = async () => {
+                fileStatusMid.innerText = "Loading";
+                try {
+                    const formData = {
+                        sessionValue: localStorage.getItem("session"),
+                        instructorName: localStorage.getItem("teacher"),
+                        className: localStorage.getItem("class"),
+                        courseName: localStorage.getItem("course"),
+                        doctype: "question paper",
+                        subtype: "mid"
+                    };
+
+                    const response = await fetch('http://localhost:5000/api/teacher/check-document', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData), // Send FormData directly
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        let path = data.document.path;
+                        path = path.replace(/\\/g, '/');
+                        const filePath = `http://localhost:5000/${path}`;
+
+                        fileStatusMid.innerText = "Open";
+                        document.getElementById("file-btn-mid").addEventListener("click", () => {
+                            window.open(filePath, "_blank");
+                        });
+
+                    } else {
+                        fileStatusMid.innerText = "Upload";
+                        const inputPDF = document.getElementById("midUpload");
+
+                        document.getElementById("file-btn-mid").addEventListener("click", () => {
+                            inputPDF.click();
+                        });
+                        inputPDF.addEventListener("change", function () {
+                            handleFileClick("question paper", "mid", event);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error fetching file', error);
+                    alert('An error occurred while fetching the file.', error);
+                }
+            };
+            getMidsData();
+
+            // Get final document data
+            const getFinalsData = async () => {
+                fileStatusFinal.innerText = "Loading";
+                try {
+                    const formData = {
+                        sessionValue: localStorage.getItem("session"),
+                        instructorName: localStorage.getItem("teacher"),
+                        className: localStorage.getItem("class"),
+                        courseName: localStorage.getItem("course"),
+                        doctype: "question paper",
+                        subtype: "final"
+                    };
+
+                    const response = await fetch('http://localhost:5000/api/teacher/check-document', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData), // Send FormData directly
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        let path = data.document.path;
+                        path = path.replace(/\\/g, '/');
+                        const filePath = `http://localhost:5000/${path}`;
+
+                        fileStatusFinal.innerText = "Open";
+                        document.getElementById("file-btn-final").addEventListener("click", () => {
+                            window.open(filePath, "_blank");
+                        });
+
+                    } else {
+                        fileStatusFinal.innerText = "Upload";
+                        const inputPDF = document.getElementById("finalUpload");
+                        document.getElementById("file-btn-final").addEventListener("click", () => {
+                            inputPDF.click();
+                        });
+                        inputPDF.addEventListener("change", function () {
+                            handleFileClick("question paper", "final", event);
+                        });
+                    }
+                } catch (error) {
+                    console.error('Error fetching file', error);
+                    alert('An error occurred while fetching the file.', error);
+                }
+            };
+            getFinalsData();
+
+            // Set session, teacher, class, and course info
             document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
             document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
             document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
             document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
         });
-        async function handleFileUpload(type, event) {
+
+        async function handleFileClick(type , subtype , event) {
             const file = event.target.files[0]; // Get the selected file
-    
+
             // Validate the file type
             if (!file || file.type !== 'application/pdf') {
                 showUploadStatus('Please upload a valid PDF file.', 'error');
                 return;
             }
-    
+
             // Retrieve required data from localStorage
             const classValue = localStorage.getItem('class');
             const teacherName = localStorage.getItem('teacher');
             const sessionValue = localStorage.getItem('session');
             const courseValue = localStorage.getItem('course');
-    
+
             // Validate localStorage values
             if (!classValue || !teacherName || !sessionValue || !courseValue) {
                 showUploadStatus('Missing data in localStorage. Check inputs.', 'error');
                 return;
             }
-    
+
             // Prepare FormData
             const formData = new FormData();
             formData.append('file', file);
@@ -193,15 +327,16 @@ const token = localStorage.getItem('token');
             formData.append('session', sessionValue);
             formData.append('course', courseValue);
             formData.append('doctype', type); // Add the document type (e.g., 'mid' or 'final')
-    
+            formData.append('subtype', subtype); // Add the document type (e.g., 'mid' or 'final')
+
             try {
                 // Send the file to the server
                 const response = await fetch('http://localhost:5000/api/teacher/document', {
                     method: 'POST',
                     body: formData,
-                    headers:formData
+                    headers: formData
                 });
-    
+
                 if (response.ok) {
                     const result = await response.json();
                     showUploadStatus(`File uploaded successfully: ${result.message}`, 'success');
@@ -216,21 +351,20 @@ const token = localStorage.getItem('token');
                 event.target.value = ''; // Clear the file input
             }
         }
-    
+
         // Display upload status messages
         function showUploadStatus(message, type) {
             const status = document.getElementById('uploadStatus');
             status.textContent = message;
-            status.className = `text-center py-2 px-4 rounded-lg ${
-                type === 'success' ? 'bg-green-500' : 'bg-red-500'
-            }`;
+            status.className = `text-center py-2 px-4 rounded-lg ${type === 'success' ? 'bg-green-500' : 'bg-red-500'
+                }`;
             status.style.display = 'block';
             setTimeout(() => {
                 status.style.display = 'none';
             }, 3000);
         }
     </script>
-    
+
 </body>
 
 </html>

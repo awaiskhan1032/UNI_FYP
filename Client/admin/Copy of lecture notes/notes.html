@@ -28,48 +28,48 @@
 
 <body class="bg-gray-100 min-h-screen font-sans">
     <div
-    class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
-    <nav>
-        <ul class="space-y-4">
-            <li><a href="../Home/home.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
-            </li>
-            <li><a href="../course outline/outline.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
-                    Outline</a></li>
-            <li><a href="../course description/resdes.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
-                    Description</a></li>
-            <li><a href="../Copy of lecture notes/notes.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
-                    Notes</a></li>
-            <li><a href="../Copy of Question papers/papers.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
-                    Papers</a></li>
-            <li><a href="../Model solution/modelsol.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
-                    Solutions</a></li>
-            <li><a href="../samples/samples.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
-            </li>
-            <li><a href="../Course log/courselog.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
-                    Log</a></li>
-            <li><a href="../Outcome Assesment/assesment.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
-                    Assessment</a></li>
-            <li><a href="../Course folder verfication report/resverf.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
-                    Verification</a></li>
-            <li><a href="../Manage logins/managelogin.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
-                    Login</a></li>
-            <li><a href="./login/login.html"
-                    class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
-            </li>
-        </ul>
-    </nav>
-</div>
+        class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+        <nav>
+            <ul class="space-y-4">
+                <li><a href="../Home/home.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
+                </li>
+                <li><a href="../course outline/outline.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Outline</a></li>
+                <li><a href="../course description/resdes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Description</a></li>
+                <li><a href="../Copy of lecture notes/notes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
+                        Notes</a></li>
+                <li><a href="../Copy of Question papers/papers.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
+                        Papers</a></li>
+                <li><a href="../Model solution/modelsol.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
+                        Solutions</a></li>
+                <li><a href="../samples/samples.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
+                </li>
+                <li><a href="../Course log/courselog.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Log</a></li>
+                <li><a href="../Outcome Assesment/assesment.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
+                        Assessment</a></li>
+                <li><a href="../Course folder verfication report/resverf.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
+                        Verification</a></li>
+                <li id="manage-login-btn"><a href="../Manage logins/managelogin.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
+                        Login</a></li>
+                <li><a href="./login/login.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
     <div class="ml-[calc(100vw/5)] flex flex-col items-center py-8 space-y-6">
         <!-- Page Heading -->
         <div class="text-center">
@@ -77,32 +77,33 @@
             <p class="text-gray-600">Manage notes week by week</p>
         </div>
         <div
-        class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
-        <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
-        <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Session:</span>
-                <p id="sessionInfo" class="text-gray-700"></p>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Teacher:</span>
-                <p id="teacherInfo" class="text-gray-700"></p>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Class:</span>
-                <p id="classInfo" class="text-gray-700"></p>
-            </div>
-            <div class="flex items-center space-x-2">
-                <span class="font-bold text-purple-900">Course:</span>
-                <p id="courseInfo" class="text-gray-700"></p>
+            class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300">
+            <h2 class="text-xl font-semibold text-purple-700">Current Session Details</h2>
+            <div class="grid grid-cols-2 gap-4 w-full max-w-md text-left">
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Session:</span>
+                    <p id="sessionInfo" class="text-gray-700"></p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Teacher:</span>
+                    <p id="teacherInfo" class="text-gray-700"></p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Class:</span>
+                    <p id="classInfo" class="text-gray-700"></p>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <span class="font-bold text-purple-900">Course:</span>
+                    <p id="courseInfo" class="text-gray-700"></p>
+                </div>
             </div>
         </div>
-    </div>
 
         <!-- Week Selection -->
         <div>
             <label for="week-select" class="block text-lg font-medium text-gray-700">Select Week</label>
-            <select id="week-select" class="mt-2 block w-40 p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
+            <select id="week-select"
+                class="mt-2 block w-40 p-2 border border-gray-300 rounded-lg shadow-sm focus:ring-purple-500 focus:border-purple-500">
                 <option value="" disabled selected>Select Week</option>
                 <!-- Options for weeks -->
                 <script>
@@ -120,10 +121,9 @@
             <!-- File Upload -->
             <div class="flex flex-col space-y-4">
                 <input type="file" id="fileUpload" accept=".pdf" class="hidden">
-                <button
-                    class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition"
-                    onclick="document.getElementById('fileUpload').click()">
-                    Upload PDF
+                <button class="bg-purple-600 text-white py-2 px-4 rounded-lg hover:bg-purple-700 transition"
+                    id="file-btn">
+                    <span id="file-status"></span> PDF
                 </button>
                 <div id="fileList" class="text-gray-700 space-y-2"></div>
             </div>
@@ -131,17 +131,19 @@
     </div>
 
     <script>
+        const state = {
+            selectedWeek: null
+        };
 
-// token starts here
-const token = localStorage.getItem('token');
+        // token starts here
+        const token = localStorage.getItem('token');
         if (token) {
             const payload = JSON.parse(atob(token.split('.')[1]));
             const isExpired = payload.exp * 1000 < Date.now();
             const role = payload.role || "";
 
             if (role === 'teacher') {
-                document.getElementById('add-course-btn').style.display = 'none';
-                document.getElementById('or-text').style.display = 'none';
+
                 document.getElementById('manage-login-btn').style.display = 'none';
             }
 
@@ -181,23 +183,75 @@ const token = localStorage.getItem('token');
 
         //token ends here
 
-         document.addEventListener('DOMContentLoaded', () => {
+        async function loadFileStatus() {
+            const fileStatus = document.getElementById("file-status");
+            fileStatus.innerText = "Week";
+
+            try {
+                let weekValue;
+                document.getElementById('week-select').addEventListener('change', async (event) => {
+                    const week = event.target.value;
+                    state.selectedWeek = week;
+                    document.getElementById('modalTitle').textContent = `Week ${week} - Lecture Notes`;
+                    weekValue = state.selectedWeek;
+
+                    const formData = {
+                        sessionValue: localStorage.getItem("session"),
+                        instructorName: localStorage.getItem("teacher"),
+                        className: localStorage.getItem("class"),
+                        courseName: localStorage.getItem("course"),
+                        doctype: "lecture notes",
+                        week: weekValue
+                    };
+
+                    const response = await fetch('http://localhost:5000/api/teacher/check-document', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify(formData),
+                    });
+
+                    if (response.ok) {
+                        const data = await response.json();
+                        let path = data.document.path.replace(/\\/g, '/');
+                        const filePath = `http://localhost:5000/${path}`;
+
+                        fileStatus.innerText = "Open";
+                        document.getElementById("file-btn").addEventListener("click", () => {
+                            window.open(filePath, "_blank");
+                        });
+
+                    } else {
+                        fileStatus.innerText = "Upload";
+
+                        const inputPDF = document.getElementById("fileUpload");
+                        document.getElementById("file-btn").addEventListener("click", () => {
+                            inputPDF.click();
+                        });
+
+                        inputPDF.addEventListener("change", function (event) {
+                            handleFileClick("lecture notes", event);
+                        });
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error fetching file', error);
+                alert('An error occurred while fetching the file.', error);
+            }
+
             document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
             document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
             document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
             document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
-        });
-        const state = {
-            selectedWeek: null
-        };
+        }
 
-        document.getElementById('week-select').addEventListener('change', (event) => {
-            const week = event.target.value;
-            state.selectedWeek = week;
-            document.getElementById('modalTitle').textContent = `Week ${week} - Lecture Notes`;
-        });
+        document.addEventListener('DOMContentLoaded', loadFileStatus);
 
-        document.getElementById('fileUpload').addEventListener('change', async (event) => {
+
+
+        const handleFileClick = async (type, event) => {
             const file = event.target.files[0];
             if (!file || file.type !== 'application/pdf') {
                 alert('Please upload a valid PDF file.');
@@ -216,15 +270,21 @@ const token = localStorage.getItem('token');
             }
 
             const formData = new FormData();
-            
-            
+
+
             formData.append('file', file);
             formData.append('week', state.selectedWeek);
-            formData.append('courseTitle', courseTitle);
+            formData.append('doctype', type);
 
-            try {                
-                const response = await fetch('http://localhost:5000/api/teacher/lecture-notes/document', {
+            try {
+                const response = await fetch('http://localhost:5000/api/teacher/document', {
                     method: 'POST',
+                    headers: {
+                        'session': localStorage.getItem('session'),
+                        'teacher': localStorage.getItem('teacher'),
+                        'class': localStorage.getItem('class'),
+                        'course': localStorage.getItem('course'),
+                    },
                     body: formData,
                 });
 
@@ -241,9 +301,10 @@ const token = localStorage.getItem('token');
             } finally {
                 event.target.value = ''; // Reset file input
             }
-        });
+
+        }
+
     </script>
 </body>
 
 </html>
-    

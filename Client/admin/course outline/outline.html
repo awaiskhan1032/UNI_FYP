@@ -65,7 +65,7 @@
                     <li><a href="../Course folder verfication report/resverf.html"
                             class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
                             Verification</a></li>
-                    <li><a href="../Manage logins/managelogin.html"
+                    <li id="manage-login-btn"><a href="../Manage logins/managelogin.html"
                             class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
                             Login</a></li>
                     <li><a href="./login/login.html"
@@ -112,11 +112,10 @@
                     class="relative flex flex-col items-center justify-center w-64 h-64 bg-gradient-to-br from-purple-400 via-purple-500 to-purple-600 text-white rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:scale-110 cursor-pointer">
                     <i class="fa-solid fa-file-alt text-5xl mb-2"></i>
                     <span class="text-xl font-semibold tracking-wide mb-2">Mid + Terminal</span>
-                    <input type="file" id="beforeUpload" accept=".pdf" class="hidden"
-                        onchange="handleFileUpload('mid+terminal', event)">
+                    <input type="file" id="beforeUpload" accept=".pdf" class="hidden">
                     <button class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-6 rounded-lg transition"
-                        onclick="document.getElementById('beforeUpload').click()">
-                        <i class="fa-solid fa-upload mr-2"></i>Upload PDF
+                        id="file-btn">
+                        <i class="fa-solid fa-upload mr-2"></i><span id="file-status"></span> PDF
                     </button>
                     <div id="beforeFileList" class="mt-4"></div>
                 </div>
@@ -137,8 +136,7 @@
             const role = payload.role || "";
 
             if (role === 'teacher') {
-                document.getElementById('add-course-btn').style.display = 'none';
-                document.getElementById('or-text').style.display = 'none';
+
                 document.getElementById('manage-login-btn').style.display = 'none';
             }
 
@@ -177,24 +175,70 @@
         }
 
         //token ends here
+        const fileStatus = document.getElementById("file-status")
+        let filePath;
 
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            fileStatus.innerText = "Loading"
+            try {
+                const formData = {
+                    sessionValue: localStorage.getItem("session"),
+                    instructorName: localStorage.getItem("teacher"),
+                    className: localStorage.getItem("class"),
+                    courseName: localStorage.getItem("course"),
+                    doctype:"course outline"
+                };
+
+
+                const response = await fetch('http://localhost:5000/api/teacher/check-document', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData), // Send FormData directly
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    path = data.document.path;
+
+                    path = path.replace(/\\/g, '/');
+                    const filePath = `http://localhost:5000/${path}`;
+
+                    fileStatus.innerText = "Open"
+                    document.getElementById("file-btn").addEventListener("click", () => {
+                        window.open(filePath, "_blank");
+                    })
+
+                } else {
+                    fileStatus.innerText = "Upload"
+                    const inputPDF = document.getElementById("beforeUpload");
+                    document.getElementById("file-btn").addEventListener("click", () => {
+                        inputPDF.click();
+                    })
+                    inputPDF.addEventListener("change", function () {
+                        handleFileClick("course outline", event)
+                    })
+                }
+            } catch (error) {
+                console.error('Error fetching file', error);
+                alert('An error occurred while fetching the file.',error);
+            }
             document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
             document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
             document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
             document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
         });
 
-        async function handleFileUpload(type, event) {
 
-
+        async function handleFileClick(type, event) {
 
             const file = event.target.files[0];
             if (!file) return;
-
             const formData = new FormData();
             formData.append('file', file);
-            formData.append('doctype', type === 'before' ? 'course outline midterm' : 'course outline final'); // Append doctype
+
+            formData.append('doctype', type); // Append doctype
 
             try {
                 const response = await fetch('http://localhost:5000/api/teacher/document', {

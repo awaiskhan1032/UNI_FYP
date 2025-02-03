@@ -13,6 +13,9 @@ const documentSchema = new mongoose.Schema(
         subtype:{
             type: String,
         },
+        week:{
+            type: String,
+        },
         teaching: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'Teaching',
