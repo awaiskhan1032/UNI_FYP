@@ -186,173 +186,190 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            const courseValue = localStorage.getItem("course");
-            const instructorValue = localStorage.getItem("teacher");
-            const classValue = localStorage.getItem("class");
-            const session = localStorage.getItem("session");
-    
-            const courseName = document.getElementById("course-name");
-            const instructorName = document.getElementById("instructor-name");
-    
-            // Set the course and instructor values on page load
-            courseName.value = courseValue;
-            instructorName.value = instructorValue;
-    
-            // Function to generate log rows dynamically
-            function generateRows() {
-                const tbody = document.getElementById('log-rows');
-                for (let i = 0; i < 34; i++) {
-                    const row = document.createElement('tr');
-                    row.className = i % 2 === 1 ? "bg-gray-200" : "";
-    
-                    // Create each cell with corresponding IDs
-                    row.innerHTML = `
-                        <td class="border border-black p-2">
-                            <input type="date" class="w-full outline-none bg-transparent" id="date-${i}" />
-                        </td>
-                        <td class="border border-black p-2">
-                            <input type="text" class="w-full outline-none bg-transparent" value="" id="duration-${i}" />
-                        </td>
-                        <td class="border border-black p-2">
-                            <textarea rows="4" class="w-full outline-none resize-none bg-transparent" id="topic-${i}"></textarea>
-                        </td>
-                        <td class="border border-black p-2">
-                            <input type="text" class="w-full outline-none bg-transparent" id="evaluation-${i}" />
-                        </td>
-                        <td class="border border-black p-2">
-                            <input type="text" class="w-full outline-none bg-transparent" id="signature-${i}" />
-                        </td>
-                    `;
-    
-                    tbody.appendChild(row);
-                }
-            }
-    
-            // Generate rows on page load
-            window.onload = generateRows;
-    
-            // Function to collect all data from the form and prepare it for posting
-            const collectFormData = () => {
-                const formData = {
-                    catalogNumber: document.getElementById("catalog-number").value,
-                    logEntries: []
-                };
-    
-                // Collect all the rows from the table
-                const logRows = document.querySelectorAll("#log-rows tr");
-                logRows.forEach(row => {
-                    const date = row.querySelector("[id^='date-']").value;
-                    const duration = row.querySelector("[id^='duration-']").value;
-                    const topic = row.querySelector("[id^='topic-']").value;
-                    const evaluationInstrument = row.querySelector("[id^='evaluation-']").value;
-                    const signature = row.querySelector("[id^='signature-']").value;
-    
-                    // Add row data to the log entries
-                    formData.logEntries.push({
-                        date,
-                        duration,
-                        topic,
-                        evaluationInstrument,
-                        signature
-                    });
-                });
-    
-                return formData;
-            };
-    
-            // Function to fetch existing course log data from the server
-            const fetchLogData = async () => {
-                const headers = {
-                    courseName: courseValue,
-                    instructorName: instructorValue,
-                    className: classValue,
-                    session: session
-                };
+    // Get stored values from localStorage
+    const courseValue = localStorage.getItem("course") || '';
+    const instructorValue = localStorage.getItem("teacher") || '';
+    const classValue = localStorage.getItem("class") || '';
+    const session = localStorage.getItem("session") || '';
 
-                
-    
-                try {
-                    const response = await fetch("http://localhost:5000/api/teacher/course/course-log", {
-                        method: "GET",
-                        headers: {
-                            "Content-Type": "application/json",
-                            ...headers
-                        }
-                    });
-    
-                    if (response.ok) {
-                        const data = await response.json();
-                        populateForm(data);
-                    } else {
-                        const errorData = await response.json();
-                        alert("Error fetching data: " + errorData.message);
-                    }
-                } catch (error) {
-                    console.error("Error fetching data:", error);
-                    alert("An error occurred while fetching the data.");
-                }
+    // Get DOM elements
+    const courseName = document.getElementById("course-name");
+    const instructorName = document.getElementById("instructor-name");
+    const logTable = document.getElementById('log-rows');
+
+    // Set initial values
+    if (courseName) courseName.value = courseValue;
+    if (instructorName) instructorName.value = instructorValue;
+
+    // Function to safely set input values
+    const safeSetValue = (elementId, value) => {
+        const element = document.getElementById(elementId);
+        if (element && value !== null && value !== undefined) {
+            element.value = value;
+        }
+    };
+
+    // Function to generate log rows dynamically
+    function generateRows() {
+        if (!logTable) return;
+        
+        logTable.innerHTML = ''; // Clear existing rows
+        
+        for (let i = 0; i < 34; i++) {
+            const row = document.createElement('tr');
+            row.className = i % 2 === 1 ? "bg-gray-200" : "";
+
+            row.innerHTML = `
+                <td class="border border-black p-2">
+                    <input type="date" class="w-full outline-none bg-transparent" id="date-${i}" />
+                </td>
+                <td class="border border-black p-2">
+                    <input type="text" class="w-full outline-none bg-transparent" id="duration-${i}" />
+                </td>
+                <td class="border border-black p-2">
+                    <textarea rows="4" class="w-full outline-none resize-none bg-transparent" id="topic-${i}"></textarea>
+                </td>
+                <td class="border border-black p-2">
+                    <input type="text" class="w-full outline-none bg-transparent" id="evaluation-${i}" />
+                </td>
+                <td class="border border-black p-2">
+                    <input type="text" class="w-full outline-none bg-transparent" id="signature-${i}" />
+                </td>
+            `;
+
+            logTable.appendChild(row);
+        }
+    }
+
+    // Function to collect form data
+    const collectFormData = () => {
+        const catalogNumber = document.getElementById("catalog-number")?.value || '';
+        const logEntries = [];
+
+        for (let i = 0; i < 34; i++) {
+            const entry = {
+                date: document.getElementById(`date-${i}`)?.value || '',
+                duration: document.getElementById(`duration-${i}`)?.value || '',
+                topic: document.getElementById(`topic-${i}`)?.value || '',
+                evaluationInstrument: document.getElementById(`evaluation-${i}`)?.value || '',
+                signature: document.getElementById(`signature-${i}`)?.value || ''
             };
-    
-            // Function to populate the form with the fetched data
-            const populateForm = (data) => {
-                // Assuming data contains log entries with date, duration, topic, evaluationInstrument, signature
-                const logEntries = data.logEntries || [];
-    
-                logEntries.forEach((log, i) => {
-                    if (i < 34) { // Only populate up to 34 rows                        
-                        document.getElementById(`date-${i}`).value = log.date || '';
-                        document.getElementById(`duration-${i}`).value = log.duration || '';
-                        document.getElementById(`topic-${i}`).value = log.topic || '';
-                        document.getElementById(`evaluation-${i}`).value = log.evaluationInstrument || '';
-                        document.getElementById(`signature-${i}`).value = log.signature || '';
-                    }
-                });
-            };
-    
-            // Fetch the existing course log data on page load
-            fetchLogData();
-    
-            // Submit the data to the API
-            const submitData = async () => {
-                const data = collectFormData();
-    
-                // Prepare the headers with the course, instructor, class, and session values
-                const headers = {
-                    courseName: courseValue,
-                    instructorName: instructorValue,
-                    className: classValue,
-                    session: session
-                };
-    
-                // Send the data to the API
-                try {
-                    const response = await fetch("http://localhost:5000/api/teacher/course/course-log", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json",
-                            ...headers
-                        },
-                        body: JSON.stringify(data)
-                    });
-    
-                    if (response.ok) {
-                        alert("Data submitted successfully");
-                    } else {
-                        const errorData = await response.json();
-                        alert("Error: " + errorData.message);
-                    }
-                } catch (error) {
-                    console.error("Error submitting data:", error);
-                    alert("An error occurred while submitting the data.");
-                }
-            };
-    
-            // Handle form submission
-            document.getElementById("submit-btn").addEventListener("click", (e) => {
-                e.preventDefault();
-                submitData();
-            });
+            logEntries.push(entry);
+        }
+
+        return {
+            catalogNumber,
+            logEntries
+        };
+    };
+
+    // Function to populate form with fetched data
+    const populateForm = (data) => {
+        if (!data || !data.logEntries) return;
+
+        const logEntries = data.logEntries;
+        
+        // Safely set catalog number
+        safeSetValue("catalog-number", data.catalogNumber);
+
+        // Populate log entries
+        logEntries.forEach((log, i) => {
+            if (i < 34) {
+                safeSetValue(`date-${i}`, log.date);
+                safeSetValue(`duration-${i}`, log.duration);
+                safeSetValue(`topic-${i}`, log.topic);
+                safeSetValue(`evaluation-${i}`, log.evaluationInstrument);
+                safeSetValue(`signature-${i}`, log.signature);
+            }
         });
+    };
+
+    // Function to fetch existing log data
+    const fetchLogData = async () => {
+        if (!courseValue || !instructorValue || !classValue || !session) {
+            console.warn('Missing required values from localStorage');
+            return;
+        }
+
+        const headers = {
+            courseName: courseValue,
+            instructorName: instructorValue,
+            className: classValue,
+            session: session
+        };
+
+        try {
+            const response = await fetch("http://localhost:5000/api/teacher/course/course-log", {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                    ...headers
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                populateForm(data);
+            } else {
+                const errorData = await response.json();
+                console.error("Error fetching data:", errorData.message);
+            }
+        } catch (error) {
+            console.error("Error fetching data:", error);
+        }
+    };
+
+    // Function to submit data
+    const submitData = async () => {
+        const data = collectFormData();
+        
+        if (!courseValue || !instructorValue || !classValue || !session) {
+            alert('Missing required information. Please check your login details.');
+            return;
+        }
+
+        const headers = {
+            courseName: courseValue,
+            instructorName: instructorValue,
+            className: classValue,
+            session: session
+        };
+
+        try {
+            const response = await fetch("http://localhost:5000/api/teacher/course/course-log", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    ...headers
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert("Data submitted successfully");
+            } else {
+                const errorData = await response.json();
+                alert("Error: " + (errorData.message || "Failed to submit data"));
+            }
+        } catch (error) {
+            console.error("Error submitting data:", error);
+            alert("An error occurred while submitting the data.");
+        }
+    };
+
+    // Initialize the page
+    generateRows();
+    fetchLogData();
+
+    // Add event listener for form submission
+    const submitBtn = document.getElementById("submit-btn");
+    if (submitBtn) {
+        submitBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            submitData();
+        });
+    }
+});
     </script>
     
 

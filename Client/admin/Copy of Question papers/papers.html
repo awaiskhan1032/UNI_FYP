@@ -109,10 +109,9 @@
 
                 <div id="mid-panel" class="w-full flex flex-col items-center space-y-4">
                     <input type="file" id="midUpload" accept=".pdf" class="hidden">
-                    <button id="file-btn-mid"
-                        class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg" >
-                    <i class="fas fa-upload mr-2"></i>
-                    <span id="file-status-mid"></span> PDF
+                    <button id="file-btn-mid" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg">
+                        <i class="fas fa-upload mr-2"></i>
+                        <span id="file-status-mid"></span> PDF
                     </button>
                     <div id="midFileList" class="w-full space-y-2"></div>
                 </div>
@@ -126,7 +125,7 @@
                 <div id="final-panel" class="w-full flex flex-col items-center space-y-4">
                     <input type="file" id="finalUpload" accept=".pdf" class="hidden"> <button id="file-btn-final"
                         class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg">
-                    <i class="fas fa-upload mr-2"></i><span id="file-status-final"></span> PDF
+                        <i class="fas fa-upload mr-2"></i><span id="file-status-final"></span> PDF
                     </button>
                     <div id="finalFileList" class="w-full space-y-2"></div>
                 </div>
@@ -191,7 +190,7 @@
             const fileStatusFinal = document.getElementById("file-status-final");
             const fileBtnMid = document.getElementById("file-btn-mid");
             const fileBtnFinal = document.getElementById("file-btn-final");
-            
+
             // Get mid document data
             const getMidsData = async () => {
                 fileStatusMid.innerText = "Loading";
@@ -223,6 +222,28 @@
                         document.getElementById("file-btn-mid").addEventListener("click", () => {
                             window.open(filePath, "_blank");
                         });
+                        const originalButtonMid = document.getElementById("file-btn-mid")
+                        if (originalButtonMid) {
+                            let clonedButtonMid = originalButtonMid.cloneNode(true); // Clone button
+                            clonedButtonMid.id = "file-btn-mid-2"; // Update the ID
+
+                            let clonedInputMid = document.getElementById("midUpload").cloneNode(true); // Clone file input                                
+                            clonedInputMid.id = "midUpload-2"; // Update input ID
+                            // console.log(clonedInput);
+                            let clonedStatusMid = clonedButtonMid.querySelector("#file-status-mid");                            
+                            if (clonedStatusMid) {
+                                clonedStatusMid.id = "file-status-2"
+                                clonedStatusMid.innerText = "Upload"
+                            }
+                            originalButtonMid.parentNode.appendChild(clonedInputMid);
+                            originalButtonMid.parentNode.appendChild(clonedButtonMid);
+                            clonedButtonMid.addEventListener("click", () => {
+                                clonedInputMid.click();
+                            })
+                            clonedInputMid.addEventListener("change", function (event) {
+                                handleFileClick("question paper", "mid", event)
+                            })
+                        }
 
                     } else {
                         fileStatusMid.innerText = "Upload";
@@ -273,6 +294,29 @@
                         document.getElementById("file-btn-final").addEventListener("click", () => {
                             window.open(filePath, "_blank");
                         });
+                        const originalButtonFinal = document.getElementById("file-btn-final")                        
+                        if (originalButtonFinal) {
+                            let clonedButtonFinal = originalButtonFinal.cloneNode(true); // Clone button
+                            clonedButtonFinal.id = "file-btn-final-2"; // Update the ID
+
+                            let clonedInputFinal = document.getElementById("finalUpload").cloneNode(true); // Clone file input                                
+                            clonedInputFinal.id = "finalUpload-2"; // Update input ID
+                            // console.log(clonedInput);
+                            let clonedStatusFinal = clonedButtonFinal.querySelector("#file-status-final");
+                            if (clonedStatusFinal) {
+                                clonedStatusFinal.id = "file-status-2"
+                                clonedStatusFinal.innerText = "Upload"
+                            }
+                            originalButtonFinal.parentNode.appendChild(clonedInputFinal);
+                            originalButtonFinal.parentNode.appendChild(clonedButtonFinal);
+                            clonedButtonFinal.addEventListener("click", () => {
+                                clonedInputFinal.click();
+                            })
+                            clonedInputFinal.addEventListener("change", function (event) {
+                                handleFileClick("question paper", "final", event)
+                            })
+                        }
+                       
 
                     } else {
                         fileStatusFinal.innerText = "Upload";
@@ -298,7 +342,7 @@
             document.getElementById('courseInfo').textContent = localStorage.getItem('course') || "No course selected";
         });
 
-        async function handleFileClick(type , subtype , event) {
+        async function handleFileClick(type, subtype, event) {
             const file = event.target.files[0]; // Get the selected file
 
             // Validate the file type

@@ -183,17 +183,42 @@
 
         //token ends here
 
+
+
         async function loadFileStatus() {
             const fileStatus = document.getElementById("file-status");
-            fileStatus.innerText = "Week";
+            fileStatus.innerText = "Week"; // Default status
 
             try {
                 let weekValue;
-                document.getElementById('week-select').addEventListener('change', async (event) => {
-                    const week = event.target.value;
-                    state.selectedWeek = week;
-                    document.getElementById('modalTitle').textContent = `Week ${week} - Lecture Notes`;
-                    weekValue = state.selectedWeek;
+                const weekSelect = document.getElementById('week-select');
+                const fileBtn = document.getElementById("file-btn");
+                const inputPDF = document.getElementById("fileUpload");
+
+                // Clear previous event listeners
+                const newFileBtn = fileBtn.cloneNode(true);
+                fileBtn.replaceWith(newFileBtn);
+
+                // Click event for the button
+                newFileBtn.addEventListener("click", () => {
+                    if (newFileBtn.dataset.fileUrl) {
+                        window.open(newFileBtn.dataset.fileUrl, "_blank");
+                    } else {
+                        inputPDF.click();
+                    }
+                });
+
+                inputPDF.addEventListener("change", function (event) {
+                    handleFileClick("lecture notes", event);
+                });
+
+                weekSelect.addEventListener('change', async (event) => {
+                    const fileStatus = document.getElementById("file-status"); // Select fresh DOM element
+                    fileStatus.innerText = "Checking..."; // ✅ **Properly updates status**
+
+                    weekValue = event.target.value;
+                    state.selectedWeek = weekValue;
+                    document.getElementById('modalTitle').textContent = `Week ${weekValue} - Lecture Notes`;
 
                     const formData = {
                         sessionValue: localStorage.getItem("session"),
@@ -204,43 +229,75 @@
                         week: weekValue
                     };
 
-                    const response = await fetch('http://localhost:5000/api/teacher/check-document', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json',
-                        },
-                        body: JSON.stringify(formData),
-                    });
-
-                    if (response.ok) {
-                        const data = await response.json();
-                        let path = data.document.path.replace(/\\/g, '/');
-                        const filePath = `http://localhost:5000/${path}`;
-
-                        fileStatus.innerText = "Open";
-                        document.getElementById("file-btn").addEventListener("click", () => {
-                            window.open(filePath, "_blank");
+                    try {
+                        const response = await fetch('http://localhost:5000/api/teacher/check-document', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(formData),
                         });
 
-                    } else {
-                        fileStatus.innerText = "Upload";
+                        if (response.ok) {
+                            // ✅ Document found → Show "Open"
+                            const data = await response.json();
+                            let path = data.document.path.replace(/\\/g, '/');
+                            const filePath = `http://localhost:5000/${path}`;
 
-                        const inputPDF = document.getElementById("fileUpload");
-                        document.getElementById("file-btn").addEventListener("click", () => {
-                            inputPDF.click();
-                        });
+                            setTimeout(() => {
+                                fileStatus.innerText = "Open"; // ✅ **Force UI update**
+                                newFileBtn.dataset.fileUrl = filePath; // Store URL for button
+                            }, 100); // Small delay to ensure update is visible
 
-                        inputPDF.addEventListener("change", function (event) {
-                            handleFileClick("lecture notes", event);
-                        });
+                            const originalButton = document.getElementById("file-btn")
+                            if (originalButton) {
+                                let clonedButton = originalButton.cloneNode(true); // Clone button
+                                clonedButton.id = "file-btn-2"; // Update the ID
+
+                                let clonedInput = document.getElementById("fileUpload").cloneNode(true); // Clone file input                                
+                                clonedInput.id = "fileUpload-2"; // Update input ID
+                                // console.log(clonedInput);
+                                let clonedStatus = clonedButton.querySelector("#file-status");
+                                if (clonedStatus) {
+                                    clonedStatus.id = "file-status-2"
+                                    clonedStatus.innerText = "Upload"
+                                }
+                                originalButton.parentNode.appendChild(clonedInput);
+                                originalButton.parentNode.appendChild(clonedButton);
+                                clonedButton.addEventListener("click", () => {
+                                    clonedInput.click();                                    
+                                })
+                                clonedInput.addEventListener("change", function (event) {
+                                    handleFileClick("lecture notes", event)
+                                })
+                            }
+                        } else {
+                            // ❌ Document not found → Show "Upload"
+                            setTimeout(() => {
+                                fileStatus.innerText = "Upload";
+                                delete newFileBtn.dataset.fileUrl;
+
+                                // Remove dynamically added nodes if they exist
+                                const clonedButton = document.getElementById("file-btn-2");
+                                const clonedInput = document.getElementById("fileUpload-2");
+                                const clonedStatus = document.getElementById("file-status-2");
+
+                                if (clonedButton) clonedButton.remove();
+                                if (clonedInput) clonedInput.remove();
+                                if (clonedStatus) clonedStatus.remove();
+                            }, 100);
+                        }
+                    } catch (error) {
+                        console.error("Error fetching file:", error);
+                        fileStatus.innerText = "Error"; // Show error state
                     }
                 });
 
             } catch (error) {
                 console.error('Error fetching file', error);
-                alert('An error occurred while fetching the file.', error);
+                fileStatus.innerText = "Error";
+                alert('An error occurred while fetching the file.');
             }
 
+            // Update UI with local storage values
             document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
             document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
             document.getElementById('classInfo').textContent = localStorage.getItem('class') || "No class selected";
@@ -250,8 +307,8 @@
         document.addEventListener('DOMContentLoaded', loadFileStatus);
 
 
-
         const handleFileClick = async (type, event) => {
+            console.log(event.target); 
             const file = event.target.files[0];
             if (!file || file.type !== 'application/pdf') {
                 alert('Please upload a valid PDF file.');

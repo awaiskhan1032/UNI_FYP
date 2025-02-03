@@ -98,9 +98,10 @@ exports.submitCourseLog = async (req, res) => {
     }
 
     // Loop through log entries and create CourseLog entries for each one
-    const courseLogs = [];
+    const courseLogs = []; 
 
     for (const log of logEntries) {
+      console.log(log);
       // Check if a CourseLog already exists with the same teaching and date
       let existingCourseLog = await CourseLog.findOne({
         teaching: teaching._id,
@@ -202,7 +203,6 @@ exports.getCourseLogs = async (req, res) => {
     // Fetch course logs related to this teaching entry
     const courseLogs = await CourseLog.find({ teaching: teaching._id })
       .select("date duration topic evaluationInstrument signature") // Select the necessary fields
-      .sort({ date: 1 }); // Optionally, sort by date or any other field
 
     // Respond with the logs
     res.status(200).json({

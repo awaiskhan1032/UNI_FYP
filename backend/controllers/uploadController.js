@@ -66,8 +66,8 @@ exports.uploadDocument = async (req, res) => {
   } = req.headers;
 
   const { doctype, week, subtype } = req.body; // Retrieve doctype from FormData
-console.log(classValue,teacherName,sessionValue,courseValue);
-  
+  console.log(classValue, teacherName, sessionValue, courseValue);
+
   if (!doctype) {
     return res.status(400).json({ message: "Doctype is required." });
   }
@@ -90,7 +90,6 @@ console.log(classValue,teacherName,sessionValue,courseValue);
     const teacher = await User.findOne({ name: teacherName, role: "teacher" });
     if (!teacher) {
       console.log("teacher not found");
-
       return res.status(404).json({ message: "Teacher not found" });
     }
 
@@ -98,14 +97,12 @@ console.log(classValue,teacherName,sessionValue,courseValue);
     const sessionEntry = await Session.findOne({ year, session });
     if (!sessionEntry) {
       console.log("session not found");
-
       return res.status(404).json({ message: "Session not found" });
     }
 
     const courseEntry = await Course.findOne({ courseTitle: courseValue });
     if (!courseEntry) {
       console.log("course not found");
-
       return res.status(404).json({ message: "Course not found" });
     }
 
@@ -117,33 +114,48 @@ console.log(classValue,teacherName,sessionValue,courseValue);
 
     if (!teaching) {
       console.log("teaching entry not found");
-
       return res.status(404).json({ message: "Teaching entry not found" });
     }
 
-    // Prepare document payload
-    const documentPayload = {
-      path: req.file.path,
+    // Check if a document with similar entries exists
+    let document = await Document.findOne({
       teaching: teaching._id,
       course: courseEntry._id,
       doctype,
-    };
-
-    // Include subtype if present
-    if (subtype) {
-      documentPayload.subtype = subtype;
-    }
-    if (week) {
-      documentPayload.week = week;
-    }
-
-    // Save the document in the Document model
-    const document = await Document.create(documentPayload);
-
-    res.status(201).json({
-      message: "File uploaded successfully",
-      document,
+      ...(subtype && { subtype }), // Only add subtype if it's present
+      ...(week && { week }), // Only add week if it's present
     });
+
+  
+    if (document) {
+      // Update the existing document
+      document.path = req.file.path;
+      document.updatedAt = new Date(); // Optional: update timestamp
+      await document.save();
+
+      return res.status(200).json({
+        message: "File updated successfully",
+        document,
+      });
+    } else {
+      // Prepare document payload for new entry
+      const documentPayload = {
+        path: req.file.path,
+        teaching: teaching._id,
+        course: courseEntry._id,
+        doctype,
+        ...(subtype && { subtype }), // Include subtype if present
+        ...(week && { week }), // Include week if present
+      };
+
+      // Save the new document
+      document = await Document.create(documentPayload);
+
+      return res.status(201).json({
+        message: "File uploaded successfully",
+        document,
+      });
+    }
   } catch (error) {
     console.error("Error saving document:", error.message);
     res

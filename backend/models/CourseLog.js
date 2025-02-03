@@ -6,7 +6,7 @@ const courseLogSchema = new mongoose.Schema({
         ref: 'Teaching',
     },
     date: {
-        type: Date,
+        type: String,
     },
     duration: {
         type: String,  // You can change this to a number if needed

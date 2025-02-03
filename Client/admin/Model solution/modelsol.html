@@ -126,7 +126,7 @@
         <!-- PDF Upload Section -->
         <div id="upload-section"
             class="p-5 text-center flex flex-col items-center justify-center gap-4 bg-purple-100 rounded-lg shadow-md border border-purple-300 hidden">
-            <h2 class="text-xl font-semibold text-purple-700">Upload Your Sample</h2>
+            <h2 class="text-xl font-semibold text-purple-700">Upload Your Solution</h2>
             <input type="file" id="sample-upload" accept=".pdf" class="hidden">
             <button id="file-btn" class="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg">
                 <i class="fas fa-upload mr-2"></i><span id="file-status"></span> PDF
@@ -224,6 +224,31 @@
 
                 fileStatus.innerText = "Open";
                 fileBtn.onclick = () => window.open(filePath, "_blank");  // Set event handler once
+
+                const originalButton = document.getElementById("file-btn")
+
+                    if (originalButton) {
+                        let clonedButton = originalButton.cloneNode(true); // Clone button
+                        clonedButton.id = "file-btn-2"; // Update the ID
+
+                        let clonedInput = document.getElementById("sample-upload").cloneNode(true); // Clone file input
+                        clonedInput.id = "sample-upload-2"; // Update input ID
+
+                        let clonedStatus = clonedButton.querySelector("#file-status");
+                        if (clonedStatus) {
+                            clonedStatus.id = "file-status-2"
+                            clonedStatus.innerText = "Upload"
+                        }
+
+                        originalButton.parentNode.appendChild(clonedInput);
+                        originalButton.parentNode.appendChild(clonedButton);
+                        clonedButton.addEventListener("click", () => {
+                            clonedInput.click();
+                        })
+                        clonedInput.addEventListener("change", function () {
+                            handleFileUpload(doctype,subtype, event)
+                        })
+                    }
             } else {
                 fileStatus.innerText = "Upload";
 

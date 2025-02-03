@@ -186,7 +186,7 @@
                     instructorName: localStorage.getItem("teacher"),
                     className: localStorage.getItem("class"),
                     courseName: localStorage.getItem("course"),
-                    doctype:"course outline"
+                    doctype: "course outline"
                 };
 
 
@@ -209,7 +209,30 @@
                     document.getElementById("file-btn").addEventListener("click", () => {
                         window.open(filePath, "_blank");
                     })
+                    const originalButton = document.getElementById("file-btn")
 
+                    if (originalButton) {
+                        let clonedButton = originalButton.cloneNode(true); // Clone button
+                        clonedButton.id = "file-btn-2"; // Update the ID
+
+                        let clonedInput = document.getElementById("beforeUpload").cloneNode(true); // Clone file input
+                        clonedInput.id = "beforeUpload-2"; // Update input ID
+
+                        let clonedStatus = clonedButton.querySelector("#file-status");
+                        if (clonedStatus) {
+                            clonedStatus.id = "file-status-2"
+                            clonedStatus.innerText = "Upload"
+                        }
+
+                        originalButton.parentNode.appendChild(clonedInput);
+                        originalButton.parentNode.appendChild(clonedButton);
+                        clonedButton.addEventListener("click", () => {
+                            clonedInput.click();
+                        })
+                        clonedInput.addEventListener("change", function () {
+                            handleFileClick("course outline", event)
+                        })
+                    }
                 } else {
                     fileStatus.innerText = "Upload"
                     const inputPDF = document.getElementById("beforeUpload");
@@ -222,7 +245,7 @@
                 }
             } catch (error) {
                 console.error('Error fetching file', error);
-                alert('An error occurred while fetching the file.',error);
+                alert('An error occurred while fetching the file.', error);
             }
             document.getElementById('sessionInfo').textContent = localStorage.getItem('session') || "No session selected";
             document.getElementById('teacherInfo').textContent = localStorage.getItem('teacher') || "No teacher selected";
