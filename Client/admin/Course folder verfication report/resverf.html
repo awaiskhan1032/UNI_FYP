@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,208 +25,337 @@
         }
     </style>
 </head>
+
 <body class="min-h-screen bg-white">
-    <div class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
+    <div
+        class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
         <nav>
             <ul class="space-y-4">
-                <li><a href="../Home/home.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a></li>
-                <li><a href="../course outline/outline.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Outline</a></li>
-                <li><a href="../course description/resdes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Description</a></li>
-                <li><a href="../Copy of lecture notes/notes.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture Notes</a></li>
-                <li><a href="../Copy of Question papers/papers.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question Papers</a></li>
-                <li><a href="../Model solution/modelsol.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model Solutions</a></li>
-                <li><a href="../samples/samples.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a></li>
-                <li><a href="../Course log/courselog.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Log</a></li>
-                <li><a href="../Outcome Assesment/assesment.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome Assessment</a></li>
-                <li><a href="../Course folder verfication report/resverf.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course Folder Verification</a></li>
-                <li><a href="../Manage logins/managelogin.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage Login</a></li>
-                <li><a href="./login/login.html" class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a></li>
+                <li><a href="../Home/home.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Home</a>
+                </li>
+                <li><a href="../course outline/outline.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Outline</a></li>
+                <li><a href="../course description/resdes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Description</a></li>
+                <li><a href="../Copy of lecture notes/notes.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Lecture
+                        Notes</a></li>
+                <li><a href="../Copy of Question papers/papers.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Question
+                        Papers</a></li>
+                <li><a href="../Model solution/modelsol.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Model
+                        Solutions</a></li>
+                <li><a href="../samples/samples.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Samples</a>
+                </li>
+                <li><a href="../Course log/courselog.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Log</a></li>
+                <li><a href="../Outcome Assesment/assesment.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
+                        Assessment</a></li>
+                <li><a href="../Course folder verfication report/resverf.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Folder Verification</a></li>
+                <li id="manage-login-btn"><a href="../Manage logins/managelogin.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
+                        Login</a></li>
+                <li><a href="./login/login.html"
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
+                </li>
             </ul>
         </nav>
     </div>
-   <div class="ml-[calc(100vw/5)] p-8">
-     <!-- Header Section -->
-     <div class="text-center">
-        <h2 class="text-lg font-semibold mb-1">Department of Computer Science</h2>
-        <h1 class="text-xl font-bold underline mb-8">Course Folder Verification Report</h1>
-    </div>
-
-    <!-- Top Information Table -->
-    <table class="w-4/5 mx-auto border-collapse mb-8">
-        <tbody>
-            <tr>
-                <td class="border border-black p-2 w-8"><b>1.</b></td>
-                <td class="border border-black p-2"><b>Program</b></td>
-                <td class="border border-black p-2"><input type="text" class="w-full outline-none"></td>
-                <td class="border border-black p-2 w-8"><b>2.</b></td>
-                <td class="border border-black p-2">
-                    <div class="flex items-center gap-1">
-                        <b>Semester: </b>
-                        <input type="text" class="w-16 outline-none">
-                    </div>
-                </td>
-                <td class="border border-black p-2 w-16"><input type="number" class="w-12 outline-none"></td>
-            </tr>
-            <tr>
-                <td class="border border-black p-2"><b>3.</b></td>
-                <td class="border border-black p-2"><b>Course Title</b></td>
-                <td class="border border-black p-2" colspan="4"><input type="text" class="w-full outline-none"></td>
-            </tr>
-            <tr>
-                <td class="border border-black p-2"><b>4.</b></td>
-                <td class="border border-black p-2"><b>Instructor Name</b></td>
-                <td class="border border-black p-2" colspan="4"><input type="text" class="w-full outline-none"></td>
-            </tr>
-            <tr>
-                <td class="border border-black p-2"><b>5.</b></td>
-                <td class="border border-black p-2"><b>Reviewer Name</b></td>
-                <td class="border border-black p-2" colspan="4"><input type="text" class="w-full outline-none"></td>
-            </tr>
-        </tbody>
-    </table>
-
-    <!-- Checklist Header -->
-    <h2 class="text-center font-bold underline text-lg mb-8">CHECKLIST</h2>
-
-    <!-- Checklist Table -->
-    <table class="w-11/12 mx-auto border-collapse mb-8">
-        <thead>
-            <tr>
-                <th class="border border-black p-2 w-1/5 text-left">Course Folder Particulars</th>
-                <th class="border border-black p-2 w-3/5 text-left">Requirements</th>
-                <th class="border border-black p-2 w-16">Yes</th>
-                <th class="border border-black p-2 w-16">No</th>
-            </tr>
-        </thead>
-        <tbody>
-            <script>
-                const checklistItems = [
-                    { id: 1, title: "Course Outline", rows: 7 },
-                    { id: 2, title: "Course Description-NCEAC", rows: 7 },
-                    { id: 3, title: "Copy of Lecture Notes", rows: 1 },
-                    { id: 4, title: "Copy of Question Papers (Assignment 1-4, Quiz 1-4, Mid-term, Final-term)", rows: 5 },
-                    { id: 5, title: "Copy of Model Solution (Assignment 1-4, Quiz 1-4, Mid-term, Final-term)", rows: 5 },
-                    { id: 6, title: "Copy of Three Samples Graded (Good, Average, Worst)", rows: 7 },
-                    { id: 7, title: "Attendance", rows: 1 },
-                    { id: 8, title: "Course Log-NCEAC", rows: 1 },
-                    { id: 9, title: "Complete Result", rows: 1 },
-                    { id: 10, title: "Outcomes Assessment", rows: 1 }
-                ];
-
-                document.write(checklistItems.map(item => `
-                    <tr>
-                        <td class="border border-black p-2 align-top"><b>${item.id}.</b> ${item.title}</td>
-                        <td class="border border-black p-2">
-                            <textarea rows="${item.rows}" class="w-full resize-none outline-none"></textarea>
-                        </td>
-                        <td class="border border-black p-2 text-center">
-                            <input type="text" class="w-8 text-center outline-none mx-auto">
-                        </td>
-                        <td class="border border-black p-2 text-center">
-                            <input type="text" class="w-8 text-center outline-none mx-auto">
-                        </td>
-                    </tr>
-                `).join(''));
-            </script>
-        </tbody>
-    </table>
-
-    <!-- Confirmation Text -->
-    <div class="text-center mb-8">
-        <p>I hereby confirm that all the above-mentioned documents are complete in prescribed manner</p>
-    </div>
-
-    <!-- Signature Section -->
-    <div class="flex justify-around mb-12 w-4/5 mx-auto">
+    <div class="ml-[calc(100vw/5)] p-8">
+        <!-- Header Section -->
         <div class="text-center">
-            <p>Instructor Signature</p>
-            <div class="w-28 h-px bg-black mx-auto mt-5"></div>
+            <h2 class="text-lg font-semibold mb-1">Department of Computer Science</h2>
+            <h1 class="text-xl font-bold underline mb-8">Course Folder Verification Report</h1>
         </div>
-        <div class="text-center">
-            <p>Instructor Signature</p>
-            <div class="w-28 h-px bg-black mx-auto mt-5"></div>
+
+        <!-- Top Information Table -->
+        <table class="w-4/5 mx-auto border-collapse mb-8">
+            <tbody>
+                <tr>
+                    <td class="border border-black p-2 w-8"><b>1.</b></td>
+                    <td class="border border-black p-2"><b>Program</b></td>
+                    <td class="border border-black p-2"><input type="text" class="w-full outline-none" id="program" readonly></td>
+                    <td class="border border-black p-2 w-8"><b>2.</b></td>
+                    <td class="border border-black p-2">
+                        <div class="flex items-center gap-1">
+                            <b>Semester: </b>
+                            <input type="text" id="semester" class="w-16 outline-none" readonly>
+                        </div>
+                    </td>
+                    <td class="border border-black p-2 w-16"><input type="number" class="w-12 outline-none"></td>
+                </tr>
+                <tr>
+                    <td class="border border-black p-2"><b>3.</b></td>
+                    <td class="border border-black p-2"><b>Course Title</b></td>
+                    <td class="border border-black p-2" colspan="4"><input type="text" class="w-full outline-none" readonly id="course-title"></td>
+                </tr>
+                <tr>
+                    <td class="border border-black p-2"><b>4.</b></td>
+                    <td class="border border-black p-2"><b>Instructor Name</b></td>
+                    <td class="border border-black p-2" colspan="4"><input type="text" class="w-full outline-none" readonly id="instructor-name"></td>
+                </tr>
+                <tr>
+                    <td class="border border-black p-2"><b>5.</b></td>
+                    <td class="border border-black p-2"><b>Reviewer Name</b></td>
+                    <td class="border border-black p-2" colspan="4"><input type="text" class="w-full outline-none" readonly id="reviewer-name"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Checklist Header -->
+        <h2 class="text-center font-bold underline text-lg mb-8">CHECKLIST</h2>
+
+        <!-- Checklist Table -->
+        <table class="w-11/12 mx-auto border-collapse mb-8">
+            <thead>
+                <tr>
+                    <th class="border border-black p-2 w-1/5 text-left">Course Folder Particulars</th>
+                    <th class="border border-black p-2 w-3/5 text-left">Requirements</th>
+                    <th class="border border-black p-2 w-16">Yes</th>
+                    <th class="border border-black p-2 w-16">No</th>
+                </tr>
+            </thead>
+            <tbody>
+                <script>
+                    const checklistItems = [
+                        { id: 1, title: "Course Outline", rows: 7 },
+                        { id: 2, title: "Course Description-NCEAC", rows: 7 },
+                        { id: 3, title: "Copy of Lecture Notes", rows: 1 },
+                        { id: 4, title: "Copy of Question Papers (Assignment 1-4, Quiz 1-4, Mid-term, Final-term)", rows: 5 },
+                        { id: 5, title: "Copy of Model Solution (Assignment 1-4, Quiz 1-4, Mid-term, Final-term)", rows: 5 },
+                        { id: 6, title: "Copy of Three Samples Graded (Good, Average, Worst)", rows: 7 },
+                        { id: 7, title: "Attendance", rows: 1 },
+                        { id: 8, title: "Course Log-NCEAC", rows: 1 },
+                        { id: 9, title: "Complete Result", rows: 1 },
+                        { id: 10, title: "Outcomes Assessment", rows: 1 }
+                    ];
+                
+                    document.write(checklistItems.map(item => `
+                        <tr>
+                            <td class="border border-black p-2 align-top"><b>${item.id}.</b> ${item.title}</td>
+                            <td class="border border-black p-2">
+                                <textarea id="requirement-${item.id}" rows="${item.rows}" class="w-full resize-none outline-none"></textarea>
+                            </td>
+                            <td class="border border-black p-2 text-center">
+                                <input id="yes-${item.id}" type="text" class="w-8 text-center outline-none mx-auto">
+                            </td>
+                            <td class="border border-black p-2 text-center">
+                                <input id="no-${item.id}" type="text" class="w-8 text-center outline-none mx-auto">
+                            </td>
+                        </tr>
+                    `).join(''));
+                </script>
+                
+            </tbody>
+        </table>
+
+        <!-- Confirmation Text -->
+        <div class="text-center mb-8">
+            <p>I hereby confirm that all the above-mentioned documents are complete in prescribed manner</p>
+        </div>
+
+        <!-- Signature Section -->
+        <div class="flex justify-around mb-12 w-4/5 mx-auto">
+            <div class="text-center">
+                <p>Instructor Signature</p>
+                <div class="w-28 h-px bg-black mx-auto mt-5"></div>
+            </div>
+            <div class="text-center">
+                <p>Instructor Signature</p>
+                <div class="w-28 h-px bg-black mx-auto mt-5"></div>
+            </div>
+        </div>
+
+        <div class="flex justify-around mb-12 w-4/5 mx-auto">
+            <div class="text-center">
+                <p>Signature</p>
+                <p>Convener Folder Review Committee</p>
+                <div class="w-28 h-px bg-black mx-auto mt-5"></div>
+            </div>
+            <div class="text-center">
+                <p>Signature</p>
+                <p>Chairman</p>
+                <div class="w-28 h-px bg-black mx-auto mt-5"></div>
+            </div>
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-center gap-8 mb-8">
+            <button
+            id="submit-btn"
+                class="px-8 py-4 bg-[#212121] text-white font-bold tracking-wider rounded-2xl hover:bg-purple-500 transition-colors duration-300 active:scale-95">
+                Submit
+            </button>
+            <button
+                class="px-8 py-4 bg-[#212121] text-white font-bold tracking-wider rounded-2xl hover:bg-purple-500 transition-colors duration-300 active:scale-95">
+                Print
+            </button>
+            <button
+                class="px-8 py-4 bg-[#212121] text-white font-bold tracking-wider rounded-2xl hover:bg-purple-500 transition-colors duration-300 active:scale-95">
+                Download
+            </button>
         </div>
     </div>
 
-    <div class="flex justify-around mb-12 w-4/5 mx-auto">
-        <div class="text-center">
-            <p>Signature</p>
-            <p>Convener Folder Review Committee</p>
-            <div class="w-28 h-px bg-black mx-auto mt-5"></div>
-        </div>
-        <div class="text-center">
-            <p>Signature</p>
-            <p>Chairman</p>
-            <div class="w-28 h-px bg-black mx-auto mt-5"></div>
-        </div>
-    </div>
+    <script>
 
-    <!-- Buttons -->
-    <div class="flex justify-center gap-8 mb-8">
-        <button class="px-8 py-4 bg-[#212121] text-white font-bold tracking-wider rounded-2xl hover:bg-purple-500 transition-colors duration-300 active:scale-95">
-            Submit
-        </button>
-        <button class="px-8 py-4 bg-[#212121] text-white font-bold tracking-wider rounded-2xl hover:bg-purple-500 transition-colors duration-300 active:scale-95">
-            Print
-        </button>
-        <button class="px-8 py-4 bg-[#212121] text-white font-bold tracking-wider rounded-2xl hover:bg-purple-500 transition-colors duration-300 active:scale-95">
-            Download
-        </button>
-    </div>
-   </div>
-
-<script>
-
-// token starts here
-const token = localStorage.getItem('token');
-        if (token) {
-            const payload = JSON.parse(atob(token.split('.')[1]));
-            const isExpired = payload.exp * 1000 < Date.now();
-            const role = payload.role || "";
-
-            if (role === 'teacher') {
-                document.getElementById('add-course-btn').style.display = 'none';
-                document.getElementById('or-text').style.display = 'none';
-                document.getElementById('manage-login-btn').style.display = 'none';
-            }
-
-            if (isExpired) {
-                alert('Session expired. Please log in again.');
-                localStorage.removeItem('token'); // Clear expired token
-                window.location.href = '../../../login/login.html'; // Redirect to login
-            } else {
-                // Verify token validity with backend
-                fetch('http://localhost:5000/api/auth/validate-token', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        Authorization: `Bearer ${token}`,
-                    },
-                })
-                    .then((response) => {
-                        if (!response.ok) {
-                            throw new Error('Invalid token. Please log in again.');
-                        }
-                        return response.json();
-                    })
-                    .then((data) => {
-                        console.log('Token is valid:', data);
-                        document.body.style.display = 'block'; // Show the page after validation
-                    })
-                    .catch((err) => {
-                        alert(err.message);
-                        localStorage.removeItem('token'); // Clear invalid token
-                        window.location.href = '../../login/login.html'; // Redirect to login
-                    });
-            }
-        } else {
-            alert('Access denied. Please log in.');
-            window.location.href = '../../login/login.html'; // Redirect if no token
+        // Ensure user is authenticated
+        const token = localStorage.getItem("token");
+        if (!token) {
+            alert("Access denied. Please log in.");
+            window.location.href = "../../login/login.html";
         }
 
-        //token ends here
+        // Fetch and validate token
+        fetch("http://localhost:5000/api/auth/validate-token", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        })
+            .then(response => {
+                if (!response.ok) throw new Error("Invalid token. Please log in again.");
+                return response.json();
+            })
+            .then(() => document.body.style.display = "block")
+            .catch(err => {
+                alert(err.message);
+                localStorage.removeItem("token");
+                window.location.href = "../../login/login.html";
+            });
+        const courseValue = localStorage.getItem("course");
+        const instructorValue = localStorage.getItem("teacher");
+        const classValue = localStorage.getItem("class");
+        const session = localStorage.getItem("session");
+        document.addEventListener("DOMContentLoaded", () => {
+            const program = classValue.split(" ")[0]
+            const semester = classValue.split(" ")[1]
+            document.getElementById("program").value=program
+            document.getElementById("semester").value=semester
+            document.getElementById("course-title").value=courseValue
+            document.getElementById("instructor-name").value=instructorValue
+        })
 
-</script>
+        // Fetch existing verification report data
+        async function loadVerificationData() {
+            try {
+                const headers = {
+                    courseName: courseValue,
+                    instructorName: instructorValue,
+                    className: classValue,
+                    session: session
+                };
+                const response = await fetch("http://localhost:5000/api/teacher/course/verification-report", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json",
+                        ...headers
+                    }
+                });
+
+                if (!response.ok) throw new Error("No existing data found.");
+
+                const data = await response.json();
+                console.log("Existing data:", data);
+
+                // Populate form fields
+                document.getElementById("program").value = data.program || "";
+                document.getElementById("semester").value = data.semester || "";
+                document.getElementById("course-title").value = data.courseTitle || "";
+                document.getElementById("instructor-name").value = data.instructorName || "";
+                document.getElementById("reviewer-name").value = data.reviewerName || "";
+
+                // Populate checklist items
+                data.checklist.forEach((item, index) => {
+                    document.getElementById(`requirement-${index + 1}`).value = item.requirement || "";
+                    document.getElementById(`yes-${index + 1}`).value = item.yes || "";
+                    document.getElementById(`no-${index + 1}`).value = item.no || "";
+                });
+
+            } catch (error) {
+                console.warn("No existing data found, ready for new submission.");
+                document.getElementById("submit-btn").addEventListener("click", handleSubmit);
+            }
+        }
+
+        // Collect form data
+        function getFormData() {
+            const formData = {
+                program: document.getElementById("program").value,
+                semester: document.getElementById("semester").value,
+                coursename: document.getElementById("course-title").value,
+                instructorname: document.getElementById("instructor-name").value,
+                classname:classValue,
+                session:session,
+                reviewerName: document.getElementById("reviewer-name").value,
+                checklist: [],
+            };
+
+            // Collect checklist data
+            for (let i = 1; i <= 10; i++) {
+                formData.checklist.push({
+                    requirement: document.getElementById(`requirement-${i}`).value,
+                    yes: document.getElementById(`yes-${i}`).value,
+                    no: document.getElementById(`no-${i}`).value,
+                });
+            }
+
+            return formData;
+        }
+
+        // Submit new verification report
+        async function handleSubmit() {
+            try {
+                const formData = getFormData();
+
+                const response = await fetch("http://localhost:5000/api/teacher/course/verification-report", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        ...formData
+                    },
+                    body: JSON.stringify(formData),
+                });
+
+                if (!response.ok) throw new Error("Failed to save verification report.");
+
+                alert("Verification report saved successfully!");
+
+            } catch (error) {
+                console.error("Error saving verification report:", error);
+                alert("Failed to save verification report. Please try again.");
+            }
+        }
+
+        // Handle printing
+        function handlePrint() {
+            document.getElementById("sidebar").style.display = "none";
+            document.getElementById("print-btn").style.display = "none";
+            document.getElementById("submit-btn").style.display = "none";
+
+            window.print();
+
+            window.onafterprint = () => {
+                document.getElementById("sidebar").style.display = "block";
+                document.getElementById("print-btn").style.display = "block";
+                document.getElementById("submit-btn").style.display = "block";
+            };
+        }
+
+        // Initialize
+        document.addEventListener("DOMContentLoaded", loadVerificationData);
+    </script>
 
 </body>
+
 </html>
