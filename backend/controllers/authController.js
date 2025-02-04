@@ -2,6 +2,8 @@ const User = require("../models/User");
 const jwt = require("jsonwebtoken");
 const crypto = require("crypto");
 const sendEmail = require("../config/email");
+const bcrypt = require("bcrypt");
+
 
 exports.login = async (req, res) => {
   try {
@@ -34,6 +36,61 @@ exports.login = async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
+  }
+};
+
+exports.updateUserPassword = async (req, res) => {
+  try {
+    
+      const { password } = req.body;
+      
+      const { id } = req.params;
+      
+      if (!password) {
+          return res.status(400).json({ message: "Password is required" });
+      }
+
+      const hashedPassword = await bcrypt.hash(password, 10);
+
+      const user = await User.findByIdAndUpdate(id, { password: hashedPassword }, { new: true });
+      console.log(user);
+      
+      if (!user) {
+          return res.status(404).json({ message: "User not found" });
+      }
+
+      res.status(200).json({ message: "Password updated successfully" });
+  } catch (error) {
+      res.status(500).json({ message: "Error updating password", error: error.message });
+  }
+};
+exports.getUsers = async (req,res)=>{
+  try {
+    const users = await User.find({ role: "teacher" }, "_id name email"); // Fetch only necessary fields
+    const formattedUsers = users.map(user => ({
+        id: user._id, // Rename _id to id
+        name: user.name,
+        email: user.email
+    }));
+    res.status(200).json(formattedUsers);
+} catch (error) {
+    res.status(500).json({ message: "Error fetching users", error: error.message });
+}
+}
+exports.deleteUser = async (req, res) => {
+  
+  try {
+      const { userId } = req.params;
+
+      const user = await User.findByIdAndDelete(userId);
+
+      if (!user) {
+          return res.status(404).json({ message: "User not found" });
+      }
+
+      res.status(200).json({ message: "User deleted successfully" });
+  } catch (error) {
+      res.status(500).json({ message: "Error deleting user", error: error.message });
   }
 };
 
