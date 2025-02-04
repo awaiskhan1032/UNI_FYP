@@ -28,6 +28,7 @@
 </head>
 
 <body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
     <div
         class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
         <nav>
@@ -65,13 +66,15 @@
                 <li id="manage-login-btn"><a href="../Manage logins/managelogin.html"
                         class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
                         Login</a></li>
+                        <li><a href="../About us/About.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">About us
+            </a></li>
                 <li><a href="./login/login.html"
                         class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
                 </li>
             </ul>
         </nav>
     </div>
-
     <!-- Main Section -->
     <div class="flex-1 ml-[calc(100vw/5)] h-screen bg-white p-8 rounded-2xl shadow-lg">
         <!-- Header -->
@@ -87,7 +90,7 @@
         <!-- Form -->
         <div class="mt-8">
             <div class="flex items-center justify-between mb-4">
-                <h2 class="text-2xl font-bold text-purple-700 m-auto">Please select the following:</h2>
+                <h2 class="text-2xl font-bold text-purple-700 ml-12">Please select the following:</h2>
                 <p id="or-text" class="text-2xl font-bold text-purple-700 mr-5">OR</p>
                 <a id="add-course-btn" href="./register-course.html"
                     class="bg-purple-700 text-white py-2 px-6 rounded-xl shadow-lg hover:bg-purple-900 hover:scale-105 transition">Add

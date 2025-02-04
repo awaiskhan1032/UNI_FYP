@@ -8,28 +8,29 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <title>Question Papers</title>
     <style>
-        .custom::-webkit-scrollbar-track {
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            background-color: #F5F5F5;
-        }
-
-        .custom::-webkit-scrollbar {
+        .custom-scrollbar::-webkit-scrollbar {
             width: 12px;
             background-color: #F5F5F5;
         }
 
-        .custom::-webkit-scrollbar-thumb {
+        .custom-scrollbar::-webkit-scrollbar-thumb {
             border-radius: 10px;
-            -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
             background-color: #993aec;
+        }
+
+        .sub-items {
+            display: none;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 10px;
         }
     </style>
 </head>
 
-<body>
+<body class="bg-gray-100 font-sans">
+    <!-- Sidebar -->
     <div
-        class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom">
+        class="w-1/5 bg-gradient-to-b h-screen fixed from-purple-300 via-purple-400 to-purple-600 p-4 rounded-2xl overflow-y-auto custom-scrollbar">
         <nav>
             <ul class="space-y-4">
                 <li><a href="../Home/home.html"
@@ -60,11 +61,14 @@
                         class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Outcome
                         Assessment</a></li>
                 <li><a href="../Course folder verfication report/resverf.html"
-                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Folder
-                        Verification</a></li>
+                        class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Course
+                        Folder Verification</a></li>
                 <li id="manage-login-btn"><a href="../Manage logins/managelogin.html"
                         class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Manage
                         Login</a></li>
+                        <li><a href="../About us/About.html"
+                            class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">About us
+            </a></li>
                 <li><a href="./login/login.html"
                         class="block text-center bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200">Logout</a>
                 </li>
